@@ -57,21 +57,21 @@ class Comment
         return $this->id;
     }
 
-    public function setPost(\AppBundle\Entity\Post $post = null)
+    public function setTask(\AppBundle\Entity\Task $task = null)
     {
-        $this->post = $post;
+        $this->task = $task;
 
         return $this;
     }
 
     /**
-     * Get post
+     * Get task
      *
      * @return string 
      */
-    public function getPost()
+    public function getTask()
     {
-        return $this->post;
+        return $this->task;
     }
 
     /**
