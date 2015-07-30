@@ -51,13 +51,6 @@ class Task
     private $description;
 
     /**
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Comment"
-     *               mappedBy = "post")
-     * @ORM\OrderBy({"publishedAt" = "DESC"})
-     */
-    private $comments;
-
-    /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\State")
      */
     private $state;
