@@ -51,6 +51,13 @@ class Task
     private $description;
 
     /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Comment"
+     *               mappedBy = "post")
+     * @ORM\OrderBy({"publishedAt" = "DESC"})
+     */
+    private $comments;
+
+    /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\State")
      */
     private $state;
@@ -176,6 +183,13 @@ class Task
     {
         return $this->description;
     }
+
+   public function getComments(\AppBundle\Entity\Comment $comment)
+   {
+    $this->comment = $comment;
+
+    return $this;
+   }
 
     public function setState(\AppBundle\Entity\State $state)
     {
