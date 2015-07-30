@@ -4,6 +4,7 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
+
 /**
  * Task
  *
@@ -63,14 +64,6 @@ class Task
     private $startTime;
 
     /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="end_time", type="datetime")
-     */
-    private $endTime;
-
-
-    /**
      * Get id
      *
      * @return integer 
@@ -90,7 +83,7 @@ class Task
     /**
      * Get taskCategory
      *
-     * @return string 
+     * @return string
      */
     public function getTaskCategory()
     {
@@ -224,26 +217,4 @@ class Task
         return $this->startTime;
     }
 
-    /**
-     * Set endTime
-     *
-     * @param \DateTime $endTime
-     * @return Task
-     */
-    public function setEndTime($endTime)
-    {
-        $this->endTime = $endTime;
-
-        return $this;
-    }
-
-    /**
-     * Get endTime
-     *
-     * @return \DateTime 
-     */
-    public function getEndTime()
-    {
-        return $this->endTime;
-    }
 }
