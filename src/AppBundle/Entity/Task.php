@@ -46,9 +46,9 @@ class Task
     /**
      * @var string
      *
-     * @ORM\Column(name="content", type="text")
+     * @ORM\Column(name="description", type="string", length=255)
      */
-    private $content;
+    private $description;
 
     /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\State")
@@ -155,26 +155,26 @@ class Task
     }
 
     /**
-     * Set content
+     * Set description
      *
-     * @param string $content
+     * @param string $description
      * @return Task
      */
-    public function setContent($content)
+    public function setdescription($description)
     {
-        $this->content = $content;
+        $this->description = $description;
 
         return $this;
     }
 
     /**
-     * Get content
+     * Get description
      *
      * @return string 
      */
-    public function getContent()
+    public function getdescription()
     {
-        return $this->content;
+        return $this->description;
     }
 
     public function setState(\AppBundle\Entity\State $state)
