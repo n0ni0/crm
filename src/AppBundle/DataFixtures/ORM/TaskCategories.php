@@ -22,6 +22,7 @@ class TaskCategories extends AbstractFixture implements OrderedFixtureInterface
       'private'
     );
 
+
     foreach($categories as $TaskCategories)
     {
       $categories = new TaskCategory();
@@ -30,6 +31,6 @@ class TaskCategories extends AbstractFixture implements OrderedFixtureInterface
       $manager->persist($categories);
     }
 
-    $manager->flush();
+      $manager->flush();
   }
 }
