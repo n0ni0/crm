@@ -16,26 +16,27 @@
             <th>Móvil</th>
             <th>Email</th>
             <th>Empresa</th>
-            <th>Ver perfíl</th>
+            <th>Perfíl</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            {% for customers in customer %}
-              <td>{{ customers.photo}}</td>
-              <td>{{ customers.name}}</td>
-              <td>{{ customers.lastname }}</td>
-              <td>{{ customers.phone }}</td>
-              <td>{{ customers.mobilephone }}</td>
-              <td>{{ customers.email }}</td>
-              <td>{{ customers.company }}</td>
-              <td><button width="auto" type="button" class="btn btn-primary">Perfíl</button></td>
+            {% for pagination in pagination %}
+              <td>{{ pagination.photo}}</td>
+              <td>{{ pagination.name}}</td>
+              <td>{{ pagination.lastname }}</td>
+              <td>{{ pagination.phone }}</td>
+              <td>{{ pagination.mobilephone }}</td>
+              <td>{{ pagination.email }}</td>
+              <td>{{ pagination.company }}</td>
+              <td><button width="auto" type="button" class="btn btn-success btn-xs"><i class="glyphicon glyphicon-user"></button></td>
           </tr>
             {% endfor %}
           <tr>
         </tbody>
       </table>
     </div>
+    {{ knp_pagination_render(pagination) }}
   </div>
 {% endblock %}
 

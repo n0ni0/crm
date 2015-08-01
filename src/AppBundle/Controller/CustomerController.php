@@ -21,7 +21,14 @@ class CustomerController extends Controller
                     );
     }
 
-    return $this->render('customer/list.html.twig', array(
-    'customer' => $customer));
+    $paginator  = $this->get('knp_paginator');
+    $pagination = $paginator->paginate(
+      $customer,
+      $this->getRequest()->query->get('page',1),15
+    );
+
+    return $this->render('customer/list.html.twig', compact(
+      'pagination'
+    ));
   }
 }
