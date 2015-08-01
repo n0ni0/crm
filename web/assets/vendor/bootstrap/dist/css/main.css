@@ -1,5 +1,5 @@
 body {
-  background-color: #eee;
+  background-color: #FFFFFF;
 }
 
 .form-signin {
@@ -37,4 +37,18 @@ body {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+
+#customers th{
+text-align: center;
+background-color: #2C3E50;
+color: white;
+}
+
+#customers td{
+text-align: center;
+}
+
+#customerTitle{
+  text-align: center;
 }
