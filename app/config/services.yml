@@ -7,3 +7,10 @@ services:
 #    service_name:
 #        class: AppBundle\Directory\ClassName
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+
+  CustomerManager:
+    class: AppBundle\Model\CustomerManager
+    arguments:
+      - @doctrine.orm.default_entity_manager
+      - @service_container
+

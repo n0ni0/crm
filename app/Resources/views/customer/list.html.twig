@@ -1,0 +1,11 @@
+{% extends 'layout.html.twig' %}
+
+{% block content%}
+  {% for customers in customer %}
+    {{ customers.name }}
+    {{ customers.country }}
+  {% endfor %}
+{% endblock %}
+
+
+
