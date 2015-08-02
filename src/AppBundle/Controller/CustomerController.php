@@ -4,15 +4,17 @@ namespace AppBundle\Controller;
 
 Use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Customer;
 use AppBundle\Entity\CustomerRepository;
+use AppBundle\Utils\Constants;
 
 class CustomerController extends Controller
 {
   /**
    * @Route("/customer", name="customer")
    */
-  public function listAction()
+  public function listAction(Request $request)
   {
     $customer = $this->get('CustomerManager')->findAllCustomers();
     if(!$customer){
@@ -22,13 +24,13 @@ class CustomerController extends Controller
     }
 
     $paginator  = $this->get('knp_paginator');
-    $pagination = $paginator->paginate(
+    $customers = $paginator->paginate(
       $customer,
-      $this->getRequest()->query->get('page',1),15
+      $request->query->getInt('page',1), $pages = Constants::NUM_PAGES
     );
 
-    return $this->render('customer/list.html.twig', compact(
-      'pagination'
+    return $this->render('customer/list.html.twig', array(
+      'customers' => $customers
     ));
   }
 }

@@ -20,13 +20,13 @@
         </thead>
         <tbody>
           <tr>
-            {% for pagination in pagination %}
-              <td>{{ pagination.name}}</td>
-              <td>{{ pagination.lastname }}</td>
-              <td>{{ pagination.phone }}</td>
-              <td>{{ pagination.mobilephone }}</td>
-              <td>{{ pagination.email }}</td>
-              <td>{{ pagination.company }}</td>
+            {% for customers in customers %}
+              <td>{{ customers.name }}</td>
+              <td>{{ customers.lastname }}</td>
+              <td>{{ customers.phone }}</td>
+              <td>{{ customers.mobilephone }}</td>
+              <td>{{ customers.email }}</td>
+              <td>{{ customers.company }}</td>
               <td><button width="auto" type="button" class="btn btn-success btn-xs"><i class="glyphicon glyphicon-user"></button></td>
           </tr>
             {% endfor %}
@@ -34,7 +34,7 @@
         </tbody>
       </table>
     </div>
-    {{ knp_pagination_render(pagination) }}
+    {{ knp_pagination_render(customers) }}
   </div>
 {% endblock %}
 
