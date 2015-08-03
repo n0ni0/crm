@@ -29,4 +29,16 @@ class CustomerRepository extends EntityRepository
 
     return $query->getResult();
   }
+
+  public function findAndDeleteCustomer($id)
+  {
+    $em = $this->getEntityManager();
+    $dql = 'DELETE
+              FROM AppBundle:Customer c
+             WHERE c.id = :id';
+
+    $query = $em->createQuery($dql);
+    $query->setParameter('id', $id);
+    $query->execute();
+  }
 }

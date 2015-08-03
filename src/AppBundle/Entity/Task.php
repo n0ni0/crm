@@ -33,11 +33,6 @@ class Task
     private $user;
 
     /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Customer")
-     */
-    private $customer;
-
-    /**
      * @var string
      *
      * @ORM\Column(name="title", type="string", length=255)
@@ -105,23 +100,6 @@ class Task
     public function getUser()
     {
         return $this->user;
-    }
-
-    public function setCustomer(\AppBundle\Entity\Customer $customer)
-    {
-        $this->customer = $customer;
-
-        return $this;
-    }
-
-    /**
-     * Get customer
-     *
-     * @return string 
-     */
-    public function getCustomer()
-    {
-        return $this->customer;
     }
 
     /**

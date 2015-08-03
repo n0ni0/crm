@@ -92,12 +92,6 @@ class Customer
     private $photo;
 
     /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\CustomerCategory")
-     */
-    private $customerCategory;
-
-
-    /**
      * Get id
      *
      * @return integer 
@@ -335,22 +329,5 @@ class Customer
     public function getPhoto()
     {
         return $this->photo;
-    }
-
-    public function setCustomerCategory(\AppBundle\Entity\CustomerCategory $customerCategory)
-    {
-        $this->customerCategory = $customerCategory;
-
-        return $this;
-    }
-
-    /**
-     * Get customerCategory
-     *
-     * @return string 
-     */
-    public function getCustomerCategory()
-    {
-        return $this->customerCategory;
     }
 }

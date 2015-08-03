@@ -29,4 +29,9 @@ class CustomerManager
   {
     return $this->repo->findCustomerProfile($id);
   }
+
+  public function deleteCustomer($customer)
+  {
+    return $this->repo->findAndDeleteCustomer($customer);
+  }
 }

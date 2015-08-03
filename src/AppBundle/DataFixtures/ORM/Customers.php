@@ -5,7 +5,6 @@ namespace AppBundle\DataFixtures\ORM;
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
-use AppBundle\Entity\CustomerCategory;
 use AppBundle\Entity\Customer;
 
 class Customers extends AbstractFixture implements OrderedFixtureInterface
@@ -16,11 +15,9 @@ class Customers extends AbstractFixture implements OrderedFixtureInterface
 
   public function load(ObjectManager $manager)
   {
-    $customerCategories = $manager->getRepository('AppBundle:CustomerCategory')->findAll();
 
     for ($i = 0; $i < 30; $i++) {
       $customer = new Customer();
-      $customerCategory = $customerCategories[array_rand($customerCategories)];
       $mobile = rand(661000000,669999999);
       $phone  = rand(910000000,999999999);
 
@@ -34,7 +31,6 @@ class Customers extends AbstractFixture implements OrderedFixtureInterface
       $customer->setCompany('company'.$i);
       $customer->setAnnotations($this->getAnnotations());
       $customer->setPhoto('photo'.$i.'.jpg');
-      $customer->setCustomerCategory($customerCategory);
 
       $manager->persist($customer);
     }

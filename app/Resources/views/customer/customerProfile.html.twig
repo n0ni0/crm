@@ -50,7 +50,6 @@
                         <td>Anotaciones:</td>
                         <td>{{ profiles.Annotations }}</td>
                       </tr>
-                    {% endfor %}
                   </tr>
                 </tbody>
               </table>
@@ -61,10 +60,12 @@
           <a href="#" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-md btn-success">
             <i class="glyphicon glyphicon-edit"></i>
           </a>
-          <a data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-md btn-danger">
+          <a href="{{ path('deleteCustomer', { 'id': profiles.id }) }}" data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-md btn-danger">
             <i class="glyphicon glyphicon-remove"></i>
           </a>
         </div>
+
+                    {% endfor %}
       </div>
 </div>
 {% endblock %}

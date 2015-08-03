@@ -46,4 +46,13 @@ class CustomerController extends Controller
       'profile' => $profile
     ));
   }
+
+  /**
+   * @Route("/customer/{id}/delete", name="deleteCustomer")
+   */
+  public function deleteCustomerAction($id)
+  {
+    $customer = $this->get('CustomerManager')->deleteCustomer($id);
+    return $this->redirectToRoute('customer');
+  }
 }
