@@ -52,13 +52,6 @@ class Customer
     /**
      * @var string
      *
-     * @ORM\Column(name="country", type="string", length=255)
-     */
-    private $country;
-
-    /**
-     * @var string
-     *
      * @ORM\Column(name="phone", type="string", length=50)
      */
     private $phone;
@@ -204,29 +197,6 @@ class Customer
     public function getCity()
     {
         return $this->city;
-    }
-
-    /**
-     * Set country
-     *
-     * @param string $country
-     * @return Customer
-     */
-    public function setCountry($country)
-    {
-        $this->country = $country;
-
-        return $this;
-    }
-
-    /**
-     * Get country
-     *
-     * @return string 
-     */
-    public function getCountry()
-    {
-        return $this->country;
     }
 
     /**

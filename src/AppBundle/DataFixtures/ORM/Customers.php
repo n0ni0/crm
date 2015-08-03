@@ -28,7 +28,6 @@ class Customers extends AbstractFixture implements OrderedFixtureInterface
       $customer->setLastName($this->getLastName());
       $customer->setAddress('calle'.$i);
       $customer->setCity($this->getCity());
-      $customer->setCountry($this->getCountry());
       $customer->setPhone($phone);
       $customer->setMobilePhone($mobile);
       $customer->setEmail('customer'.$i.'@localhost');
@@ -88,14 +87,6 @@ class Customers extends AbstractFixture implements OrderedFixtureInterface
         'Collado Villalba','Córdoba','Donostia-San Sebastian'
      );
        return $city[array_rand($city)];
-  }
-
-  private function getCountry()
-  {
-    $country = array(
-        'España','Inglaterra','Francia','Alemania'
-     );
-       return $country[array_rand($country)];
   }
 
   private function getAnnotations()
