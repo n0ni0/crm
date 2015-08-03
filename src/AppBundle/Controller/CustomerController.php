@@ -6,6 +6,7 @@ Use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Customer;
+use AppBundle\Entity\CustomerCategory;
 use AppBundle\Entity\CustomerRepository;
 use AppBundle\Utils\Constants;
 
@@ -31,6 +32,18 @@ class CustomerController extends Controller
 
     return $this->render('customer/list.html.twig', array(
       'customers' => $customers
+    ));
+  }
+
+  /**
+   * @Route("/customer/{id}", name="customerProfile")
+   */
+  public function profileAction($id)
+  {
+    $profile = $this->get('CustomerManager')->findCustomerProfile($id);
+
+    return $this->render('customer/customerProfile.html.twig', array(
+      'profile' => $profile
     ));
   }
 }

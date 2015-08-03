@@ -6,7 +6,6 @@ use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Entity\Repository;
 use Symfony\Component\DependencyInjection\ContainerInterface as Container;
 use AppBundle\Entity\Customer;
-use AppBundle\Entity\CustomerRepository;
 
 class CustomerManager
 {
@@ -24,5 +23,10 @@ class CustomerManager
   public function findAllCustomers()
   {
     return $this->repo->findAllCustomers();
+  }
+
+  public function findCustomerProfile($id)
+  {
+    return $this->repo->findCustomerProfile($id);
   }
 }

@@ -16,4 +16,17 @@ class CustomerRepository extends EntityRepository
         )
       ->getResult();
   }
+
+  public function findCustomerProfile($id)
+  {
+    $em  = $this->getEntityManager();
+    $dql = 'SELECT c
+              FROM AppBundle:Customer c
+             WHERE c.id = :id';
+
+    $query = $em->createQuery($dql);
+    $query->setParameter('id', $id);
+
+    return $query->getResult();
+  }
 }
