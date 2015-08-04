@@ -39,16 +39,16 @@ body {
   border-top-right-radius: 0;
 }
 
-#customers th{
+#contacts th{
 text-align: center;
 background-color: #2C3E50;
 color: white;
 }
 
-#customers td{
+#contacts td{
 text-align: center;
 }
 
-#customerTitle{
+#contactTitle{
   text-align: center;
 }

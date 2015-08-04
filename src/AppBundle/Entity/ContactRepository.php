@@ -4,24 +4,24 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\EntityRepository;
 
-class CustomerRepository extends EntityRepository
+class ContactRepository extends EntityRepository
 {
-  public function findAllCustomers()
+  public function findAllContacts()
   {
     return $this->getEntityManager()
       ->createQuery(
         'SELECT c
-           FROM AppBundle:Customer c
+           FROM AppBundle:Contact c
           ORDER BY c.name ASC'
         )
       ->getResult();
   }
 
-  public function findCustomerProfile($id)
+  public function findContactProfile($id)
   {
     $em  = $this->getEntityManager();
     $dql = 'SELECT c
-              FROM AppBundle:Customer c
+              FROM AppBundle:Contact c
              WHERE c.id = :id';
 
     $query = $em->createQuery($dql);
@@ -30,11 +30,11 @@ class CustomerRepository extends EntityRepository
     return $query->getResult();
   }
 
-  public function findAndDeleteCustomer($id)
+  public function findAndDeleteContact($id)
   {
     $em = $this->getEntityManager();
     $dql = 'DELETE
-              FROM AppBundle:Customer c
+              FROM AppBundle:Contact c
              WHERE c.id = :id';
 
     $query = $em->createQuery($dql);

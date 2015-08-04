@@ -5,12 +5,12 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Customer
+ * contact
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="AppBundle\Entity\CustomerRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Entity\ContactRepository")
  */
-class Customer
+class Contact
 {
     /**
      * @var integer
@@ -105,7 +105,7 @@ class Customer
      * Set name
      *
      * @param string $name
-     * @return Customer
+     * @return contact
      */
     public function setName($name)
     {
@@ -128,7 +128,7 @@ class Customer
      * Set lastname
      *
      * @param string $lastname
-     * @return Customer
+     * @return contact
      */
     public function setLastname($lastname)
     {
@@ -151,7 +151,7 @@ class Customer
      * Set address
      *
      * @param string $address
-     * @return Customer
+     * @return contact
      */
     public function setAddress($address)
     {
@@ -174,7 +174,7 @@ class Customer
      * Set city
      *
      * @param string $city
-     * @return Customer
+     * @return contact
      */
     public function setCity($city)
     {
@@ -197,7 +197,7 @@ class Customer
      * Set phone
      *
      * @param string $phone
-     * @return Customer
+     * @return contact
      */
     public function setPhone($phone)
     {
@@ -220,7 +220,7 @@ class Customer
      * Set mobilephone
      *
      * @param string $mobilephone
-     * @return Customer
+     * @return contact
      */
     public function setMobilephone($mobilephone)
     {
@@ -243,7 +243,7 @@ class Customer
      * Set email
      *
      * @param string $email
-     * @return Customer
+     * @return contact
      */
     public function setEmail($email)
     {
@@ -266,7 +266,7 @@ class Customer
      * Set company
      *
      * @param string $company
-     * @return Customer
+     * @return contact
      */
     public function setCompany($company)
     {
@@ -289,7 +289,7 @@ class Customer
      * Set annotations
      *
      * @param string $annotations
-     * @return Customer
+     * @return contact
      */
     public function setAnnotations($annotations)
     {
@@ -312,7 +312,7 @@ class Customer
      * Set photo
      *
      * @param string $photo
-     * @return Customer
+     * @return contact
      */
     public function setPhoto($photo)
     {

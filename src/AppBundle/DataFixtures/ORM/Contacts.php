@@ -5,9 +5,9 @@ namespace AppBundle\DataFixtures\ORM;
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
-use AppBundle\Entity\Customer;
+use AppBundle\Entity\Contact;
 
-class Customers extends AbstractFixture implements OrderedFixtureInterface
+class Contacts extends AbstractFixture implements OrderedFixtureInterface
 {
   public function getOrder(){
     return 60;
@@ -17,22 +17,22 @@ class Customers extends AbstractFixture implements OrderedFixtureInterface
   {
 
     for ($i = 0; $i < 30; $i++) {
-      $customer = new Customer();
+      $contact = new Contact();
       $mobile = rand(661000000,669999999);
       $phone  = rand(910000000,999999999);
 
-      $customer->setName($this->getName());
-      $customer->setLastName($this->getLastName());
-      $customer->setAddress('calle'.$i);
-      $customer->setCity($this->getCity());
-      $customer->setPhone($phone);
-      $customer->setMobilePhone($mobile);
-      $customer->setEmail('customer'.$i.'@localhost');
-      $customer->setCompany('company'.$i);
-      $customer->setAnnotations($this->getAnnotations());
-      $customer->setPhoto('photo'.$i.'.jpg');
+      $contact->setName($this->getName());
+      $contact->setLastName($this->getLastName());
+      $contact->setAddress('calle'.$i);
+      $contact->setCity($this->getCity());
+      $contact->setPhone($phone);
+      $contact->setMobilePhone($mobile);
+      $contact->setEmail('contact'.$i.'@localhost');
+      $contact->setCompany('company'.$i);
+      $contact->setAnnotations($this->getAnnotations());
+      $contact->setPhoto('photo'.$i.'.jpg');
 
-      $manager->persist($customer);
+      $manager->persist($contact);
     }
     $manager->flush();
   }

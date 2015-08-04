@@ -5,9 +5,9 @@ namespace AppBundle\Model;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Entity\Repository;
 use Symfony\Component\DependencyInjection\ContainerInterface as Container;
-use AppBundle\Entity\Customer;
+use AppBundle\Entity\Contact;
 
-class CustomerManager
+class ContactManager
 {
   protected $em;
   protected $container;
@@ -17,21 +17,21 @@ class CustomerManager
   {
     $this->em         = $em;
     $this->container  = $container;
-    $this->repo       = $em->getRepository('AppBundle:Customer');
+    $this->repo       = $em->getRepository('AppBundle:Contact');
   }
 
-  public function findAllCustomers()
+  public function findAllContacts()
   {
-    return $this->repo->findAllCustomers();
+    return $this->repo->findAllContacts();
   }
 
-  public function findCustomerProfile($id)
+  public function findContactProfile($id)
   {
-    return $this->repo->findCustomerProfile($id);
+    return $this->repo->findContactProfile($id);
   }
 
-  public function deleteCustomer($customer)
+  public function deleteContact($contact)
   {
-    return $this->repo->findAndDeleteCustomer($customer);
+    return $this->repo->findAndDeleteContact($contact);
   }
 }

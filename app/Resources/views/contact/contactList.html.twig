@@ -4,13 +4,13 @@
   <div class="container col-md-10 col-md-offset-1">
     <div class="panel panel-primary">
       <div class="panel-heading">
-        <h3 class="panel-title">Clientes</h3>
+        <h3 class="panel-title">Contactos</h3>
       </div>
       <div class="panel-body">
   </div>
   <div class="container-fluid">
     <div class="widget-content">
-      <table id="customers" class="table table-striped table-bordered table-hover">
+      <table id="contacts" class="table table-striped table-bordered table-hover">
         <thead>
           <tr>
             <th>Nombre</th>
@@ -24,15 +24,15 @@
         </thead>
         <tbody>
           <tr>
-            {% for customers in customers %}
-              <td>{{ customers.name }}</td>
-              <td>{{ customers.lastname }}</td>
-              <td>{{ customers.phone }}</td>
-              <td>{{ customers.mobilephone }}</td>
-              <td>{{ customers.email }}</td>
-              <td>{{ customers.company }}</td>
+            {% for contacts in contacts %}
+              <td>{{ contacts.name }}</td>
+              <td>{{ contacts.lastname }}</td>
+              <td>{{ contacts.phone }}</td>
+              <td>{{ contacts.mobilephone }}</td>
+              <td>{{ contacts.email }}</td>
+              <td>{{ contacts.company }}</td>
               <td>
-                <a href={{ path('customerProfile', {'id': customers.id}) }}>
+                <a href={{ path('contactProfile', {'id': contacts.id}) }}>
                   <button width="auto" type="button" class="btn btn-success btn-xs">
                     <i class="glyphicon glyphicon-user">
                   </button></a></td>
@@ -42,7 +42,7 @@
         </tbody>
       </table>
     </div>
-    {{ knp_pagination_render(customers) }}
+    {{ knp_pagination_render(contacts) }}
   </div>
     </div>
   </div>
