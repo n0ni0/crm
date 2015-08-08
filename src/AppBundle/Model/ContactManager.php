@@ -34,4 +34,10 @@ class ContactManager
   {
     return $this->repo->findAndDeleteContact($contact);
   }
+
+  public function updateContact($id)
+  {
+    return $contact = $this->repo->updateContact($id);
+  }
+
 }

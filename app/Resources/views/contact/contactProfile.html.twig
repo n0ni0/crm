@@ -1,71 +1,65 @@
 {% extends 'layout.html.twig' %}
 
-{% block content %}
-  <div class="container col-md-10 col-md-offset-1">
-      <div class="panel panel-primary">
-        <div class="panel-heading">
-          <h3 class="panel-title">Perfíl de contacto</h3>
-        </div>
-        <div class="panel-body">
-          <div class="row">
-          {% for profiles in profile%}
-            <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="http://babyinfoforyou.com/wp-content/uploads/2014/10/avatar-300x300.png" class="img-circle img-responsive"> 
-            </div>
-            <div class=" col-md-9 col-lg-9 "> 
-              <table class="table table-user-information">
-                <tbody>
-                      <tr>
-                        <td>Nombre:</td>
-                        <td>{{ profiles.name }}</td>
-                      </tr>
-                      <tr>
-                        <td>Apellidos:</td>
-                        <td>{{ profiles.lastname }}</td>
-                      </tr>
-                      <tr>
-                        <td>Ciudad:</td>
-                        <td>{{ profiles.city }}</td>
-                      </tr>
-                      <tr>
-                        <td>Dirección:</td>
-                        <td>{{ profiles.address }}</td>
-                      </tr>
-                      <tr>
-                        <td>Teléfono:</td>
-                        <td>{{ profiles.phone }}</td>
-                      </tr>
-                      <tr>
-                        <td>Móvil:</td>
-                        <td>{{ profiles.mobilephone }}</td>
-                      </tr>
-                      <tr>
-                        <td>Email:</td>
-                        <td>{{ profiles.email }}</td>
-                      </tr>
-                      <tr>
-                        <td>Empresa:</td>
-                        <td>{{ profiles.company }}</td>
-                      </tr>
-                      <tr>
-                        <td>Anotaciones:</td>
-                        <td>{{ profiles.Annotations }}</td>
-                      </tr>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-        <div class="panel-footer">
-          <a href="#" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-md btn-success">
-            <i class="glyphicon glyphicon-edit"></i>
-          </a>
-          <a href="{{ path('deleteContact', { 'id': profiles.id }) }}" data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-md btn-danger">
-            <i class="glyphicon glyphicon-remove"></i>
-          </a>
-        </div>
+{% block panel_title %}
+    Perfil de contacto
+{% endblock %}
 
-                    {% endfor %}
+{% block panel_body %}
+  {% for profiles in profile%}
+    <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="http://babyinfoforyou.com/wp-content/uploads/2014/10/avatar-300x300.png" class="img-circle img-responsive"> 
+    </div>
+    <div class=" col-md-9 col-lg-9 "> 
+      <table class="table table-user-information">
+        <tbody>
+          <tr>
+            <td>Nombre:</td>
+            <td>{{ profiles.name }}</td>
+          </tr>
+          <tr>
+            <td>Apellidos:</td>
+            <td>{{ profiles.lastname }}</td>
+          </tr>
+          <tr>
+            <td>Ciudad:</td>
+            <td>{{ profiles.city }}</td>
+          </tr>
+          <tr>
+            <td>Dirección:</td>
+            <td>{{ profiles.address }}</td>
+          </tr>
+          <tr>
+            <td>Teléfono:</td>
+            <td>{{ profiles.phone }}</td>
+          </tr>
+          <tr>
+            <td>Móvil:</td>
+            <td>{{ profiles.mobilephone }}</td>
+          </tr>
+          <tr>
+            <td>Email:</td>
+            <td>{{ profiles.email }}</td>
+          </tr>
+          <tr>
+            <td>Empresa:</td>
+            <td>{{ profiles.company }}</td>
+          </tr>
+          <tr>
+            <td>Anotaciones:</td>
+            <td>{{ profiles.Annotations }}</td>
+          </tr>
+          </tr>
+          </tbody>
+        </table>
       </div>
-</div>
+    </div>
+    </div>
+    <div class="panel-footer">
+      <a href="{{ path('editContact', { 'id': profiles.id }) }}" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-md btn-success">
+        <i class="glyphicon glyphicon-edit"></i>
+      </a>
+      <a href="{{ path('deleteContact', { 'id': profiles.id }) }}" data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-md btn-danger">
+        <i class="glyphicon glyphicon-remove"></i>
+      </a>
+    </div>
+  {% endfor %}
 {% endblock %}

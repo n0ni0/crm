@@ -43,6 +43,21 @@
      </div>
    </nav>
 
-   {% block content %}{% endblock %}
+  {% block panel %}
+    <div class="container col-md-10 col-md-offset-1">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            {% block panel_title %}{% endblock %}
+          </h3>
+        </div>
+        <div class="panel-body">
+          <div class="container-fluid">
+            {% block panel_body %}{% endblock %}
+          </div>
+        </div>
+      </div> 
     </div>
+  {% endblock %}
+
 {% endblock %}

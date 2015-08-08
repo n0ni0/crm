@@ -8,13 +8,14 @@ class ContactRepository extends EntityRepository
 {
   public function findAllContacts()
   {
-    return $this->getEntityManager()
-      ->createQuery(
-        'SELECT c
+    $em  = $this->getEntityManager();
+    $dql ='SELECT c
            FROM AppBundle:Contact c
-          ORDER BY c.name ASC'
-        )
-      ->getResult();
+          ORDER BY c.name ASC';
+
+    $query = $em->createQuery($dql);
+    $query->execute();
+    return $query->getResult();
   }
 
   public function findContactProfile($id)
@@ -26,7 +27,7 @@ class ContactRepository extends EntityRepository
 
     $query = $em->createQuery($dql);
     $query->setParameter('id', $id);
-
+    $query->execute();
     return $query->getResult();
   }
 
@@ -41,4 +42,13 @@ class ContactRepository extends EntityRepository
     $query->setParameter('id', $id);
     $query->execute();
   }
+
+  public function updateContact($id)
+  {
+    $em = $this->getEntityManager();
+    $contact = $em->getRepository('AppBundle:Contact')->find($id);
+
+    return $contact;
+  }
+  
 }

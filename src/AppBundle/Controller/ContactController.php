@@ -8,6 +8,7 @@ use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Contact;
 use AppBundle\Entity\ContactRepository;
 use AppBundle\Utils\Constants;
+use AppBundle\Form\Type\ContactProfileType;
 
 class ContactController extends Controller
 {
@@ -18,9 +19,7 @@ class ContactController extends Controller
   {
     $contact = $this->get('ContactManager')->findAllContacts();
     if(!$contact){
-            throw $this->createNotFoundException(
-                      'No se ha encontrado ningún contacto'
-                    );
+      throw $this->createNotFoundException('No se ha encontrado ningún contacto');
     }
 
     $paginator  = $this->get('knp_paginator');
@@ -41,6 +40,10 @@ class ContactController extends Controller
   {
     $profile = $this->get('ContactManager')->findContactProfile($id);
 
+    if(!$profile){
+      throw $this->createNotFoundException('Usuario no encontrado');
+    }
+
     return $this->render('contact/contactProfile.html.twig', array(
       'profile' => $profile
     ));
@@ -52,6 +55,39 @@ class ContactController extends Controller
   public function deleteContactAction($id)
   {
     $contact = $this->get('ContactManager')->deleteContact($id);
+
+    if(!$contact){
+      throw $this->createNotFoundException('Usuario no encontrado');
+    }
+
     return $this->redirectToRoute('contact');
   }
+
+  /**
+   * @Route("/contact/{id}/edit", name="editContact")
+   */
+  public function editContactAction(Request $request, $id)
+  {
+    $contact = $this->get('ContactManager')->updateContact($id);
+
+    if(!$contact){
+      throw $this->createNotFoundException('Usuario no encontrado');
+    }
+
+    $form = $this->createForm(new ContactProfileType(), $contact);
+    $form->handleRequest($request);
+
+    if($form->isValid()){
+      $em = $this->getDoctrine()->getManager();
+      $em->persist($contact);
+      $em->flush();
+
+      return $this->redirectToRoute('contact');
+    }
+
+    return $this->render('contact/editContactProfile.html.twig', array(
+      'form' => $form->createView()
+    ));
+  }
+
 }
