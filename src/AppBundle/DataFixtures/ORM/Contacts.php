@@ -30,7 +30,6 @@ class Contacts extends AbstractFixture implements OrderedFixtureInterface
       $contact->setEmail('contact'.$i.'@localhost');
       $contact->setCompany('company'.$i);
       $contact->setAnnotations($this->getAnnotations());
-      $contact->setPhoto('photo'.$i.'.jpg');
 
       $manager->persist($contact);
     }

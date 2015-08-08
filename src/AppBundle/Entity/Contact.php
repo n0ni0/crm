@@ -85,13 +85,6 @@ class Contact
     private $annotations;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="photo", type="string", length=255)
-     */
-    private $photo;
-
-    /**
      * Get id
      *
      * @return integer 
@@ -308,26 +301,4 @@ class Contact
         return $this->annotations;
     }
 
-    /**
-     * Set photo
-     *
-     * @param string $photo
-     * @return contact
-     */
-    public function setPhoto($photo)
-    {
-        $this->photo = $photo;
-
-        return $this;
-    }
-
-    /**
-     * Get photo
-     *
-     * @return string 
-     */
-    public function getPhoto()
-    {
-        return $this->photo;
-    }
 }
