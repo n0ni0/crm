@@ -22,7 +22,7 @@ class ContactManager
 
   public function findAllContacts()
   {
-    return $this->repo->findAllContacts();
+    return $this->repo->findAll();
   }
 
   public function findContactProfile($id)
@@ -35,9 +35,14 @@ class ContactManager
     return $this->repo->findAndDeleteContact($contact);
   }
 
-  public function updateContact($id)
+  public function findContact($id)
   {
-    return $contact = $this->repo->updateContact($id);
+    return $contact = $this->repo->find($id);
+  }
+
+  public function update()
+  {
+    $this->em->flush();
   }
 
 }

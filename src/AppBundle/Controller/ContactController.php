@@ -56,10 +56,6 @@ class ContactController extends Controller
   {
     $contact = $this->get('ContactManager')->deleteContact($id);
 
-    if(!$contact){
-      throw $this->createNotFoundException('Usuario no encontrado');
-    }
-
     return $this->redirectToRoute('contact');
   }
 
@@ -68,7 +64,7 @@ class ContactController extends Controller
    */
   public function editContactAction(Request $request, $id)
   {
-    $contact = $this->get('ContactManager')->updateContact($id);
+    $contact = $this->get('ContactManager')->findContact($id);
 
     if(!$contact){
       throw $this->createNotFoundException('Usuario no encontrado');
@@ -78,9 +74,7 @@ class ContactController extends Controller
     $form->handleRequest($request);
 
     if($form->isValid()){
-      $em = $this->getDoctrine()->getManager();
-      $em->persist($contact);
-      $em->flush();
+      $this->get('ContactManager')->update();
 
       return $this->redirectToRoute('contact');
     }
