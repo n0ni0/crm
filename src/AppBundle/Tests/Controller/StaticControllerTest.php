@@ -6,11 +6,18 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class StaticControllerTest extends webTestCase
 {
+  public function setUp()
+  {
+    $this->client = static::createClient(array(), array(
+      'PHP_AUTH_USER' => 'username',
+      'PHP_AUTH_PW'   => 'password',
+    ));
+  }
+
   public function testPrivacy()
   {
-    $client = self::createClient();
-    $client->request('GET', '/privacy');
+    $this->client->request('GET', '/privacy');
 
-    $this->assertTrue($client->getResponse()->isSuccessful());
+    $this->assertTrue($this->client->getResponse()->isSuccessful());
   }
 }
