@@ -5,7 +5,7 @@ namespace AppBundle\Utils;
 class Constants
 {
   /**
-   * Number of customers per page
+   * Number of contacts per page
    */
-  const NUM_PAGES = 20;
+  const CONTACTS_PER_PAGE = 20;
 }

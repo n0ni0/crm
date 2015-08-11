@@ -25,7 +25,7 @@ class ContactController extends Controller
     $paginator  = $this->get('knp_paginator');
     $contacts = $paginator->paginate(
       $contact,
-      $request->query->getInt('page',1), $pages = Constants::NUM_PAGES
+      $request->query->getInt('page',1), $pages = Constants::CONTACTS_PER_PAGE
     );
 
     return $this->render('contact/contactList.html.twig', array(
