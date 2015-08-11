@@ -27,4 +27,11 @@ class ContactRepositoryTest extends kernelTestCase
 
     $this->assertCount(1, $contacts);
   }
+
+  public function testFindAndDeleteContact()
+  {
+    $contacts = $this->em
+     ->getRepository('AppBundle:Contact')
+     ->findAndDeleteContact('5');
+  }
 }
