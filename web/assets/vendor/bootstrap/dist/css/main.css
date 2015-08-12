@@ -52,3 +52,7 @@ text-align: center;
 #contactTitle{
   text-align: center;
 }
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
