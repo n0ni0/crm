@@ -38,20 +38,18 @@ class ContactProfileType extends AbstractType
       ))
       ->add('annotations', 'textarea', array(
         'label' => 'Anotaciones:',
-      ))
-      ->add('Actualizar', 'submit', array(
       ));
   }
 
   public function setDefaultsOptions(OptionResolverInterface $resolver)
   {
-    $resolver->setDefatults(array(
+    $resolver->setDefaults(array(
       'data_class' => 'AppBundle\Entity\Contact'
     ));
   }
 
   public function getName()
   {
-    return 'editContact';
+    return 'app_ContactProfile';
   }
 }
