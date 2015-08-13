@@ -45,4 +45,11 @@ class ContactManager
     $this->em->flush();
   }
 
+  public function createContact($contact, $flush = true)
+  {
+    $this->em->persist($contact);
+    if($flush){
+      $this->em->flush();
+    }
+  }
 }
