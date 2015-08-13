@@ -22,7 +22,7 @@ class ContactManager
 
   public function findAllContacts()
   {
-    return $this->repo->findAll();
+    return $this->repo->findBy(array(), array('name'=>'asc'));
   }
 
   public function findContactProfile($id)
