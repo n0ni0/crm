@@ -27,4 +27,28 @@ class ContactControllerTest extends webTestCase
       $crawler->filter('i.glyphicon-user'),
       'The contact page displays the correct number of contacts');
   }
+
+  public function testNewContactCreate()
+  {
+    $crawler = $this->client->request('GET', '/contact/new/');
+
+    $this->assertEquals(1, $crawler->filter('h3:contains("Nuevo contacto")')->count());
+
+    $form = $crawler->selectButton('Crear')->form();
+    $form['app_ContactProfile[name]']        = 'Pepe';
+    $form['app_ContactProfile[lastname]']    = 'Lopez';
+    $form['app_ContactProfile[address]']     = 'C/Larga Nº14';
+    $form['app_ContactProfile[city]']        = 'Chiclana de la Frontera';
+    $form['app_ContactProfile[phone]']       = '956412563';
+    $form['app_ContactProfile[mobilephone]'] = '632147896';
+    $form['app_ContactProfile[email]']       = 'pepe@gmail.com';
+    $form['app_ContactProfile[company]']     = 'empresa ficticia';
+    $form['app_ContactProfile[annotations]'] = 'anotación de prueba';
+
+    $this->client->followRedirects(true);
+    $crawler = $this->client->submit($form);
+    $result  = $this->client->getResponse()->getStatusCode();
+    $this->assertEquals($result, 200);
+    $this->assertEquals(1, $crawler->filter('h3:contains("Contactos")')->count());
+  }
 }
