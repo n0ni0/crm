@@ -52,12 +52,13 @@
     </div>
     </div>
     <div class="panel-footer">
-      <a href="{{ path('editContact', { 'id': profiles.id }) }}" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-md btn-success">
+      <a href="{{ path('editContact', { 'id': profiles.id }) }}" class="btn btn-md btn-success">
         <i class="glyphicon glyphicon-edit"></i>
       </a>
-      <a href="{{ path('deleteContact', { 'id': profiles.id }) }}" data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-md btn-danger">
+      <a href="{{ path('deleteContact', { 'id': profiles.id }) }}" class="btn btn-md btn-danger">
         <i class="glyphicon glyphicon-remove"></i>
       </a>
+      <a href="{{ path('contact') }}" class="btn btn-md btn-default">Volver</a>
     </div>
   {% endfor %}
 {% endblock %}
