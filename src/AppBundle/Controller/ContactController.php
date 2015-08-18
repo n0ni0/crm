@@ -76,7 +76,7 @@ class ContactController extends Controller
     if($form->isValid()){
       $this->get('ContactManager')->update();
 
-      return $this->redirectToRoute('contact');
+      return $this->redirectToRoute('contactProfile', array('id' => $contact->getId()));
     }
 
     return $this->render('contact/editContactProfile.html.twig', array(
@@ -96,7 +96,7 @@ class ContactController extends Controller
     if($form->isValid()){
         $this->get('ContactManager')->createContact($contact);
 
-      return $this->redirectToRoute('contact');
+      return $this->redirectToRoute('contactProfile', array('id' => $contact->getId()));
     }
 
     return $this->render('contact/newContact.html.twig', array(
