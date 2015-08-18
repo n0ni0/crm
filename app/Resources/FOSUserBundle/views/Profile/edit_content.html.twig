@@ -1,0 +1,15 @@
+{% extends 'layout.html.twig' %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block panel_title %}Perfíl de {{ app.user.username }}{% endblock %}
+
+{% block panel_body %}
+  <form action="{{ path('fos_user_profile_edit') }}" {{ form_enctype(form) }} method="POST" class="fos_user_profile_edit">
+    {{ form_widget(form) }}
+     <div>
+       <input type="submit" value="{{ 'profile.edit.submit'|trans }}" class="btn btn-md btn-success" />
+       <a href="{{ path('fos_user_profile_show') }}" class="btn btn-md btn-default">Volver</a>
+     </div>
+  </form>
+{% endblock %}
