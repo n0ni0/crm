@@ -1,5 +1,13 @@
 body {
   background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+   min-height: 100vh;
+}
+
+.wrap{
+  flex: 1;
+  padding-bottom: 10px;
 }
 
 .form-signin {
@@ -55,4 +63,19 @@ text-align: center;
 
 .dropdown:hover .dropdown-menu {
   display: block;
+}
+
+.notes{
+  font-style: bold;
+}
+
+#footer {
+ color: white;
+ bottom: 0;
+ height: 35px;
+ width: 100%;
+}
+
+.panell{
+  width: 90vh;
 }

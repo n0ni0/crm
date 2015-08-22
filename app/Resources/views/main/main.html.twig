@@ -6,51 +6,54 @@
 <div class="notes container-fluid">
   <div class="row">
     <div class="container-fluid col-md-3">
-      <div class="panel panel-primary">
-        <div class="panel-heading">
-          <div class="panel-title">
-            Notas públicas <a href="#"><i class="addNote glyphicon glyphicon-plus-sign pull-right"></i></a>
+      <div class="col-md-12">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <div class="panel-title">
+              Notas públicas <a href="#"><i class="addNote glyphicon glyphicon-plus-sign pull-right"></i></a>
+            </div>
+            </div>
+            <div class="panel-body">
+              {% for publicNote in publicNotes %}
+                <a href="#">{{ publicNote.title  }}</a>
+                <br>
+              {% endfor %}
+            </div>
           </div>
         </div>
-        <div class="panel-body">
-          {% for publicNote in publicNotes %}
-            <a href="#">{{ publicNote.title  }}</a>
-            <br>
-          {% endfor %}
+
+      <div class="notes container-fluid col-md-12">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <div class="panel-title">
+              Notas privadas <a href="#"><i class="glyphicon glyphicon-plus-sign pull-right"></i></a>
+            </div>
+            </div>
+            <div class="panel-body">
+              {% for privateNote in privateNotes %}
+                <a href="#">{{ privateNote.title  }}</a>
+                <br>
+              {% endfor %}
+            </div>
         </div>
       </div>
     </div>
-
+  
     <div class="notes container-fluid col-md-8 pull-right">
-      <div class="panel panel-primary">
-        <div class="panel-heading">
-          <div class="panel-title">
-            Tareas
+      <div class="col-md-12">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <div class="panel-title">
+              Tareas
+            </div>
           </div>
-        </div>
-        <div class="panel-body">
-          --- TASKS ---
+          <div class="panel-body">
+            --- TASKS ---
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </div> 
 
-  <div class="row">
-    <div class="notes container-fluid col-md-3">
-      <div class="panel panel-primary">
-        <div class="panel-heading">
-          <div class="panel-title">
-            Notas privadas <a href="#"><i class="glyphicon glyphicon-plus-sign pull-right"></i></a>
-          </div>
-        </div>
-        <div class="panel-body">
-          {% for privateNote in privateNotes %}
-            <a href="#">{{ privateNote.title  }}</a>
-            <br>
-          {% endfor %}
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
 {% endblock %}
