@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Notes
  *
  * @ORM\Table()
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="AppBundle\Entity\NotesRepository")
  */
 class Notes
 {
@@ -36,7 +36,14 @@ class Notes
     /**
      * @var string
      *
-     * @ORM\Column(name="content", type="text")
+     * @ORM\Column(name="content", type="string", length=255)
+     */
+    private $title;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="title", type="text")
      */
     private $content;
 
@@ -96,6 +103,29 @@ class Notes
     public function getDate()
     {
         return $this->date;
+    }
+
+    /**
+     * Set title
+     *
+     * @param string $title
+     * @return Notes
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+
+        return $this;
+    }
+
+    /**
+     * Get title
+     *
+     * @return string 
+     */
+    public function getTitle()
+    {
+        return $this->title;
     }
 
     /**

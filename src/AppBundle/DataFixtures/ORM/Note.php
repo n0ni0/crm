@@ -26,6 +26,7 @@ class Note extends AbstractFixture implements OrderedFixtureInterface
       $user = $users[array_rand($users)];
       $notes->setUser($user);
       $notes->setDate(new \DateTime('now - '.rand(1, 30).' days'));
+      $notes->setTitle('Lorem ipsum dolor sit amet, consectetur adipisicing elit'.$i);
       $notes->setContent($this->getComments());
       $notes->setPrivate($priv);
 

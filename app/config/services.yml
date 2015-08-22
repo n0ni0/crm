@@ -14,3 +14,9 @@ services:
       - @doctrine.orm.default_entity_manager
       - @service_container
 
+  NotesManager:
+    class: AppBundle\Model\NotesManager
+    arguments:
+      - @doctrine.orm.default_entity_manager
+      - @service_container
+
