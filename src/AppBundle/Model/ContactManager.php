@@ -20,9 +20,9 @@ class ContactManager
     $this->repo       = $em->getRepository('AppBundle:Contact');
   }
 
-  public function findAllContacts()
+  public function findAllContacts($criteria)
   {
-    return $this->repo->findBy(array(), array('name'=>'asc'));
+    return $this->repo->findBy(array(), array($criteria => 'ASC'));
   }
 
   public function findContactProfile($id)

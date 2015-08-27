@@ -9,6 +9,7 @@ use AppBundle\Entity\Contact;
 use AppBundle\Entity\ContactRepository;
 use AppBundle\Utils\Constants;
 use AppBundle\Form\Type\ContactProfileType;
+use AppBundle\Form\Type\ContactListType;
 
 class ContactController extends Controller
 {
@@ -17,10 +18,26 @@ class ContactController extends Controller
    */
   public function listAction(Request $request)
   {
-    $contact = $this->get('ContactManager')->findAllContacts();
-    if(!$contact){
-      throw $this->createNotFoundException('No se ha encontrado ningún contacto');
-    }
+    $form = $this->createForm(new ContactListType());
+    $form->handleRequest($request);
+
+    if($form->isValid()){
+      $criteria = $form->get('contact')->getData();
+      $contact  = $this->get('ContactManager')->findAllContacts($criteria);
+
+      $paginator  = $this->get('knp_paginator');
+      $contacts   = $paginator->paginate(
+      $contact,
+      $request->query->getInt('page',1), $pages = Constants::CONTACTS_PER_PAGE
+      );
+
+      return $this->render('contact/contactList.html.twig', array(
+        'contacts' => $contacts,
+        'form'     => $form->createView()
+        ));
+     }
+
+    $contact  = $this->get('ContactManager')->findAllContacts($criteria = 'lastname');
 
     $paginator  = $this->get('knp_paginator');
     $contacts = $paginator->paginate(
@@ -29,7 +46,8 @@ class ContactController extends Controller
     );
 
     return $this->render('contact/contactList.html.twig', array(
-      'contacts' => $contacts
+      'contacts' => $contacts,
+      'form'     => $form->createView()
     ));
   }
 
