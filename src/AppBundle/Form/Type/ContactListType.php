@@ -16,8 +16,6 @@ class ContactListType extends AbstractType
         'choices'       => array(
           'name'        => 'Nombre',
           'lastname'    => 'Apellidos',
-          'phone'       => 'Teléfono',
-          'mobilephone' => 'Móvil',
           'email'       => 'Email',
           'company'     => 'Empresa',
         ),

@@ -37,7 +37,8 @@ class ContactController extends Controller
         ));
      }
 
-    $contact  = $this->get('ContactManager')->findAllContacts($criteria = 'lastname');
+    $contact  = $this->get('ContactManager')
+      ->findAllContacts($criteria = Constants::DEFAULT_CONTACT_ORDER);
 
     $paginator  = $this->get('knp_paginator');
     $contacts = $paginator->paginate(
