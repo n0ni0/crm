@@ -2,6 +2,11 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="es" target-language="es" datatype="plaintext" original="file.ext">
     <body>
+      <trans-unit id="login.company_name">
+        <source>login.company_name</source>
+        <target>CRM</target>
+      </trans-unit>
+
       <trans-unit id="panel_title.change_password">
         <source>panel_title.change_password</source>
         <target>Cambiar contraseña de: </target>
