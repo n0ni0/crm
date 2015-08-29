@@ -4,7 +4,21 @@
     <body>
       <trans-unit id="title.homepage">
         <source>title.homepage</source>
-        <target>Bienvenido a CRM</target>
+        <target>CRM|</target>
+      </trans-unit>
+
+      <trans-unit id="link">
+        <source>link</source>
+        <target>Link</target>
+      </trans-unit>
+
+      <trans-unit id="contact.all">
+        <source>contact.all</source>
+        <target>Todos los contactos</target>
+      </trans-unit>
+      <trans-unit id="contact.new">
+        <source>contact.new</source>
+        <target>Nuevo contacto</target>
       </trans-unit>
     </body>
   </file>
