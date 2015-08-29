@@ -7,6 +7,11 @@
         <target>Cambiar contraseña de: </target>
       </trans-unit>
 
+      <trans-unit id="panel_title.user_profile">
+        <source>panel_title.user_profile</source>
+        <target>Perfil de: </target>
+      </trans-unit>
+
       <trans-unit id="footer.copyright">
         <source>footer.copyright</source>
         <target>CRM nonio2015</target>

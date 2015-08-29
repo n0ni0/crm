@@ -2,14 +2,14 @@
 
 {% trans_default_domain 'FOSUserBundle' %}
 
-{% block panel_title %}Perfíl de {{ app.user.username }}{% endblock %}
+{% block panel_title %}{{ 'panel_title.user_profile'|trans({}, 'messages') }}{{ app.user.username }}{% endblock %}
 
 {% block panel_body %}
   <form action="{{ path('fos_user_profile_edit') }}" {{ form_enctype(form) }} method="POST" class="fos_user_profile_edit">
     {{ form_widget(form) }}
      <div>
        <input type="submit" value="{{ 'profile.edit.submit'|trans }}" class="btn btn-md btn-success" />
-       <a href="{{ path('fos_user_profile_show') }}" class="btn btn-md btn-default">Volver</a>
+       <a href="{{ path('fos_user_profile_show') }}" class="btn btn-md btn-default">{{ 'btn.back'|trans({}, 'buttons') }}</a>
      </div>
   </form>
 {% endblock %}
