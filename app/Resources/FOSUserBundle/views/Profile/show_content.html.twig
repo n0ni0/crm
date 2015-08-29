@@ -1,7 +1,7 @@
 {% extends 'layout.html.twig' %}
 {% trans_default_domain 'FOSUserBundle' %}
 
-{% block panel_title %}Perfíl de {{ app.user.username }} {% endblock %}
+{% block panel_title %}{{ 'panel_title.user_profile'|trans({}, 'messages') }} {{ app.user.username }} {% endblock %}
 
 {% block panel_body %}
   <div class="fos_user_user_show">
@@ -9,8 +9,8 @@
     <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
   </div>
   <div class="panel_footer">
-    <a class="btn btn-success" href="{{ path('fos_user_profile_edit') }}">Editar</a>
-    <a class="btn btn-success" href="{{ path('fos_user_change_password') }}">Cambiar contraseña</a>
+    <a class="btn btn-success" href="{{ path('fos_user_profile_edit') }}">{{ 'btn.edit_user_profile'|trans({}, 'buttons') }}</a>
+    <a class="btn btn-success" href="{{ path('fos_user_change_password') }}">{{ 'btn.change_user_password'|trans({}, 'buttons') }}</a>
   </div>
 {% endblock %}
 

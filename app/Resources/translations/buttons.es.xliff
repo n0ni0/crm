@@ -6,6 +6,14 @@
         <source>btn.back</source>
         <target>Volver</target>
       </trans-unit>
+      <trans-unit id="btn.edit_user_profile">
+        <source>btn.edit_user_profile</source>
+        <target>Editar perfil</target>
+      </trans-unit>
+      <trans-unit id="btn.change_user_password">
+        <source>btn.change_user_password</source>
+        <target>Cambiar contraseña</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
