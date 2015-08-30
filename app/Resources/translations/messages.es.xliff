@@ -11,10 +11,42 @@
         <source>panel_title.change_password</source>
         <target>Cambiar contraseña de: </target>
       </trans-unit>
-
+      <trans-unit id="panel_title.contacts">
+        <source>panel_title.contacts</source>
+        <target>Contactos</target>
+      </trans-unit>
       <trans-unit id="panel_title.user_profile">
         <source>panel_title.user_profile</source>
         <target>Perfil de: </target>
+      </trans-unit>
+
+      <trans-unit id="table.name">
+        <source>table.name</source>
+        <target>Nombre</target>
+      </trans-unit>
+      <trans-unit id="table.last_name">
+        <source>table.last_name</source>
+        <target>Apellidos</target>
+      </trans-unit>
+      <trans-unit id="table.phone">
+        <source>table.phone</source>
+        <target>Teléfono</target>
+      </trans-unit>
+      <trans-unit id="table.mobile_phone">
+        <source>table.mobile_phone</source>
+        <target>Móvil</target>
+      </trans-unit>
+      <trans-unit id="table.email">
+        <source>table.email</source>
+        <target>Correo</target>
+      </trans-unit>
+      <trans-unit id="table.company">
+        <source>table.company</source>
+        <target>Empresa</target>
+      </trans-unit>
+      <trans-unit id="table.profile">
+        <source>table.profile</source>
+        <target>Perfiil</target>
       </trans-unit>
 
       <trans-unit id="footer.copyright">

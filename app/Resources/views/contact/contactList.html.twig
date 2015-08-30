@@ -1,7 +1,7 @@
 {% extends 'layout.html.twig' %}
 
   {% block panel_title %}
-    Contactos
+    {{ 'panel_title.contacts'|trans({}, 'messages') }}
   {% endblock %}
 
   {% block panel_body %}
@@ -12,7 +12,7 @@
           {{ form_widget(form) }}
           </div>
         <div class="pull-left">
-            <input type="submit" value="Buscar"
+          <input type="submit" value="{{ 'btn.search'|trans({}, 'buttons') }}"
             class="{{ button_css|default("btn btn-success pull-right") }}" />
           {{ form_end(form) }}
         </div>
@@ -23,13 +23,13 @@
       <table id="contacts" class="table table-striped table-bordered table-hover">
         <thead>
           <tr>
-            <th>Nombre</th>
-            <th>Apellidos</th>
-            <th>Teléfono</th>
-            <th>Móvil</th>
-            <th>Email</th>
-            <th>Empresa</th>
-            <th>Perfíl</th>
+            <th>{{ 'table.name'|trans({}, 'messages') }}</th>
+            <th>{{ 'table.last_name'|trans({}, 'messages') }}</th>
+            <th>{{ 'table.phone'|trans({}, 'messages') }}</th>
+            <th>{{ 'table.mobile_phone'|trans({}, 'messages') }}</th>
+            <th>{{ 'table.email'|trans({}, 'messages') }}</th>
+            <th>{{ 'table.company'|trans({}, 'messages') }}</th>
+            <th>{{ 'table.profile'|trans({}, 'messages') }}</th>
           </tr>
         </thead>
         <tbody>
