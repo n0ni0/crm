@@ -19,6 +19,10 @@
         <source>panel_title.user_profile</source>
         <target>Perfil de: </target>
       </trans-unit>
+      <trans-unit id="panel_title.new_contact">
+        <source>panel_title.new_contact</source>
+        <target>Nuevo contacto</target>
+      </trans-unit>
 
       <trans-unit id="table.name">
         <source>table.name</source>
@@ -46,7 +50,44 @@
       </trans-unit>
       <trans-unit id="table.profile">
         <source>table.profile</source>
-        <target>Perfiil</target>
+        <target>Perfil</target>
+      </trans-unit>
+
+      <trans-unit id="contact.name">
+        <source>contact.name</source>
+        <target>Nombre:</target>
+      </trans-unit>
+      <trans-unit id="contact.last_name">
+        <source>contact.last_name</source>
+        <target>Apellidos:</target>
+      </trans-unit>
+      <trans-unit id="contact.address">
+        <source>contact.address</source>
+        <target>Dirección:</target>
+      </trans-unit>
+      <trans-unit id="contact.city">
+        <source>contact.city</source>
+        <target>Ciudad:</target>
+      </trans-unit>
+      <trans-unit id="contact.phone">
+        <source>contact.phone</source>
+        <target>Teléfono:</target>
+      </trans-unit>
+      <trans-unit id="contact.mobile_phone">
+        <source>contact.mobile_phone</source>
+        <target>Móvil:</target>
+      </trans-unit>
+      <trans-unit id="contact.email">
+        <source>contact.email</source>
+        <target>Email:</target>
+      </trans-unit>
+      <trans-unit id="contact.company">
+        <source>contact.company</source>
+        <target>Empresa:</target>
+      </trans-unit>
+      <trans-unit id="contact.annotations">
+        <source>contact.annotations</source>
+        <target>Anotaciones:</target>
       </trans-unit>
 
       <trans-unit id="footer.copyright">

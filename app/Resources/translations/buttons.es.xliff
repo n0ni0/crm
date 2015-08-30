@@ -6,6 +6,10 @@
         <source>btn.search</source>
         <target>Buscar</target>
       </trans-unit>
+      <trans-unit id="btn.create">
+        <source>btn.create</source>
+        <target>Crear</target>
+      </trans-unit>
       <trans-unit id="btn.back">
         <source>btn.back</source>
         <target>Volver</target>

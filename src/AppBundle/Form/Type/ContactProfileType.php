@@ -13,31 +13,40 @@ class ContactProfileType extends AbstractType
   {
     $builder
       ->add('name', 'text', array(
-        'label' => 'Nombre:'
+        'label'              => 'contact.name',
+        'translation_domain' => 'messages'
       ))
       ->add('lastname', 'text', array(
-        'label' => 'Apellidos:',
+        'label'              => 'contact.last_name',
+        'translation_domain' => 'messages'
       ))
       ->add('address', 'text', array(
-        'label' => 'Dirección:',
+        'label'              => 'contact.address',
+        'translation_domain' => 'messages'
       ))
       ->add('city', 'text', array(
-        'label' => 'Ciudad:',
+        'label'              => 'contact.city',
+        'translation_domain' => 'messages'
       ))
       ->add('phone', 'text', array(
-        'label' => 'Teléfono:',
+        'label'              => 'contact.phone',
+        'translation_domain' => 'messages'
       ))
       ->add('mobilephone', 'text', array(
-        'label' => 'Móvil:',
+        'label'              => 'contact.mobile_phone',
+        'translation_domain' => 'messages'
       ))
       ->add('email', 'email', array(
-        'label' => 'Email:',
+        'label'              => 'contact.email',
+        'translation_domain' => 'messages'
       ))
       ->add('company', 'text', array(
-        'label' => 'Empresa:',
+        'label'              => 'contact.company',
+        'translation_domain' => 'messages'
       ))
       ->add('annotations', 'textarea', array(
-        'label' => 'Anotaciones:',
+        'label'              => 'contact.annotations',
+        'translation_domain' => 'messages'
       ));
   }
 
