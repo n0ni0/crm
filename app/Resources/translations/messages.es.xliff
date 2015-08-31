@@ -89,6 +89,10 @@
         <source>contact.annotations</source>
         <target>Anotaciones:</target>
       </trans-unit>
+      <trans-unit id="contact.ordered_by">
+        <source>contact.ordered_by</source>
+        <target>Ordenado por:</target>
+      </trans-unit>
 
       <trans-unit id="footer.copyright">
         <source>footer.copyright</source>

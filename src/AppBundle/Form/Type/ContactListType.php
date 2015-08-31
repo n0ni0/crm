@@ -13,14 +13,15 @@ class ContactListType extends AbstractType
   {
     $builder
       ->add('contact', 'choice', array(
-        'choices'       => array(
-          'name'        => 'Nombre',
-          'lastname'    => 'Apellidos',
-          'email'       => 'Email',
-          'company'     => 'Empresa',
+        'choices'            => array(
+          'name'             => 'contact.name',
+          'lastname'         => 'contact.last_name',
+          'email'            => 'contact.email',
+          'company'          => 'contact.company',
         ),
-        'label'         => false,
-        'placeholder'   => 'Ordenado por:',
+        'label'              => false,
+        'translation_domain' => 'messages',
+        'placeholder'        => 'contact.ordered_by',
       ));
   }
 
