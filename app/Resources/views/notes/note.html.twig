@@ -1,0 +1,24 @@
+{% extends 'layout.html.twig' %}
+
+{% block panel_title %}Notas{% endblock %}
+
+{% block panel_body %}
+<div class=" col-md-9 col-lg-9 "> 
+      <table class="table table-user-information">
+        <tbody>
+          <tr>
+            <td>Titulo</td>
+            <td>{{ note.title }}</td>
+          </tr>
+          <tr>
+            <td>Fecha publicación</td>
+            <td>{{ note.date|date('Y-m-d') }}</td>
+          </tr>
+          <tr>
+            <td>Contenido</td>
+            <td>{{ note.content }}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+{% endblock %}

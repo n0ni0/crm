@@ -20,13 +20,12 @@ class NotesManager
     $this->repo       = $em->getRepository('AppBundle:Notes');
   }
 
-  public function findAllPublicNotes()
+  public function findNotes($user, $private)
   {
-    return $this->repo->findAllPublicNotes();
+    return $this->repo->findNotes($user, $private);
   }
 
-  public function findUserPrivateNotes($user)
-  {
-    return $this->repo->findUserPrivateNotes($user);
+  public function showNote($user, $id){
+    return $this->repo->showNote($user,$id);
   }
 }
