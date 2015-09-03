@@ -3,22 +3,68 @@
 {% block panel_title %}Notas{% endblock %}
 
 {% block panel_body %}
-<div class=" col-md-9 col-lg-9 "> 
-      <table class="table table-user-information">
-        <tbody>
-          <tr>
-            <td>Titulo</td>
-            <td>{{ note.title }}</td>
-          </tr>
-          <tr>
-            <td>Fecha publicación</td>
-            <td>{{ note.date|date('Y-m-d') }}</td>
-          </tr>
-          <tr>
-            <td>Contenido</td>
-            <td>{{ note.content }}</td>
-          </tr>
-          </tbody>
-        </table>
+  <div id="main" class="container">
+    <div class="form-horizontal">
+
+      <div class="form-group field_string">
+        <label class="col-md-2 control-label">
+          Título:
+        </label>
+        <div class="col-md-10">
+          <div class="form-control">
+            {{ note.title }}
+          </div>
+        </div>
       </div>
+
+      <div class="form-group field_text">
+        <label class="col-md-2 control-label">
+          Autor:
+        </label>
+        <div class="col-md-10">
+          <div class="form-control">
+            {{ note.user }}
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group field_string">
+        <label class="col-md-2 control-label">
+          Fecha de publicación
+        </label>
+        <div class="col-md-10">
+          <div class="form-control">
+            {{ note.date|date('d-m-Y') }}
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group field_text">
+        <label class="col-md-2 control-label">
+          Contenido:
+        </label>
+        <div class="col-md-10">
+          <textarea class="form-control" rows="20">
+            {{ note.content }}
+          </textarea>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  </div>
+  </div>
+  <div class="panel-footer">
+    <a href="#" class="btn btn-md btn-success">
+      <i class="glyphicon glyphicon-edit"></i>
+    </a>
+    <a href="#" class="btn btn-md btn-danger">
+      <i class="glyphicon glyphicon-remove"></i>
+    </a>
+    <a href="#" class="btn btn-md btn-default">Volver</a>
+    </div>
 {% endblock %}
+
+
+
