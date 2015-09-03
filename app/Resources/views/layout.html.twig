@@ -15,15 +15,15 @@
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav">
             <li><a href="#">{{ 'link'|trans({}, 'menus') }}</a></li>
-            <li><a href="#">{{ 'link'|trans({}, 'menus') }}</a></li>
+            <li><a href="#">{{ 'new_note'|trans({}, 'menus') }}</a></li>
             <li class="dropdown">
-            <a href="" class="dropdown-toggle" data-toggle="dropdown">Contactos<b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li><a href="{{ path('contact') }}">{{ 'contact.all'|trans({}, 'menus') }}</a></li>
-              <li><a href="{{ path('newContact') }}">{{ 'contact.new'|trans({}, 'menus') }}</a></li>
-          </ul>
+            <a href="" class="dropdown-toggle" data-toggle="dropdown">{{ 'link.contacts'|trans({}, 'menus') }}<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="{{ path('contact') }}">{{ 'contact.all'|trans({}, 'menus') }}</a></li>
+                <li><a href="{{ path('newContact') }}">{{ 'contact.new'|trans({}, 'menus') }}</a></li>
+              </ul>
             </li>
-       </ul>
+        </ul>
 
       <div class="pull-right">
         <ul class="nav navbar-nav pull-right">

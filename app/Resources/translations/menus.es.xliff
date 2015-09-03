@@ -12,6 +12,16 @@
         <target>Link</target>
       </trans-unit>
 
+      <trans-unit id="link.notes">
+        <source>link.notes</source>
+        <target>Notas</target>
+      </trans-unit>
+
+      <trans-unit id="link.contacts">
+        <source>link.contacts</source>
+        <target>Contactos</target>
+      </trans-unit>
+
       <trans-unit id="contact.all">
         <source>contact.all</source>
         <target>Todos los contactos</target>
@@ -19,6 +29,11 @@
       <trans-unit id="contact.new">
         <source>contact.new</source>
         <target>Nuevo contacto</target>
+      </trans-unit>
+
+      <trans-unit id="new_note">
+        <source>new_note</source>
+        <target>Nueva nota</target>
       </trans-unit>
     </body>
   </file>
