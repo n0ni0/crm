@@ -1,6 +1,6 @@
 {% extends 'layout.html.twig' %}
 
-{% block panel_title %}Home{% endblock %}
+{% block panel_title %}{{'home.title'|trans({}, 'messages') }}{% endblock %}
 
 {% block panel_body %}
 <div class="notes container-fluid">
@@ -10,7 +10,7 @@
         <div class="panel panel-primary">
           <div class="panel-heading">
             <div class="panel-title">
-              Notas públicas <a href="#"><i class="addNote glyphicon glyphicon-plus-sign pull-right"></i></a>
+              {{ 'panel_title.public_note'|trans({}, 'messages') }}
             </div>
             </div>
             <div class="panel-body">
@@ -26,7 +26,7 @@
         <div class="panel panel-primary">
           <div class="panel-heading">
             <div class="panel-title">
-              Notas privadas <a href="#"><i class="glyphicon glyphicon-plus-sign pull-right"></i></a>
+              {{ 'panel_title.private_note'|trans({}, 'messages') }}
             </div>
             </div>
             <div class="panel-body">
@@ -38,13 +38,13 @@
         </div>
       </div>
     </div>
-  
+
     <div class="notes container-fluid col-md-8 pull-right">
       <div class="col-md-12">
         <div class="panel panel-primary">
           <div class="panel-heading">
             <div class="panel-title">
-              Tareas
+              {{ 'panel_title.tasks'|trans({}, 'messages') }}
             </div>
           </div>
           <div class="panel-body">

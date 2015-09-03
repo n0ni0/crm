@@ -7,6 +7,11 @@
         <target>CRM</target>
       </trans-unit>
 
+      <trans-unit id="home.title">
+        <source>home.title</source>
+        <target>Página principal</target>
+      </trans-unit>
+
       <trans-unit id="panel_title.change_password">
         <source>panel_title.change_password</source>
         <target>Cambiar contraseña de: </target>
@@ -22,6 +27,18 @@
       <trans-unit id="panel_title.new_contact">
         <source>panel_title.new_contact</source>
         <target>Nuevo contacto</target>
+      </trans-unit>
+      <trans-unit id="panel_title.public_note">
+        <source>panel_title.public_note</source>
+        <target>Notas públicas</target>
+      </trans-unit>
+      <trans-unit id="panel_title.private_note">
+        <source>panel_title.private_note</source>
+        <target>Notas privadas</target>
+      </trans-unit>
+      <trans-unit id="panel_title.tasks">
+        <source>panel_title.tasks</source>
+        <target>Tareas</target>
       </trans-unit>
 
       <trans-unit id="table.name">
