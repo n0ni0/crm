@@ -10,3 +10,5 @@
 /vendor/
 /web/bundles/
 .bowerrc
+.ctags
+tags
