@@ -40,6 +40,10 @@
         <source>panel_title.tasks</source>
         <target>Tareas</target>
       </trans-unit>
+      <trans-unit id="panel_title.new_note">
+        <source>panel_title.new_note</source>
+        <target>Nueva nota</target>
+      </trans-unit>
 
       <trans-unit id="table.name">
         <source>table.name</source>
@@ -109,6 +113,36 @@
       <trans-unit id="contact.ordered_by">
         <source>contact.ordered_by</source>
         <target>Ordenado por:</target>
+      </trans-unit>
+
+      <trans-unit id="note.title">
+        <source>note.title</source>
+        <target>Título:</target>
+      </trans-unit>
+
+      <trans-unit id="note.private">
+        <source>note.private</source>
+        <target>Privada</target>
+      </trans-unit>
+      <trans-unit id="note.public">
+        <source>note.public</source>
+        <target>Pública</target>
+      </trans-unit>
+      <trans-unit id="note.visibility">
+        <source>note.visibility</source>
+        <target>Visibilidad:</target>
+      </trans-unit>
+      <trans-unit id="note.content">
+        <source>note.content</source>
+        <target>Contenido:</target>
+      </trans-unit>
+      <trans-unit id="note.author">
+        <source>note.author</source>
+        <target>Autor:</target>
+      </trans-unit>
+      <trans-unit id="note.date">
+        <source>note.date</source>
+        <target>Fecha de publicación:</target>
       </trans-unit>
 
       <trans-unit id="footer.copyright">

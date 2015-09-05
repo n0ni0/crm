@@ -55,6 +55,11 @@ class Notes
     private $private;
 
 
+    public function __construct()
+    {
+      $this->date = new \DateTime();
+    }
+
     /**
      * Get id
      *
@@ -88,7 +93,7 @@ class Notes
      * @param \DateTime $date
      * @return Notes
      */
-    public function setDate($date)
+    public function setDate(\DateTime $date)
     {
         $this->date = $date;
 

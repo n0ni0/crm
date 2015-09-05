@@ -28,4 +28,12 @@ class NotesManager
   public function showNote($user, $id){
     return $this->repo->showNote($user,$id);
   }
+
+  public function createNote($note, $flush = true)
+  {
+    $this->em->persist($note);
+    if($flush){
+      $this->em->flush();
+    }
+  }
 }

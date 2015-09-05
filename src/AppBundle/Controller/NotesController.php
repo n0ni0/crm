@@ -6,7 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Notes;
-use Appbundle\Form\Type\NotesType;
+use AppBundle\Form\Type\NoteType;
 
 class NotesController extends Controller
 {
@@ -25,6 +25,27 @@ class NotesController extends Controller
     return $this->render('notes/note.html.twig', array(
       'note' => $note
     ));
-
   }
-}
+
+  /**
+   * @Route("/note/new/", name="newNote")
+   */
+  public function newNoteAction(Request $request)
+  {
+    $notes = new Notes();
+    $form = $this->createForm(new NoteType(), $notes);
+    $form->handleRequest($request);
+
+    if($form->isValid()){
+      $data = $form->getData();
+      $data->setUser($this->getUser());
+      $this->get('NotesManager')->createNote($data);
+
+      return $this->redirectToRoute('main');
+    }
+
+    return $this->render('notes/newNote.html.twig', array(
+      'form' => $form->createView()
+    ));
+  }
+ }
