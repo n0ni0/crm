@@ -35,6 +35,15 @@
         <source>new_note</source>
         <target>Nueva nota</target>
       </trans-unit>
+
+      <trans-unit id="user.preferences">
+        <source>user.preferences</source>
+        <target>Preferencias</target>
+      </trans-unit>
+      <trans-unit id="user.logout">
+        <source>user.logout</source>
+        <target>Salir</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
