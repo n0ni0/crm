@@ -6,11 +6,24 @@ use Doctrine\ORM\EntityRepository;
 
 class NotesRepository extends EntityRepository
 {
-  public function findNotes($user, $private)
+  public function findPublicNotes($private)
   {
    $em  = $this->getEntityManager();
-   $dql = 'SELECT n
+   $dql = 'SELECT n.title, n.id
              FROM AppBundle:Notes n
+            WHERE n.private = :private';
+
+   $query = $em->createQuery($dql);
+   $query->setParameter('private', $private);
+   $query->execute();
+   return $query->getResult();
+  }
+
+  public function findPrivateNotes($user, $private)
+  {
+   $em  = $this->getEntityManager();
+   $dql = 'SELECT n.title, n.id
+              FROM AppBundle:Notes n
              WHERE n.user = :user
                AND n.private = :private';
 
@@ -24,9 +37,8 @@ class NotesRepository extends EntityRepository
   public function showNote($user, $id)
   {
     $em  = $this->getEntityManager();
-    $dql = 'SELECT n,u
+    $dql = 'SELECT n
               FROM AppBundle:Notes n
-              JOIN n.user u
              WHERE n.user = :user
                AND n.id = :id';
 
@@ -34,6 +46,6 @@ class NotesRepository extends EntityRepository
     $query->setParameter('user', $user);
     $query->setParameter('id', $id);
     $query->execute();
-    return $query->getOneorNullResult();
+    return $query->getOneOrNullResult();
   }
 }
