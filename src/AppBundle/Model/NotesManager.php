@@ -31,7 +31,16 @@ class NotesManager
   }
 
   public function showNote($user, $id){
-    return $this->repo->showNote($user,$id);
+    $query       = $this->repo->findOneById($id);
+    $userNote    = $query->getUser()->getId();
+    $privateNote = $query->getPrivate();
+
+    if($userNote != $user && $privateNote == true){
+      return false;
+    }
+    else{
+      return $query;
+    }
   }
 
   public function createNote($note, $flush = true)
