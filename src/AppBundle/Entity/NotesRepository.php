@@ -33,4 +33,16 @@ class NotesRepository extends EntityRepository
    $query->execute();
    return $query->getResult();
   }
+
+  public function findAndDeleteNote($id)
+  {
+    $em = $this->getEntityManager();
+    $dql = 'DELETE
+              FROM AppBundle:Notes n
+             WHERE n.id = :id';
+
+    $query = $em->createQuery($dql);
+    $query->setParameter('id', $id);
+    $query->execute();
+   }
 }

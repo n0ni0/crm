@@ -76,4 +76,21 @@ class NotesController extends Controller
       'form' => $form->createView()
     ));
   }
+
+  /**
+   * @Route("/note/{id}/delete", name="deleteNote")
+   */
+  public function deleteNoteAction($id)
+  {
+    $user = $this->getUser()->getId();
+    $note = $this->get('NotesManager')->showNote($user, $id);
+
+    if(!$note){
+      throw $this->createNotFoundException('Note not found or not allowed to delete');
+    }
+
+    $note = $this->get('NotesManager')->findAndDeleteNote($id);
+
+    return $this->redirectToRoute('main');
+  }
  }

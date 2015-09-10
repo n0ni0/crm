@@ -55,4 +55,9 @@ class NotesManager
   {
     $this->em->flush();
   }
+
+  public function findAndDeleteNote($id)
+  {
+    return $this->repo->findAndDeleteNote($id);
+  }
 }
