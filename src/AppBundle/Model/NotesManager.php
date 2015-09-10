@@ -50,4 +50,9 @@ class NotesManager
       $this->em->flush();
     }
   }
+
+  public function update()
+  {
+    $this->em->flush();
+  }
 }

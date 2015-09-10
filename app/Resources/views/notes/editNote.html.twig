@@ -1,0 +1,17 @@
+{% extends 'layout.html.twig' %}
+{% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %}
+
+  {% block panel_title %}
+      Editar nota
+  {% endblock %}
+
+  {% block panel_body %}
+    <div class="container">
+      {{ form_start(form) }}
+        {{ form_widget(form) }}
+          <input type="submit" value="Editar nota"
+            class="{{ button_css|default("btn btn-success pull-right") }}" />
+        {{ form_end(form) }}
+    </div>
+  {% endblock %}
+

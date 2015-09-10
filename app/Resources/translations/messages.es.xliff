@@ -44,6 +44,10 @@
         <source>panel_title.new_note</source>
         <target>Nueva nota</target>
       </trans-unit>
+      <trans-unit id="panel_title.notes">
+        <source>panel_title.notes</source>
+        <target>Notas</target>
+      </trans-unit>
 
       <trans-unit id="table.name">
         <source>table.name</source>
