@@ -12,5 +12,11 @@
             class="{{ button_css|default("btn btn-success pull-right") }}" />
         {{ form_end(form) }}
     </div>
+
+  </div>
+  </div>
+  <div class="panel-footer">
+    <a href="{{ path('main') }}" class="btn btn-md btn-default">{{ 'btn.back'|trans({}, 'buttons') }}</a>
+    </div>
   {% endblock %}
 
