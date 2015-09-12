@@ -1,57 +1,115 @@
 {% extends 'layout.html.twig' %}
 
 {% block panel_title %}
-    Perfil de contacto
+  {{ 'panel_title.contact_profile'|trans({}, 'messages') }}
 {% endblock %}
 
 {% block panel_body %}
   {% for profiles in profile%}
-    <div class=" col-md-9 col-lg-9 "> 
-      <table class="table table-user-information">
-        <tbody>
-          <tr>
-            <td>{{ 'contact.name'|trans({}, 'messages') }}</td>
-            <td>{{ profiles.name }}</td>
-          </tr>
-          <tr>
-            <td>{{ 'contact.last_name'|trans({}, 'messages') }}</td>
-            <td>{{ profiles.lastname }}</td>
-          </tr>
-          <tr>
-            <td>{{ 'contact.city'|trans({}, 'messages') }}</td>
-            <td>{{ profiles.city }}</td>
-          </tr>
-          <tr>
-            <td>{{ 'contact.address'|trans({}, 'messages') }}</td>
-            <td>{{ profiles.address }}</td>
-          </tr>
-          <tr>
-            <td>{{ 'contact.phone'|trans({}, 'messages') }}</td>
-            <td>{{ profiles.phone }}</td>
-          </tr>
-          <tr>
-            <td>{{ 'contact.mobile_phone'|trans({}, 'messages') }}</td>
-            <td>{{ profiles.mobilephone }}</td>
-          </tr>
-          <tr>
-            <td>{{ 'contact.email'|trans({}, 'messages') }}</td>
-            <td>{{ profiles.email }}</td>
-          </tr>
-          <tr>
-            <td>{{ 'contact.company'|trans({}, 'messages') }}</td>
-            <td>{{ profiles.company }}</td>
-          </tr>
-          <tr>
-            <td>{{ 'contact.annotations'|trans({}, 'messages') }}</td>
-            <td>{{ profiles.Annotations }}</td>
-          </tr>
-          </tr>
-          </tbody>
-        </table>
+  <div id="main" class="container">
+    <div class="form-horizontal">
+
+      <div class="form-group field_string">
+        <label class="col-md-2 control-label">
+          {{ 'contact.name'|trans({}, 'messages') }}
+        </label>
+        <div class="col-md-10">
+          <div class="form-control">
+            {{ profiles.name }}
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group field_string">
+        <label class="col-md-2 control-label">
+          {{ 'contact.last_name'|trans({}, 'messages') }}
+        </label>
+        <div class="col-md-10">
+          <div class="form-control">
+            {{ profiles.lastname }}
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group field_string">
+        <label class="col-md-2 control-label">
+          {{ 'contact.city'|trans({}, 'messages') }}
+        </label>
+        <div class="col-md-10">
+          <div class="form-control">
+            {{ profiles.city }}
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group field_string">
+        <label class="col-md-2 control-label">
+          {{ 'contact.address'|trans({}, 'messages') }}
+        </label>
+        <div class="col-md-10">
+          <div class="form-control">
+            {{ profiles.address }}
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group field_text">
+        <label class="col-md-2 control-label">
+          {{ 'contact.phone'|trans({}, 'messages') }}
+        </label>
+        <div class="col-md-3">
+          <div class="form-control">
+            {{ profiles.phone }}
+          </div>
+        </div>
+        <label class="col-md-2 control-label">
+          {{ 'contact.mobile_phone'|trans({}, 'messages') }}
+        </label>
+        <div class="col-md-2">
+          <div class="form-control">
+            {{ profiles.mobilephone }}
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group field_string">
+        <label class="col-md-2 control-label">
+          {{ 'contact.email'|trans({}, 'messages') }}
+        </label>
+        <div class="col-md-10">
+          <div class="form-control">
+            {{ profiles.email }}
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group field_string">
+        <label class="col-md-2 control-label">
+          {{ 'contact.company'|trans({}, 'messages') }}
+        </label>
+        <div class="col-md-10">
+          <div class="form-control">
+            {{ profiles.company }}
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group field_text">
+        <label class="col-md-2 control-label">
+          {{ 'contact.annotations'|trans({}, 'messages') }}
+        </label>
+        <div class="col-md-10">
+          <textarea readonly class="form-control">
+            {{ profiles.annotations }}
+          </textarea>
+        </div>
       </div>
     </div>
-    </div>
-    <div class="panel-footer">
+  </div>
+
+   </div>
+  </div>
+  <div class="panel-footer">
       <a href="{{ path('editContact', { 'id': profiles.id }) }}" class="btn btn-md btn-success">
         <i class="glyphicon glyphicon-edit"></i>
       </a>

@@ -48,6 +48,10 @@
         <source>panel_title.notes</source>
         <target>Notas</target>
       </trans-unit>
+      <trans-unit id="panel_title.contact_profile">
+        <source>panel_title.contact_profile</source>
+        <target>Perfil de contacto</target>
+      </trans-unit>
 
       <trans-unit id="table.name">
         <source>table.name</source>
