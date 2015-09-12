@@ -79,3 +79,16 @@ text-align: center;
 .panell{
   width: 90vh;
 }
+
+.form_label{
+  background-color: lime;
+  height: 4em;
+}
+
+.form_choice{
+  width: 120px;
+}
+
+textarea.form-control{
+  height: 300px;
+}

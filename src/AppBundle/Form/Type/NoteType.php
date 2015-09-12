@@ -13,16 +13,21 @@ class NoteType extends AbstractType
     $builder
       ->add('title', 'text', array(
         'label'               => 'note.title',
-        'translation_domain'  => 'messages'
+        'translation_domain'  => 'messages',
       ))
+
       ->add('private', 'choice', array(
         'choices'   => array(
           '0'       => 'note.public',
           '1'        =>'note.private',
         ),
         'label'              => 'note.visibility',
-        'translation_domain' => 'messages'
+        'translation_domain' => 'messages',
+        'attr' =>array(
+          'class'  => 'form_choice'
+        )
       ))
+
       ->add('content', 'textarea', array(
         'label'               => 'note.content',
         'translation_domain'  => 'messages'
