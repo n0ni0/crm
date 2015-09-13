@@ -20,3 +20,8 @@ services:
       - @doctrine.orm.default_entity_manager
       - @service_container
 
+  TaskManager:
+    class: AppBundle\Model\TaskManager
+    arguments:
+      - @doctrine.orm.default_entity_manager
+      - @service_container

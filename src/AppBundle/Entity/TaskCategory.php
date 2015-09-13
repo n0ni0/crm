@@ -61,4 +61,9 @@ class TaskCategory
     {
         return $this->taskCategory;
     }
+
+    public function __toString()
+    {
+      return $this->getTaskCategory();
+    }
 }

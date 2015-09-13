@@ -7,9 +7,9 @@
         <target>CRM|</target>
       </trans-unit>
 
-      <trans-unit id="link">
-        <source>link</source>
-        <target>Link</target>
+      <trans-unit id="tasks">
+        <source>tasks</source>
+        <target>Tareas</target>
       </trans-unit>
 
       <trans-unit id="link.notes">
