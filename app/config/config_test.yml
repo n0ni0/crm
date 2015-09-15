@@ -18,4 +18,4 @@ swiftmailer:
 security:
   firewalls:
     main:
-      http_basic: ~
+      http_basic: true
