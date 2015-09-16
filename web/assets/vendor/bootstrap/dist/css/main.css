@@ -87,3 +87,7 @@ text-align: center;
 textarea.form-control{
   height: 230px;
 }
+
+.label{
+  font-size: 15px;
+}

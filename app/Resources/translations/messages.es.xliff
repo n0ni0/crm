@@ -81,6 +81,30 @@
         <source>table.profile</source>
         <target>Perfil</target>
       </trans-unit>
+      <trans-unit id="table.title">
+        <source>table.title</source>
+        <target>Titulo</target>
+      </trans-unit>
+      <trans-unit id="table.category">
+        <source>table.category</source>
+        <target>Categroría</target>
+      </trans-unit>
+      <trans-unit id="table.user">
+        <source>table.user</source>
+        <target>Creado por</target>
+      </trans-unit>
+      <trans-unit id="table.date">
+        <source>table.date</source>
+        <target>Fecha de creación</target>
+      </trans-unit>
+      <trans-unit id="table.show">
+        <source>table.show</source>
+        <target>Ver tarea</target>
+      </trans-unit>
+      <trans-unit id="table.state">
+        <source>table.state</source>
+        <target>Estado</target>
+      </trans-unit>
 
       <trans-unit id="contact.name">
         <source>contact.name</source>
