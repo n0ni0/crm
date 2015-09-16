@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Tests\Controller\ContactController;
+namespace AppBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use AppBundle\Utils\Constants;
@@ -49,6 +49,6 @@ class ContactControllerTest extends webTestCase
     $crawler = $this->client->submit($form);
     $result  = $this->client->getResponse()->getStatusCode();
     $this->assertEquals($result, 200);
-    $this->assertEquals(1, $crawler->filter('h3:contains("Contactos")')->count());
+    $this->assertEquals(1, $crawler->filter('a:contains("Contactos")')->count());
   }
 }
