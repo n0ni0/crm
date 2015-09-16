@@ -16,10 +16,10 @@ class TaskCategories extends AbstractFixture implements OrderedFixtureInterface
   public function load(ObjectManager $manager)
   {
     $categories = array(
-      'project',
-      'budget',
-      'sat',
-      'private'
+      'Proyecto',
+      'Presupuestp',
+      'Sat',
+      'Privada'
     );
 
 
