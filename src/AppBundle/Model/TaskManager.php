@@ -24,4 +24,9 @@ class TaskManager
   {
     return $this->repo->findAllTasks();
   }
+
+  public function findTask($id)
+  {
+    return $this->repo->findOneById($id);
+  }
 }

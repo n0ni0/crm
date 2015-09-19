@@ -26,7 +26,7 @@
             <td><span class="label label-warning">{{ task.taskCategory }}</span></td>
             <td><span class="label label-primary">{{ task.state }}</span></td>
             <td>
-            <a href="#">
+              <a href="{{ path('task', { 'id':task.id }) }}">
               <button width="auto" type="button" class="btn btn-success btn-xs">
                 <i class="glyphicon glyphicon-file">
               </button></a></td>

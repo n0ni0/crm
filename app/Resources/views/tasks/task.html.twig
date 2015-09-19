@@ -1,0 +1,135 @@
+{% extends 'layout.html.twig' %}
+
+{% block panel_title %}
+  {{ 'panel_title.task'|trans({}, 'messages') }}
+{% endblock %}
+
+{% block panel_body %}
+  <div id="main" class="container">
+    <div class="form-horizontal">
+
+      <div class="form-group field_string">
+        <label class="col-md-2 control-label">
+          {{ 'task.title'|trans({}, 'messages') }}
+        </label>
+        <div class="col-md-10">
+          <div class="form-control text-center">
+            {{ task.title }}
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group field_text">
+        <label class="col-md-2 control-label">
+          {{ 'task.category'|trans({}, 'messages') }}
+        </label>
+        <div class="col-md-2">
+          <div class="form-control text-center">
+            {{ task.taskcategory }}
+          </div>
+        </div>
+        <label class="col-md-2 control-label">
+          {{ 'task.state'|trans({}, 'messages') }}
+        </label>
+        <div class="col-md-2">
+          <div class="form-control text-center">
+            {{ task.state }}
+          </div>
+        </div>
+        <label class="col-md-2 control-label">
+          {{ 'task.start_time'|trans({}, 'messages') }}
+        </label>
+        <div class="col-md-2">
+          <div class="form-control text-center">
+            {{ task.starttime|date('d-m-Y H:i') }}
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group field_text">
+        <label class="col-md-2 control-label">
+          {{ 'task.created_by'|trans({}, 'messages') }}
+        </label>
+        <div class="col-md-2">
+          <div class="form-control text-center">
+            {{ task.user }}
+          </div>
+        </div>
+        <label class="col-md-2 control-label">
+          {{ 'task.edited_by'|trans({}, 'messages') }}
+        </label>
+        <div class="col-md-2">
+          <div class="form-control text-center">
+            {% if last is not null %}
+              {{ last.user }}
+            {% endif %}
+          </div>
+        </div>
+        <label class="col-md-2 control-label">
+          {{ 'task.last_modify'|trans({}, 'messages') }}
+        </label>
+        <div class="col-md-2">
+          <div class="form-control text-center">
+            {% if last is not null %}
+              {{ last.publishedAt|date('d-m-Y H:i') }}
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group field_string">
+        <label class="col-md-2 control-label">
+          {{ 'task.description'|trans({}, 'messages') }}
+        </label>
+        <div class="col-md-10">
+          <div class="form-control text-center">
+            {{ task.description }}
+          </div>
+        </div>
+      </div>
+
+    <div class="container-fluid">
+      <a href="#" class="btn btn-md btn-success">
+        <i class="glyphicon glyphicon-edit"> {{ 'btn.edit'|trans({}, 'buttons') }}</i>
+      </a>
+      <a href="#" class="btn btn-md btn-danger">
+        <i class="glyphicon glyphicon-remove"> {{ 'btn.delete'|trans({}, 'buttons') }}</i>
+      </a>
+      <a href="#" class="btn btn-md btn-warning">
+        <i class="glyphicon glyphicon-comment"> {{ 'btn.comment'|trans({}, 'buttons') }}</i>
+      </a>
+      <a href="{{ path('listTask') }}" class="btn btn-md btn-default">
+        <i class="glyphicon glyphicon-share-alt"> {{ 'btn.back'|trans({}, 'buttons') }}</i>
+      </a>
+    </div>
+
+    <div class="widget-content">
+      <table id="contacts" class="table table-striped table-bordered table-hover">
+        <thead>
+          <tr>
+            <th colspan="2">{{ 'task.comments'|trans({}, 'messages') }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+          {% for comments in comment %}
+              <td class="col-md-1">{{ comments.user }}<br>{{ comments.publishedat|date('d-m-Y H:i') }}
+               {% if comments.user == app.user.username %}
+                  <a href="#" class="btn btn-sm btn-success">
+                    <i class="glyphicon glyphicon-edit"></i>
+                  </a>
+                  <a href="#" class="btn btn-sm btn-danger">
+                    <i class="glyphicon glyphicon-remove"></i>
+                  </a>
+                </td>
+               {% endif %}
+               <td class="col-md-6">{{ comments.content }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    </div>
+  </div>
+{% endblock %}

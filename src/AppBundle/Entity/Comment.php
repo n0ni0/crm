@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Comment
  *
  * @ORM\Table()
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="AppBundle\Entity\CommentRepository")
  */
 class Comment
 {
@@ -22,8 +22,7 @@ class Comment
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Task", inversedBy="comments")
-     * @ORM\JoinColumn(nullable = false)
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Task")
      */
     private $task;
 
