@@ -19,7 +19,7 @@
         </thead>
         <tbody>
           <tr>
-            {% for task in task %}
+            {% for task in tasks %}
             <td>{{ task.title }}</td>
             <td>{{ task.user }}</td>
             <td>{{ task.starttime|date('d-m-Y H:i') }}</td>
@@ -35,4 +35,5 @@
         </tbody>
       </table>
     </div>
+    {{ knp_pagination_render(tasks) }}
   {% endblock %}
