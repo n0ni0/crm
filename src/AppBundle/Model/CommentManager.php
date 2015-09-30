@@ -35,4 +35,12 @@ class CommentManager
       array('publishedAt' => 'DESC')
     );
   }
+
+  public function createComment($data, $flush = true)
+  {
+    $this->em->persist($data);
+    if($flush){
+      $this->em->flush();
+    }
+  }
 }

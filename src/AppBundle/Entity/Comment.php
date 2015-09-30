@@ -12,6 +12,11 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Comment
 {
+  public function __construct()
+  {
+    $this->publishedAt = new \DateTime('now');
+  }
+
     /**
      * @var integer
      *
