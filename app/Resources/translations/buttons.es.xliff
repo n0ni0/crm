@@ -22,6 +22,22 @@
         <source>btn.change_user_password</source>
         <target>Cambiar contraseña</target>
       </trans-unit>
+      <trans-unit id="btn.edit">
+        <source>btn.edit</source>
+        <target>Editar</target>
+      </trans-unit>
+      <trans-unit id="btn.delete">
+        <source>btn.delete</source>
+        <target>Borrar</target>
+      </trans-unit>
+      <trans-unit id="btn.comment">
+        <source>btn.comment</source>
+        <target>Comentar</target>
+      </trans-unit>
+      <trans-unit id="btn.new_comment">
+        <source>btn.new_comment</source>
+        <target>Añadir comentario</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
