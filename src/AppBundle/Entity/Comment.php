@@ -46,6 +46,13 @@ class Comment
     private $publishedAt;
 
     /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="editedAt", type="datetime", nullable=true)
+     */
+    private $editedAt;
+
+    /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
      */
     private $user;
@@ -122,6 +129,29 @@ class Comment
     public function getPublishedAt()
     {
         return $this->publishedAt;
+    }
+
+    /**
+     * Set editedAt
+     *
+     * @param \DateTime $editedAt
+     * @return Comment
+     */
+    public function setEditedAt($editedAt)
+    {
+        $this->editedAt = $editedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get editedAt
+     *
+     * @return \DateTime
+     */
+    public function editedAt()
+    {
+        return $this->editedAt;
     }
 
     public function setUser(\AppBundle\Entity\User $user)
