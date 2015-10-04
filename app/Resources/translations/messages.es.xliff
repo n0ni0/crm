@@ -213,9 +213,9 @@
         <source>task.created_by</source>
         <target>Creado por:</target>
       </trans-unit>
-      <trans-unit id="task.edited_by">
-        <source>task.edited_by</source>
-        <target>Editado por:</target>
+      <trans-unit id="task.last_comment">
+        <source>task.last_comment</source>
+        <target>Último comentario:</target>
       </trans-unit>
       <trans-unit id="task.last_modify">
         <source>task.last_modify</source>
