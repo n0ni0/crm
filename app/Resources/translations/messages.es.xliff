@@ -36,6 +36,10 @@
         <source>panel_title.private_note</source>
         <target>Notas privadas</target>
       </trans-unit>
+      <trans-unit id="panel_title.edit_note">
+        <source>panel_title.edit_note</source>
+        <target>Editar nota </target>
+      </trans-unit>
       <trans-unit id="panel_title.tasks">
         <source>panel_title.tasks</source>
         <target>Tareas</target>
