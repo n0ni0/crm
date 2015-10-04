@@ -52,4 +52,50 @@ class CommentController extends Controller
       'form' => $form->createView(),
     ));
   }
+
+  /**
+   * @Route("/task/{task}/comment/{id}/", name="editComment")
+   */
+  public function editCommentAction(Request $request, $id, $task)
+  {
+    $user          = $this->getUser()->getId();
+    $commentToEdit = $this->get('CommentManager')->checkUserComment($user, $id);
+
+    if(!$commentToEdit){
+      throw $this->createNotFoundException('Comment not found or not allowed to edit');
+    }
+
+    $form = $this->createForm(new  CommentType(), $commentToEdit);
+    $form->handleRequest($request);
+
+    if($form->isValid()){
+      $this->get('CommentManager')->update();
+
+      return $this->redirectToRoute('task', array(
+        'id' => $task));
+    }
+
+    return $this->render('comments/editComment.html.twig', array(
+      'form' => $form->createView(),
+    ));
+  }
+
+  /**
+   * @Route("task/{task}/comment/{id}/delete", name="deleteComment")
+   */
+  public function deleteCommentAction($id, $task)
+  {
+    $user    = $this->getUser()->getId();
+    $comment = $this->get('CommentManager')->checkIfDeleteComment($user, $id);
+
+    if(!$comment){
+      throw $this->createNotFoundException('Comment not found or not allowed to delete');
+    }
+
+    $comment = $this->get('CommentManager')->findAndDeleteComment($id);
+
+    return $this->redirectToRoute('task', array(
+      'id' => $task));
+  }
+
 }

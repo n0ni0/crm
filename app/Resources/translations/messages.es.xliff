@@ -60,6 +60,10 @@
         <source>panel_title.task</source>
         <target>Tarea</target>
       </trans-unit>
+      <trans-unit id="panel_title.edit_comment">
+        <source>panel_title.edit_comment</source>
+        <target>Editar comentario</target>
+      </trans-unit>
 
       <trans-unit id="table.name">
         <source>table.name</source>

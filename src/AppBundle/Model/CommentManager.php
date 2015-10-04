@@ -36,11 +36,41 @@ class CommentManager
     );
   }
 
+  public function checkUserComment($user, $id)
+  {
+    $query       = $this->repo->findOneById($id);
+    $userComment = $query->getUser()->getId();
+
+    if($userComment == $user){
+      return $query;
+    }
+  }
+
   public function createComment($data, $flush = true)
   {
     $this->em->persist($data);
     if($flush){
       $this->em->flush();
+    }
+  }
+
+  public function update()
+  {
+    $this->em->flush();
+  }
+
+  public function findAndDeleteComment($id)
+  {
+    return $this->repo->findAndDeleteComment($id);
+  }
+
+  public function checkIfDeleteComment($user, $id)
+  {
+    $query   = $this->repo->findOneById($id);
+    $comment = $query->getUser()->getId();
+
+    if($user == $comment){
+      return $query;
     }
   }
 }
