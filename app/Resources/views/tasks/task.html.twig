@@ -60,8 +60,8 @@
         </label>
         <div class="col-md-2">
           <div class="form-control text-center">
-            {% if last is not null %}
-              {{ last.user }}
+            {% if lastComment is not null %}
+              {{ lastComment.publishedAt|date('d-m-Y H:i') }}
             {% endif %}
           </div>
         </div>
@@ -70,8 +70,8 @@
         </label>
         <div class="col-md-2">
           <div class="form-control text-center">
-            {% if last is not null %}
-              {{ last.publishedAt|date('d-m-Y H:i') }}
+            {% if lastEdit.editedAt is not null %}
+              {{ lastEdit.editedAt|date('d-m-Y H:i') }}
             {% endif %}
           </div>
         </div>
@@ -82,7 +82,7 @@
           {{ 'task.description'|trans({}, 'messages') }}
         </label>
         <div class="col-md-10">
-          <div class="form-control text-center">
+          <div class="form-control">
             {{ task.description }}
           </div>
         </div>

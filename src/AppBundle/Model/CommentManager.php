@@ -28,11 +28,19 @@ class CommentManager
     );
   }
 
-  public function findLast($id)
+  public function findLastComment($id)
   {
     return $this->repo->findOneByTask(
       array('id'          => $id),
       array('publishedAt' => 'DESC')
+    );
+  }
+
+  public function findLastEdit($id)
+  {
+    return $this->repo->findOneByTask(
+      array('id'          => $id),
+      array('editedAt' => 'DESC')
     );
   }
 

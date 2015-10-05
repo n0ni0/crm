@@ -69,6 +69,9 @@ class CommentController extends Controller
     $form->handleRequest($request);
 
     if($form->isValid()){
+      $now  = new \DateTime();
+      $data = $form->getData();
+      $data->setEditedAt($now);
       $this->get('CommentManager')->update();
 
       return $this->redirectToRoute('task', array(

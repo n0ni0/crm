@@ -42,14 +42,16 @@ class TaskController extends Controller
       throw $this->createNotFoundException('Task not found');
     }
 
-    $taskId  = $task->getId();
-    $comment = $this->get('CommentManager')->findComments($taskId);
-    $last    = $this->get('CommentManager')->findLast($taskId);
+    $taskId      = $task->getId();
+    $comment     = $this->get('CommentManager')->findComments($taskId);
+    $lastComment = $this->get('CommentManager')->findLastComment($taskId);
+    $lastEdit    = $this->get('CommentManager')->findLastEdit($taskId);
 
     return $this->render('tasks/task.html.twig', array(
-      'task'    => $task,
-      'last'    => $last,
-      'comment' => $comment
+      'task'        => $task,
+      'lastComment' => $lastComment,
+      'lastEdit'    => $lastEdit,
+      'comment'     => $comment
     ));
   }
 }
