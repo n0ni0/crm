@@ -100,3 +100,13 @@ textarea.form-control{
 .comments-table{
   padding-top: 10px;
 }
+
+#commentEdited{
+  padding-top: 10px;
+  font-size: 15px;
+  text-align: right;
+}
+
+.commentContent{
+  text-align: right;
+}

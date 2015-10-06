@@ -127,7 +127,11 @@
                  </a>
                 </td>
                {% endif %}
-               <td class="col-md-6">{{ comments.content|nl2br }}</td>
+               <td class="commentContent col-md-7">{{ comments.content|nl2br }}
+                {% if comments.editedAt is not null %}
+                  {% include 'includes/editedComment.html.twig' %}
+                {% endif %}
+               </td>
           </tr>
           {% endfor %}
         </tbody>

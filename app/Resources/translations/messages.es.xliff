@@ -230,6 +230,11 @@
         <source>footer.copyright</source>
         <target>CRM nonio2015</target>
       </trans-unit>
+
+      <trans-unit id="comment.edited_date">
+        <source>comment.edited_date</source>
+        <target>Editado</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
