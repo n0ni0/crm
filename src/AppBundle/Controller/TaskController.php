@@ -34,7 +34,7 @@ class TaskController extends Controller
   }
 
   /**
-   * @Route("/task/{id}/", name="task")
+   * @Route("/task/{id}/content", name="task")
    */
   public function showTaskAction($id, Request $request)
   {
