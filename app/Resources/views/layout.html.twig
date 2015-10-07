@@ -14,14 +14,20 @@
 
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav">
-          <li><a href="{{ path('listTask') }}">{{ 'tasks'|trans({}, 'menus') }}</a></li>
+            <li class="dropdown">
+              <a href="" class="dropdown-toggle" data-toggle="dropdown">{{ 'link.tasks'|trans({}, 'menus') }}<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="{{ path('listTask') }}">{{ 'task.all'|trans({}, 'menus') }}</a></li>
+                  <li><a href="{{ path('newTask') }}">{{ 'task.new'|trans({}, 'menus') }}</a></li>
+                </ul>
+            </li>
             <li><a href="{{ path('newNote') }}">{{ 'new_note'|trans({}, 'menus') }}</a></li>
             <li class="dropdown">
-            <a href="" class="dropdown-toggle" data-toggle="dropdown">{{ 'link.contacts'|trans({}, 'menus') }}<b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="{{ path('contact') }}">{{ 'contact.all'|trans({}, 'menus') }}</a></li>
-                <li><a href="{{ path('newContact') }}">{{ 'contact.new'|trans({}, 'menus') }}</a></li>
-              </ul>
+              <a href="" class="dropdown-toggle" data-toggle="dropdown">{{ 'link.contacts'|trans({}, 'menus') }}<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="{{ path('contact') }}">{{ 'contact.all'|trans({}, 'menus') }}</a></li>
+                  <li><a href="{{ path('newContact') }}">{{ 'contact.new'|trans({}, 'menus') }}</a></li>
+                </ul>
             </li>
         </ul>
 

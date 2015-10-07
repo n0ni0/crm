@@ -70,7 +70,7 @@
         </label>
         <div class="col-md-2">
           <div class="form-control input-sm text-center">
-            {% if lastEdit.editedAt is not null %}
+            {% if lastEdit is not null %}
               {{ lastEdit.editedAt|date('d-m-Y H:i') }}
             {% endif %}
           </div>

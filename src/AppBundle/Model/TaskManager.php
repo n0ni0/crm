@@ -29,4 +29,12 @@ class TaskManager
   {
     return $this->repo->findOneById($id);
   }
+
+  public function createTask($task, $flush = true)
+  {
+    $this->em->persist($task);
+    if($flush){
+      $this->em->flush();
+    }
+  }
 }

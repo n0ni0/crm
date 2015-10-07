@@ -6,6 +6,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Utils\Constants;
+use AppBundle\Entity\Task;
+use AppBundle\Form\Type\TaskType;
 
 class TaskController extends Controller
 {
@@ -52,6 +54,28 @@ class TaskController extends Controller
       'lastComment' => $lastComment,
       'lastEdit'    => $lastEdit,
       'comment'     => $comment
+    ));
+  }
+
+  /**
+   * @Route("/task/new/", name="newTask")
+   */
+  public function newTaskAction(Request $request)
+  {
+    $task = new Task();
+    $form = $this->createForm(new TaskType(), $task);
+    $form->handleRequest($request);
+
+    if($form->isValid()){
+      $data = $form->getData();
+      $data->setUser($this->getUser());
+      $this->get('TaskManager')->createTask($data);
+
+      return $this->redirectToRoute('listTask');
+    }
+
+    return $this->render('contact/newContact.html.twig', array(
+      'form' => $form->createView()
     ));
   }
 }
