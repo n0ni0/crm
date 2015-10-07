@@ -17,7 +17,7 @@ class TaskCategories extends AbstractFixture implements OrderedFixtureInterface
   {
     $categories = array(
       'Proyecto',
-      'Presupuestp',
+      'Presupuesto',
       'Sat',
       'Privada'
     );
