@@ -1,0 +1,14 @@
+<div class="container text-center">
+  <div class="row">
+    <div class="col-xs-6 col-sm-4 col-md-4">
+      {{ form_start(form) }}
+      {{ form_widget(form) }}
+    </div>
+    <div class="pull-left">
+      <input type="submit" value="{{ 'btn.search'|trans({}, 'buttons') }}"
+        class="{{ button_css|default("btn btn-success pull-right") }}" />
+        {{ form_end(form) }}
+      </div>
+    </div>
+  </div>
+</div>
