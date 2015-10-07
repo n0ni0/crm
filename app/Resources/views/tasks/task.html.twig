@@ -13,7 +13,7 @@
           {{ 'task.title'|trans({}, 'messages') }}
         </label>
         <div class="col-md-10">
-          <div class="form-control text-center">
+          <div class="form-control input-sm">
             {{ task.title }}
           </div>
         </div>
@@ -24,7 +24,7 @@
           {{ 'task.category'|trans({}, 'messages') }}
         </label>
         <div class="col-md-2">
-          <div class="form-control text-center">
+          <div class="form-control input-sm text-center">
             {{ task.taskcategory }}
           </div>
         </div>
@@ -32,7 +32,7 @@
           {{ 'task.state'|trans({}, 'messages') }}
         </label>
         <div class="col-md-2">
-          <div class="form-control text-center">
+          <div class="form-control input-sm text-center">
             {{ task.state }}
           </div>
         </div>
@@ -40,7 +40,7 @@
           {{ 'task.start_time'|trans({}, 'messages') }}
         </label>
         <div class="col-md-2">
-          <div class="form-control text-center">
+          <div class="form-control input-sm text-center">
             {{ task.starttime|date('d-m-Y H:i') }}
           </div>
         </div>
@@ -51,7 +51,7 @@
           {{ 'task.created_by'|trans({}, 'messages') }}
         </label>
         <div class="col-md-2">
-          <div class="form-control text-center">
+          <div class="form-control input-sm text-center">
             {{ task.user }}
           </div>
         </div>
@@ -59,7 +59,7 @@
           {{ 'task.last_comment'|trans({}, 'messages') }}
         </label>
         <div class="col-md-2">
-          <div class="form-control text-center">
+          <div class="form-control input-sm text-center">
             {% if lastComment is not null %}
               {{ lastComment.publishedAt|date('d-m-Y H:i') }}
             {% endif %}
@@ -69,7 +69,7 @@
           {{ 'task.last_modify'|trans({}, 'messages') }}
         </label>
         <div class="col-md-2">
-          <div class="form-control text-center">
+          <div class="form-control input-sm text-center">
             {% if lastEdit.editedAt is not null %}
               {{ lastEdit.editedAt|date('d-m-Y H:i') }}
             {% endif %}
@@ -82,7 +82,7 @@
           {{ 'task.description'|trans({}, 'messages') }}
         </label>
         <div class="col-md-10">
-          <div class="form-control">
+          <div class="form-control input-sm">
             {{ task.description }}
           </div>
         </div>
