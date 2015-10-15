@@ -89,7 +89,7 @@
       </div>
 
     <div class="container-fluid">
-      <a href="#" class="btn btn-sm btn-success">
+      <a href="{{ path("editTask", {'id':task.id }) }}" class="btn btn-sm btn-success">
         <i class="glyphicon glyphicon-edit"> {{ 'btn.edit'|trans({}, 'buttons') }}</i>
       </a>
       <a href="{{ path("deleteTask", {'id':task.id }) }}" class="btn btn-sm btn-danger">

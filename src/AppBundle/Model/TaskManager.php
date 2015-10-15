@@ -52,4 +52,9 @@ class TaskManager
   {
     return $this->repo->deleteTask($id);
   }
+
+  public function update()
+  {
+    $this->em->flush();
+  }
 }

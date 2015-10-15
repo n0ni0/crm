@@ -95,4 +95,31 @@ class TaskController extends Controller
 
     return $this->redirectToRoute('listTask');
   }
+
+  /**
+   * @Route("/task/{id}/edit", name="editTask")
+   */
+  public function editTaskAction(Request $request, $id)
+  {
+    $user = $this->getUser()->getId();
+    $task = $this->get('TaskManager')->findTaskAndCheckUser($user, $id);
+
+    if(!$task){
+      throw $this->createNotFoundException('Task not found or not allowed to delete');
+    }
+
+    $form = $this->createForm(new  TaskType(), $task);
+    $form->handleRequest($request);
+
+    if($form->isValid()){
+      $this->get('TaskManager')->update();
+
+      return $this->redirectToRoute('task', array(
+        'id' => $id));
+    }
+
+    return $this->render('tasks/editTask.html.twig', array(
+      'form' => $form->createView(),
+    ));
+  }
 }
