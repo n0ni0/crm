@@ -78,4 +78,21 @@ class TaskController extends Controller
       'form' => $form->createView()
     ));
   }
+
+  /**
+   * @Route("/task/{id}/delete", name="deleteTask")
+   */
+  public function deleteTaskAction($id)
+  {
+    $user = $this->getUser()->getId();
+    $task = $this->get('TaskManager')->findTaskAndCheckUser($user, $id);
+
+    if(!$task){
+      throw $this->createNotFoundException('Task not found or not allowed to delete');
+    }
+
+    $note = $this->get('TaskManager')->DeleteTask($id);
+
+    return $this->redirectToRoute('listTask');
+  }
 }

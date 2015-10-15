@@ -37,4 +37,19 @@ class TaskManager
       $this->em->flush();
     }
   }
+
+  public function findTaskAndCheckUser($user, $id)
+  {
+    $query       = $this->repo->findOneById($id);
+    $userTask    = $query->getUser()->getId();
+
+    if($userTask == $user){
+      return $query;
+    }
+  }
+
+  public function deleteTask($id)
+  {
+    return $this->repo->deleteTask($id);
+  }
 }

@@ -92,7 +92,7 @@
       <a href="#" class="btn btn-sm btn-success">
         <i class="glyphicon glyphicon-edit"> {{ 'btn.edit'|trans({}, 'buttons') }}</i>
       </a>
-      <a href="#" class="btn btn-sm btn-danger">
+      <a href="{{ path("deleteTask", {'id':task.id }) }}" class="btn btn-sm btn-danger">
         <i class="glyphicon glyphicon-remove"> {{ 'btn.delete'|trans({}, 'buttons') }}</i>
       </a>
       <a href="#" class="edit btn btn-sm btn-warning">
