@@ -68,6 +68,10 @@
         <source>panel_title.edit_task</source>
         <target>Editar tarea</target>
       </trans-unit>
+      <trans-unit id="panel_title.register_user">
+        <source>panel_title.register_user</source>
+        <target>Registrar usuario</target>
+      </trans-unit>
 
       <trans-unit id="table.name">
         <source>table.name</source>
