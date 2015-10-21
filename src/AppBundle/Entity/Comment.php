@@ -8,10 +8,15 @@ use Doctrine\ORM\Mapping as ORM;
  * Comment
  *
  * @ORM\Table()
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="AppBundle\Entity\CommentRepository")
  */
 class Comment
 {
+  public function __construct()
+  {
+    $this->publishedAt = new \DateTime('now');
+  }
+
     /**
      * @var integer
      *
@@ -22,8 +27,8 @@ class Comment
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Task", inversedBy="comments")
-     * @ORM\JoinColumn(nullable = false)
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Task")
+     * @ORM\JoinColumn(name="task_id", referencedColumnName="id", onDelete="CASCADE")
      */
     private $task;
 
@@ -40,6 +45,13 @@ class Comment
      * @ORM\Column(name="publishedAt", type="datetime")
      */
     private $publishedAt;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="editedAt", type="datetime", nullable=true)
+     */
+    private $editedAt;
 
     /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
@@ -118,6 +130,29 @@ class Comment
     public function getPublishedAt()
     {
         return $this->publishedAt;
+    }
+
+    /**
+     * Set editedAt
+     *
+     * @param \DateTime $editedAt
+     * @return Comment
+     */
+    public function setEditedAt($editedAt)
+    {
+        $this->editedAt = $editedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get editedAt
+     *
+     * @return \DateTime
+     */
+    public function editedAt()
+    {
+        return $this->editedAt;
     }
 
     public function setUser(\AppBundle\Entity\User $user)

@@ -86,4 +86,27 @@ text-align: center;
 
 textarea.form-control{
   height: 230px;
+  resize: none;
+}
+
+.label{
+  font-size: 15px;
+}
+
+.commentTextarea{
+  padding-top: 15px;
+}
+
+.comments-table{
+  padding-top: 10px;
+}
+
+#commentEdited{
+  padding-top: 10px;
+  font-size: 15px;
+  text-align: right;
+}
+
+.commentContent{
+  text-align: right;
 }

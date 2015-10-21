@@ -1,17 +1,18 @@
 {% extends 'layout.html.twig' %}
 
   {% block panel_title %}
-  {{'panel_title.new_note'|trans({}, 'messages') }}
+    {{ 'panel_title.edit_comment'|trans({}, 'messages') }}
   {% endblock %}
 
   {% block panel_body %}
     <div class="container">
       {{ form_start(form) }}
         {{ form_widget(form) }}
-        <input type="submit" value="{{ 'btn.create'|trans({}, 'buttons') }}"
+          <input type="submit" value="Editar comentario"
             class="{{ button_css|default("btn btn-sm btn-success pull-right") }}" />
         {{ form_end(form) }}
     </div>
 
     {% include 'includes/panelFooter.html.twig' %}
   {% endblock %}
+

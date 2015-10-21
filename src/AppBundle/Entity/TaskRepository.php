@@ -19,4 +19,16 @@ class TaskRepository extends EntityRepository
     $query->execute();
     return $query->getResult();
   }
+
+  public function deleteTask($id)
+  {
+    $em = $this->getEntityManager();
+    $dql = 'DELETE
+              FROM AppBundle:Task t
+             WHERE t.id = :id';
+
+    $query = $em->createQuery($dql);
+    $query->setParameter('id', $id);
+    $query->execute();
+   }
 }

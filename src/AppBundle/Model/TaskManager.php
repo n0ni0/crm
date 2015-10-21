@@ -24,4 +24,37 @@ class TaskManager
   {
     return $this->repo->findAllTasks();
   }
+
+  public function findTask($id)
+  {
+    return $this->repo->findOneById($id);
+  }
+
+  public function createTask($task, $flush = true)
+  {
+    $this->em->persist($task);
+    if($flush){
+      $this->em->flush();
+    }
+  }
+
+  public function findTaskAndCheckUser($user, $id)
+  {
+    $query       = $this->repo->findOneById($id);
+    $userTask    = $query->getUser()->getId();
+
+    if($userTask == $user){
+      return $query;
+    }
+  }
+
+  public function deleteTask($id)
+  {
+    return $this->repo->deleteTask($id);
+  }
+
+  public function update()
+  {
+    $this->em->flush();
+  }
 }

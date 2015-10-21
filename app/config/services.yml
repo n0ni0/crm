@@ -25,3 +25,9 @@ services:
     arguments:
       - @doctrine.orm.default_entity_manager
       - @service_container
+
+  CommentManager:
+    class: AppBundle\Model\CommentManager
+    arguments:
+      - @doctrine.orm.default_entity_manager
+      - @service_container

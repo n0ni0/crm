@@ -22,6 +22,19 @@
         <target>Contactos</target>
       </trans-unit>
 
+      <trans-unit id="link.tasks">
+        <source>link.tasks</source>
+        <target>Tareas</target>
+      </trans-unit>
+      <trans-unit id="task.all">
+        <source>task.all</source>
+        <target>Todas las tareas</target>
+      </trans-unit>
+      <trans-unit id="task.new">
+        <source>task.new</source>
+        <target>Nueva tarea</target>
+      </trans-unit>
+
       <trans-unit id="contact.all">
         <source>contact.all</source>
         <target>Todos los contactos</target>

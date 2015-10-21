@@ -16,9 +16,9 @@ class States extends AbstractFixture implements OrderedFixtureInterface
   public function load(ObjectManager $manager)
   {
     $states = array(
-      'open',
-      'close',
-      'waiting'
+      'En curso',
+      'Cerrada',
+      'A la espera'
     );
 
     foreach($states as $newState)

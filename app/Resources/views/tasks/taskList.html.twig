@@ -9,28 +9,31 @@
       <table id="contacts" class="table table-striped table-bordered table-hover">
         <thead>
           <tr>
-            <th>{{ 'table.title'|trans({}, 'messages') }}</th>
-            <th>{{ 'table.category'|trans({}, 'messages') }}</th>
-            <th>{{ 'table.user'|trans({}, 'messages') }}</th>
-            <th>{{ 'table.date'|trans({}, 'messages') }}</th>
-            <th>{{ 'table.show'|trans({}, 'messages') }}</th>
+            <th class="col-md-4">{{ 'table.title'|trans({}, 'messages') }}</th>
+            <th class="col-md-2">{{ 'table.user'|trans({}, 'messages') }}</th>
+            <th class="col-md-2">{{ 'table.date'|trans({}, 'messages') }}</th>
+            <th class="col-md-1">{{ 'table.category'|trans({}, 'messages') }}</th>
+            <th class="col-md-1">{{ 'table.state'|trans({}, 'messages') }}</th>
+            <th class="col-md-1">{{ 'table.show'|trans({}, 'messages') }}</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            {% for task in task %}
+            {% for task in tasks %}
             <td>{{ task.title }}</td>
-            <td>{{ task.taskCategory }}</td>
             <td>{{ task.user }}</td>
             <td>{{ task.starttime|date('d-m-Y H:i') }}</td>
+            <td><span class="label label-warning">{{ task.taskCategory }}</span></td>
+            <td><span class="label label-primary">{{ task.state }}</span></td>
             <td>
-            <a href="#">
+              <a href="{{ path('task', { 'id':task.id }) }}">
               <button width="auto" type="button" class="btn btn-success btn-xs">
-                <i class="glyphicon glyphicon-user">
+                <i class="glyphicon glyphicon-file">
               </button></a></td>
              </tr>
             {% endfor %}
         </tbody>
       </table>
     </div>
+    {{ knp_pagination_render(tasks) }}
   {% endblock %}

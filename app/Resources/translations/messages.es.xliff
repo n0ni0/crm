@@ -36,6 +36,10 @@
         <source>panel_title.private_note</source>
         <target>Notas privadas</target>
       </trans-unit>
+      <trans-unit id="panel_title.edit_note">
+        <source>panel_title.edit_note</source>
+        <target>Editar nota </target>
+      </trans-unit>
       <trans-unit id="panel_title.tasks">
         <source>panel_title.tasks</source>
         <target>Tareas</target>
@@ -51,6 +55,18 @@
       <trans-unit id="panel_title.contact_profile">
         <source>panel_title.contact_profile</source>
         <target>Perfil de contacto</target>
+      </trans-unit>
+      <trans-unit id="panel_title.task">
+        <source>panel_title.task</source>
+        <target>Tarea</target>
+      </trans-unit>
+      <trans-unit id="panel_title.edit_comment">
+        <source>panel_title.edit_comment</source>
+        <target>Editar comentario</target>
+      </trans-unit>
+      <trans-unit id="panel_title.edit_task">
+        <source>panel_title.edit_task</source>
+        <target>Editar tarea</target>
       </trans-unit>
 
       <trans-unit id="table.name">
@@ -80,6 +96,34 @@
       <trans-unit id="table.profile">
         <source>table.profile</source>
         <target>Perfil</target>
+      </trans-unit>
+      <trans-unit id="table.title">
+        <source>table.title</source>
+        <target>Titulo</target>
+      </trans-unit>
+      <trans-unit id="table.category">
+        <source>table.category</source>
+        <target>Categroría</target>
+      </trans-unit>
+      <trans-unit id="table.user">
+        <source>table.user</source>
+        <target>Creado por</target>
+      </trans-unit>
+      <trans-unit id="table.date">
+        <source>table.date</source>
+        <target>Fecha de creación</target>
+      </trans-unit>
+      <trans-unit id="table.show">
+        <source>table.show</source>
+        <target>Ver tarea</target>
+      </trans-unit>
+      <trans-unit id="table.state">
+        <source>table.state</source>
+        <target>Estado</target>
+      </trans-unit>
+      <trans-unit id="table.task_comments">
+        <source>table.task_comments</source>
+        <target>Comentarios</target>
       </trans-unit>
 
       <trans-unit id="contact.name">
@@ -153,9 +197,47 @@
         <target>Fecha de publicación:</target>
       </trans-unit>
 
+      <trans-unit id="task.title">
+        <source>task.title</source>
+        <target>Título:</target>
+      </trans-unit>
+      <trans-unit id="task.category">
+        <source>task.category</source>
+        <target>Categoría:</target>
+      </trans-unit>
+      <trans-unit id="task.state">
+        <source>task.state</source>
+        <target>Estado:</target>
+      </trans-unit>
+      <trans-unit id="task.start_time">
+        <source>task.start_time</source>
+        <target>Fecha de inicio:</target>
+      </trans-unit>
+      <trans-unit id="task.created_by">
+        <source>task.created_by</source>
+        <target>Creado por:</target>
+      </trans-unit>
+      <trans-unit id="task.last_comment">
+        <source>task.last_comment</source>
+        <target>Último comentario:</target>
+      </trans-unit>
+      <trans-unit id="task.last_modify">
+        <source>task.last_modify</source>
+        <target>Ultima modificación:</target>
+      </trans-unit>
+      <trans-unit id="task.description">
+        <source>task.description</source>
+        <target>Descripción:</target>
+      </trans-unit>
+
       <trans-unit id="footer.copyright">
         <source>footer.copyright</source>
         <target>CRM nonio2015</target>
+      </trans-unit>
+
+      <trans-unit id="comment.edited_date">
+        <source>comment.edited_date</source>
+        <target>Editado</target>
       </trans-unit>
     </body>
   </file>
