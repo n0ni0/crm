@@ -15,3 +15,7 @@ fos_user_change_password:
 
 fos_js_routing:
       resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
+
+fos_user_register:
+      resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
+      prefix: /register

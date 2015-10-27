@@ -31,3 +31,16 @@ services:
     arguments:
       - @doctrine.orm.default_entity_manager
       - @service_container
+
+  app.form.registration:
+   class: AppBundle\Form\Type\RegistrationType
+   tags:
+      - { name: form.type, alias: app_user_registration }
+
+  FlashMessageListener:
+    class: AppBundle\EventListener\FlashMessagesListener
+    tags:
+      - { name: kernel.event_listener, event: new.user_created, method: onNewUserCreated}
+    arguments:
+      - @session
+      - @translator

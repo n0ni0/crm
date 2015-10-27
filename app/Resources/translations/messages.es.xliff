@@ -68,6 +68,10 @@
         <source>panel_title.edit_task</source>
         <target>Editar tarea</target>
       </trans-unit>
+      <trans-unit id="panel_title.register_user">
+        <source>panel_title.register_user</source>
+        <target>Registrar usuario</target>
+      </trans-unit>
 
       <trans-unit id="table.name">
         <source>table.name</source>
@@ -238,6 +242,11 @@
       <trans-unit id="comment.edited_date">
         <source>comment.edited_date</source>
         <target>Editado</target>
+      </trans-unit>
+
+      <trans-unit id="flash.user_created">
+        <source>flash.user_created</source>
+        <target>Usuario creado correctamente</target>
       </trans-unit>
     </body>
   </file>
