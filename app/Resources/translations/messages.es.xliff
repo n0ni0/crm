@@ -243,6 +243,11 @@
         <source>comment.edited_date</source>
         <target>Editado</target>
       </trans-unit>
+
+      <trans-unit id="flash.user_created">
+        <source>flash.user_created</source>
+        <target>Usuario creado correctamente</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

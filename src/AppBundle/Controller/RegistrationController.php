@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use FOS\UserBundle\FOSUserEvents;
+use AppBundle\CrmEvents;
 use FOS\UserBundle\Event\FormEvent;
 use FOS\UserBundle\Event\GetResponseUserEvent;
 use FOS\UserBundle\Event\FilterUserResponseEvent;
@@ -45,11 +46,11 @@ class RegistrationController extends BaseController
             $dispatcher->dispatch(FOSUserEvents::REGISTRATION_SUCCESS, $event);
             $userManager->updateUser($user);
 
-             $session = $request->getSession();
+            $dispatcher->dispatch(CrmEvents::NEW_USER_CREATED);
 
-            return $this->redirectToRoute('main');
+            $url = $this->generateUrl('main');
 
-
+            return $this->redirect($url);
         }
 
         return $this->render('FOSUserBundle:Registration:register.html.twig', array(
