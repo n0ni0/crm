@@ -16,4 +16,16 @@ class UserRepository extends EntityRepository
     $query->execute();
     return $query->getResult();
   }
+
+  public function findAndDeleteUser($id)
+  {
+    $em = $this->getEntityManager();
+    $dql = 'DELETE
+              FROM AppBundle:User u
+             WHERE u.id = :id';
+
+    $query = $em->createQuery($dql);
+    $query->setParameter('id', $id);
+    $query->execute();
+   }
 }

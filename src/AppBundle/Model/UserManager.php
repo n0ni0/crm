@@ -24,4 +24,9 @@ class UserManager
   {
     return $this->repo->findAll();
   }
+
+  public function deleteUser($id)
+  {
+    return $this->repo->findAndDeleteUser($id);
+  }
 }

@@ -5,13 +5,14 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
+use AppBundle\Entity\UserRepository;
 use AppBundle\Entity\User;
 use AppBundle\Utils\Constants;
 
 class UserController extends Controller
 {
   /**
-   * @route("/user/list", name="listUser")
+   * @route("/users/list", name="listUsers")
    */
   public function listUsersAction(Request $request)
   {
@@ -30,5 +31,15 @@ class UserController extends Controller
     return $this->render('users/userList.html.twig', array(
       'users'  => $users
     ));
+  }
+
+  /**
+   * @route("/user/{id}/delete", name="deleteUser")
+   */
+  public function deleteUserAction($id)
+  {
+    $user = $this->get('UserManager')->deleteUser($id);
+
+    return $this->redirectToRoute('listUsers');
   }
 }

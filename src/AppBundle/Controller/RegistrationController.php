@@ -48,7 +48,7 @@ class RegistrationController extends BaseController
 
             $dispatcher->dispatch(CrmEvents::NEW_USER_CREATED);
 
-            $url = $this->generateUrl('listUser');
+            $url = $this->generateUrl('listUsers');
 
             return $this->redirect($url);
         }

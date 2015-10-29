@@ -141,6 +141,10 @@
         <source>table.last_login</source>
         <target>Último login</target>
       </trans-unit>
+      <trans-unit id="table.user_delete">
+        <source>table.user_delete</source>
+        <target>Borrar</target>
+      </trans-unit>
 
       <trans-unit id="contact.name">
         <source>contact.name</source>
@@ -187,7 +191,6 @@
         <source>note.title</source>
         <target>Titulo:</target>
       </trans-unit>
-
       <trans-unit id="note.private">
         <source>note.private</source>
         <target>Privada</target>
