@@ -57,6 +57,19 @@
         <source>user.logout</source>
         <target>Salir</target>
       </trans-unit>
+
+      <trans-unit id="admin.administrate">
+        <source>admin.administrate</source>
+        <target>Administrar</target>
+      </trans-unit>
+      <trans-unit id="admin.register_user">
+        <source>admin.register_user</source>
+        <target>Registrar usuario</target>
+      </trans-unit>
+      <trans-unit id="admin.user_list">
+        <source>admin.user_list</source>
+        <target>Todos los usuarios</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

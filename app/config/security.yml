@@ -26,6 +26,7 @@ security:
         - { path: ^/(_(profiler|wdt)|css|images|js)/, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/register, role: ROLE_ADMIN }
+        - { path: ^/user/*, role: ROLE_ADMIN }
         - { path: ^/admin/, role: ROLE_SUPER_ADMIN }
         - { path: ^/resetting, role: ROLE_USER }
         - { path: ^/*, role: ROLE_USER }

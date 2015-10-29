@@ -72,6 +72,10 @@
         <source>panel_title.register_user</source>
         <target>Registrar usuario</target>
       </trans-unit>
+      <trans-unit id="panel_title.list_users">
+        <source>panel_title.list_users</source>
+        <target>Usuarios</target>
+      </trans-unit>
 
       <trans-unit id="table.name">
         <source>table.name</source>
@@ -128,6 +132,14 @@
       <trans-unit id="table.task_comments">
         <source>table.task_comments</source>
         <target>Comentarios</target>
+      </trans-unit>
+      <trans-unit id="table.roles">
+        <source>table.roles</source>
+        <target>Roles</target>
+      </trans-unit>
+      <trans-unit id="table.last_login">
+        <source>table.last_login</source>
+        <target>Último login</target>
       </trans-unit>
 
       <trans-unit id="contact.name">

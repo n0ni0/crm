@@ -32,6 +32,12 @@ services:
       - @doctrine.orm.default_entity_manager
       - @service_container
 
+  UserManager:
+    class: AppBundle\Model\UserManager
+    arguments:
+      - @doctrine.orm.default_entity_manager
+      - @service_container
+
   app.form.registration:
    class: AppBundle\Form\Type\RegistrationType
    tags:
