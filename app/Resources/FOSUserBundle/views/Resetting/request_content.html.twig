@@ -1,0 +1,28 @@
+{% extends 'layout.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block body %}
+  <div class="container col-md-6 col-md-offset-3">
+    <form class="user_reset_crm_logo" action="{{ path('fos_user_resetting_send_email') }}" method="POST">
+      {% include 'includes/crm_logo_with_line.html.twig' %}
+        <h2>{{ 'resetting.text.title'|trans }}</br></h2>
+          {{ 'resetting.text.description'|trans }}
+      <div>
+        {% if invalid_username is defined %}
+          <div class="alert alert-info alert-dismissable">
+            {{ 'resetting.request.invalid_username'|trans({'%username%': invalid_username}) }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+      </div>
+        {% endif %}
+          <input id="user_reset_password_text" type="text" class="form-control" id="username" name="username"
+          required="required" placeholder="{{ 'security.login.username_email'|trans }}" />
+      </div>
+      <div>
+        <button class="btn_resetting_button btn btn-md btn-primary pull-right" type="submit">{{ 'resetting.request.submit'|trans }}</button>
+      </div>
+    </form>
+  </div>
+{% endblock %}
+

@@ -1,0 +1,16 @@
+{% extends 'layout.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block body %}
+  <div class="container col-md-8 col-md-offset-2">
+    <form class="user_reset_crm_logo" action="{{ path('fos_user_resetting_reset', {'token': token}) }}" method="POST">
+      {% include 'includes/crm_logo_with_line.html.twig' %}
+      <h3>{{ 'resetting.text.enter_new_password'|trans  }}</br></h3>
+        {{ form_widget(form) }}
+      <div>
+        <button class="btn_resetting_button btn btn-md btn-primary pull-right" type="submit">{{ 'resetting.reset.submit'|trans }}</button>
+      </div>
+    </form>
+  </div>
+{% endblock %}
+
