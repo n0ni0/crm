@@ -110,3 +110,21 @@ textarea.form-control{
 .commentContent{
   text-align: right;
 }
+
+#forgot_password{
+  display: block;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+#remember_me_login{
+  margin-left: 10px;
+}
+
+.user_reset_crm_logo{
+  margin-top: 50px;
+}
+
+.btn_resetting_button{
+  margin-top: 20px;
+}

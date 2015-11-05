@@ -31,6 +31,10 @@ profile:
     flash:
         updated: El perfil ha sido actualizado
 
+# Password forgot
+forgot_password:
+    user: ¿Olvidó la contraseña?
+
 # Password change
 change_password:
     submit: Cambiar contraseña
@@ -57,7 +61,7 @@ registration:
 
 # Password resetting
 resetting:
-    password_already_requested: La contraseña para este usuario ya ha sido solicitada dentro de las 24 horas.
+    password_already_requested: La contraseña para este usuario ya ha sido solicitada dentro de las  últimas 24 horas.
     check_email: Un email ha sido enviado a %email%. Contiene un enlace de activación que debes presionar para restablecer tu contraseña.
     request:
         invalid_username: El usuario o dirección de correo "%username%" no existe.
@@ -72,10 +76,15 @@ resetting:
         message : |
             Hola %username%!
 
-            Para restablecer tu contraseña - por favor visita %confirmationUrl%
+            Para restablecer tu contraseña por favor visita el siguiente enlace
+            %confirmationUrl%
 
             Atentamente,
-            el Equipo.
+            CRM development team.
+    text:
+      title: ¿Olvidaste tu contraseña?
+      description: Ingresa tu nombre o dirección de correo para restaurarla. Es posible que tengas que verificar tu carpeta de spam.
+      enter_new_password: Introduce tu nueva contraseña
 
 # Global strings
 layout:

@@ -1,0 +1,14 @@
+{% block subject %}Restablecer contraseña de CRM{% endblock %}
+
+{% block body_text %}
+  {% autoescape false %}
+    Hola {{ user.username  }}
+
+    Para resetear tu constraseña accede al siguiente enlace {{ confirmationUrl  }}
+
+    Saludos,
+    CRM team
+  {% endautoescape %}
+{% endblock %}
+
+{% block body_html %}{% endblock %}
