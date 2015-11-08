@@ -13,13 +13,15 @@ class MainController extends Controller
    */
   public function mainAction()
   {
-    $user = $this->getUser()->getId();
+    $user         = $this->getUser()->getId();
     $publicNotes  = $this->get('NotesManager')->findPublicNotes($private = false);
     $privateNotes = $this->get('NotesManager')->findPrivateNotes($user, $private = true);
+    $lastComments = $this->get('CommentManager')->findLastsComments($user);
 
     return $this->render('main/main.html.twig', array(
       'publicNotes'  => $publicNotes,
       'privateNotes' => $privateNotes,
+      'lastComments' => $lastComments,
     ));
   }
 }

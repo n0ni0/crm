@@ -44,6 +44,10 @@
         <source>panel_title.tasks</source>
         <target>Tareas</target>
       </trans-unit>
+      <trans-unit id="panel_title.lasts_tasks">
+        <source>panel_title.lasts_tasks</source>
+        <target>Últimas Tareas</target>
+      </trans-unit>
       <trans-unit id="panel_title.new_note">
         <source>panel_title.new_note</source>
         <target>Nueva nota</target>
@@ -111,7 +115,7 @@
       </trans-unit>
       <trans-unit id="table.category">
         <source>table.category</source>
-        <target>Categroría</target>
+        <target>Categoría</target>
       </trans-unit>
       <trans-unit id="table.user">
         <source>table.user</source>
@@ -144,6 +148,10 @@
       <trans-unit id="table.user_delete">
         <source>table.user_delete</source>
         <target>Borrar</target>
+      </trans-unit>
+      <trans-unit id="table.last_comment">
+        <source>table.last_comment</source>
+        <target>Último comentario</target>
       </trans-unit>
 
       <trans-unit id="contact.name">
