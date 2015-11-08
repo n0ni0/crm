@@ -81,4 +81,9 @@ class CommentManager
       return $query;
     }
   }
+
+  public function findLastsComments($user)
+  {
+    return $this->repo->findLastsComments($user);
+  }
 }
