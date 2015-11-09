@@ -48,6 +48,14 @@
         <source>new_note</source>
         <target>Nueva nota</target>
       </trans-unit>
+      <trans-unit id="public_notes">
+        <source>public_notes</source>
+        <target>Notas públicas</target>
+      </trans-unit>
+      <trans-unit id="private_notes">
+        <source>private_notes</source>
+        <target>Notas privadas</target>
+      </trans-unit>
 
       <trans-unit id="user.preferences">
         <source>user.preferences</source>
