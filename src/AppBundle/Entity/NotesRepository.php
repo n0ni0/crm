@@ -36,7 +36,7 @@ class NotesRepository extends EntityRepository
   public function findPrivateNotes($user, $private)
   {
    $em  = $this->getEntityManager();
-   $dql = 'SELECT n.title, n.id
+   $dql = 'SELECT n
               FROM AppBundle:Notes n
              WHERE n.user = :user
                AND n.private = :private';

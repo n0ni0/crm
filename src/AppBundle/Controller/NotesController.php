@@ -116,4 +116,27 @@ class NotesController extends Controller
       'publicNote'  => $publicNote
     ));
   }
+
+  /**
+   * @Route("/note/private/list", name="privateNotes")
+   */
+  public function listPrivateNotesAction(Request $request)
+  {
+    $user          = $this->getUser()->getId();
+    $privateNotes  = $this->get('NotesManager')->findPrivateNotes($private = true, $user);
+
+    if(!$privateNotes){
+      throw $this->createNotFoundException('No se han encontrado notas privadas');
+    }
+
+    $paginator   = $this->get('knp_paginator');
+    $privateNote = $paginator->paginate(
+    $privateNotes,
+    $request->query->getInt('page',1), $pages = Constants::NOTES_PER_PAGE
+    );
+    return $this->render('notes/privateNotesList.html.twig', array(
+      'privateNotes' => $privateNotes,
+      'privateNote'  => $privateNote
+    ));
+  }
  }
