@@ -15,6 +15,11 @@ class Constants
   const USERS_PER_PAGE = 20;
 
   /**
+   * Number of notes per page
+   */
+  const NOTES_PER_PAGE = 20;
+
+  /**
    * Contact list order by last name if user don't select any
    *
    */
