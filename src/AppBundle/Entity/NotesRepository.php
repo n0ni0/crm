@@ -11,7 +11,8 @@ class NotesRepository extends EntityRepository
    $em  = $this->getEntityManager();
    $dql = 'SELECT n
              FROM AppBundle:Notes n
-            WHERE n.private = :private';
+            WHERE n.private = :private
+         ORDER BY n.date DESC';
 
    $query = $em->createQuery($dql);
    $query->setParameter('private', $private);
@@ -24,7 +25,8 @@ class NotesRepository extends EntityRepository
    $em  = $this->getEntityManager();
    $dql = 'SELECT n
              FROM AppBundle:Notes n
-            WHERE n.private = :private';
+             WHERE n.private = :private
+          ORDER BY n.date DESC';
 
    $query = $em->createQuery($dql);
    $query->setParameter('private', $private);
@@ -39,7 +41,8 @@ class NotesRepository extends EntityRepository
    $dql = 'SELECT n
               FROM AppBundle:Notes n
              WHERE n.user = :user
-               AND n.private = :private';
+               AND n.private = :private
+          ORDER BY n.date DESC';
 
    $query = $em->createQuery($dql);
    $query->setParameter('user', $user);
@@ -54,7 +57,8 @@ class NotesRepository extends EntityRepository
    $dql = 'SELECT n.title, n.id
               FROM AppBundle:Notes n
              WHERE n.user = :user
-               AND n.private = :private';
+               AND n.private = :private
+          ORDER BY n.date DESC';
 
    $query = $em->createQuery($dql);
    $query->setParameter('user', $user);
