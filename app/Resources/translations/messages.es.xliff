@@ -125,10 +125,6 @@
         <source>table.date</source>
         <target>Fecha de creación</target>
       </trans-unit>
-      <trans-unit id="table.show">
-        <source>table.show</source>
-        <target>Ver tarea</target>
-      </trans-unit>
       <trans-unit id="table.state">
         <source>table.state</source>
         <target>Estado</target>
@@ -152,6 +148,10 @@
       <trans-unit id="table.last_comment">
         <source>table.last_comment</source>
         <target>Último comentario</target>
+      </trans-unit>
+      <trans-unit id="table.description">
+        <source>table.description</source>
+        <target>Descripción</target>
       </trans-unit>
 
       <trans-unit id="contact.name">
