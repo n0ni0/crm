@@ -25,9 +25,19 @@ class NotesManager
     return $this->repo->findPublicNotes($private);
   }
 
+  public function findPublicNotesMain($private)
+  {
+    return $this->repo->findPublicNotesMain($private);
+  }
+
   public function findPrivateNotes($user, $private)
   {
     return $this->repo->findPrivateNotes($user, $private);
+  }
+
+  public function findPrivateNotesMain($user, $private)
+  {
+    return $this->repo->findPrivateNotesMain($user, $private);
   }
 
   public function showNote($user, $id){

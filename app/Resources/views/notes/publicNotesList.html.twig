@@ -1,0 +1,29 @@
+{% extends 'layout.html.twig' %}
+
+  {% block panel_title %}
+    {{ 'panel_title.public_note'|trans({}, 'messages') }}
+  {% endblock %}
+
+  {% block panel_body %}
+    <div class="widget-content col-md-8 col-md-offset-2">
+      <table id="contacts" class="table table-striped table-bordered table-hover">
+        <thead>
+          <tr>
+            <th class="col-md-3">{{ 'table.title'|trans({}, 'messages') }}</th>
+            <th class="col-md-1">{{ 'table.user'|trans({}, 'messages') }}</th>
+            <th class="col-md-1">{{ 'table.date'|trans({}, 'messages') }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            {% for publicNote in publicNotes %}
+            <td><a href="{{ path("note", { 'id':publicNote.id }) }}">{{ publicNote.title }}</a></td>
+            <td>{{ publicNote.user }}</td>
+            <td>{{ publicNote.date|date('d-m-Y H:i') }}</td>
+          </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+    {{ knp_pagination_render(publicNote) }}
+    </div>
+  {% endblock %}

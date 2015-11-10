@@ -9,9 +9,10 @@ class NotesRepository extends EntityRepository
   public function findPublicNotes($private)
   {
    $em  = $this->getEntityManager();
-   $dql = 'SELECT n.title, n.id
+   $dql = 'SELECT n
              FROM AppBundle:Notes n
-            WHERE n.private = :private';
+            WHERE n.private = :private
+         ORDER BY n.date DESC';
 
    $query = $em->createQuery($dql);
    $query->setParameter('private', $private);
@@ -19,18 +20,51 @@ class NotesRepository extends EntityRepository
    return $query->getResult();
   }
 
+  public function findPublicNotesMain($private)
+  {
+   $em  = $this->getEntityManager();
+   $dql = 'SELECT n
+             FROM AppBundle:Notes n
+             WHERE n.private = :private
+          ORDER BY n.date DESC';
+
+   $query = $em->createQuery($dql);
+   $query->setParameter('private', $private);
+   $query->execute();
+   $query->setMaxResults('5');
+   return $query->getResult();
+  }
+
   public function findPrivateNotes($user, $private)
   {
    $em  = $this->getEntityManager();
-   $dql = 'SELECT n.title, n.id
+   $dql = 'SELECT n
               FROM AppBundle:Notes n
              WHERE n.user = :user
-               AND n.private = :private';
+               AND n.private = :private
+          ORDER BY n.date DESC';
 
    $query = $em->createQuery($dql);
    $query->setParameter('user', $user);
    $query->setParameter('private', $private);
    $query->execute();
+   return $query->getResult();
+  }
+
+  public function findPrivateNotesMain($user, $private)
+  {
+   $em  = $this->getEntityManager();
+   $dql = 'SELECT n.title, n.id
+              FROM AppBundle:Notes n
+             WHERE n.user = :user
+               AND n.private = :private
+          ORDER BY n.date DESC';
+
+   $query = $em->createQuery($dql);
+   $query->setParameter('user', $user);
+   $query->setParameter('private', $private);
+   $query->execute();
+   $query->setMaxResults('5');
    return $query->getResult();
   }
 

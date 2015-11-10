@@ -14,8 +14,8 @@ class MainController extends Controller
   public function mainAction()
   {
     $user         = $this->getUser()->getId();
-    $publicNotes  = $this->get('NotesManager')->findPublicNotes($private = false);
-    $privateNotes = $this->get('NotesManager')->findPrivateNotes($user, $private = true);
+    $publicNotes  = $this->get('NotesManager')->findPublicNotesMain($private = false);
+    $privateNotes = $this->get('NotesManager')->findPrivateNotesMain($user, $private = true);
     $lastComments = $this->get('CommentManager')->findLastsComments($user);
 
     return $this->render('main/main.html.twig', array(

@@ -15,7 +15,7 @@
             </div>
             <div class="panel-body">
               {% for publicNote in publicNotes %}
-                <a href="{{ path('note',{'id':publicNote.id}) }}">{{ publicNote.title  }}</a>
+                <a href="{{ path('note',{'id':publicNote.id}) }}">{{ publicNote.title |truncate(50, true) }}</a>
                 <br>
               {% endfor %}
             </div>
@@ -31,7 +31,7 @@
             </div>
             <div class="panel-body">
               {% for privateNote in privateNotes %}
-                <a href="{{ path('note',{'id':privateNote.id}) }}">{{ privateNote.title  }}</a>
+                <a href="{{ path('note',{'id':privateNote.id}) }}">{{ privateNote.title |truncate(50, true) }}</a>
                 <br>
               {% endfor %}
             </div>

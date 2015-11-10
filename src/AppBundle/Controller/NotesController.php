@@ -7,6 +7,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Notes;
 use AppBundle\Form\Type\NoteType;
+use AppBundle\Utils\Constants;
 
 class NotesController extends Controller
 {
@@ -92,5 +93,50 @@ class NotesController extends Controller
     $note = $this->get('NotesManager')->findAndDeleteNote($id);
 
     return $this->redirectToRoute('main');
+  }
+
+  /**
+   * @Route("/note/public/list", name="publicNotes")
+   */
+  public function listPublicNotesAction(Request $request)
+  {
+    $publicNotes  = $this->get('NotesManager')->findPublicNotes($private = false);
+
+    if(!$publicNotes){
+      throw $this->createNotFoundException('No se han encontrado notas públicas');
+    }
+
+    $paginator  = $this->get('knp_paginator');
+    $publicNote = $paginator->paginate(
+    $publicNotes,
+    $request->query->getInt('page',1), $pages = Constants::NOTES_PER_PAGE
+    );
+    return $this->render('notes/publicNotesList.html.twig', array(
+      'publicNotes' => $publicNotes,
+      'publicNote'  => $publicNote
+    ));
+  }
+
+  /**
+   * @Route("/note/private/list", name="privateNotes")
+   */
+  public function listPrivateNotesAction(Request $request)
+  {
+    $user          = $this->getUser()->getId();
+    $privateNotes  = $this->get('NotesManager')->findPrivateNotes($private = true, $user);
+
+    if(!$privateNotes){
+      throw $this->createNotFoundException('No se han encontrado notas privadas');
+    }
+
+    $paginator   = $this->get('knp_paginator');
+    $privateNote = $paginator->paginate(
+    $privateNotes,
+    $request->query->getInt('page',1), $pages = Constants::NOTES_PER_PAGE
+    );
+    return $this->render('notes/privateNotesList.html.twig', array(
+      'privateNotes' => $privateNotes,
+      'privateNote'  => $privateNote
+    ));
   }
  }
