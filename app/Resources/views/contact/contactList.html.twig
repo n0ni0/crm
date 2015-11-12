@@ -6,7 +6,7 @@
 
   {% block panel_body %}
     {% include 'includes/searchBox.html.twig' %}
-    <div class="widget-content">
+    <div class="widget-content col-md-10 col-md-offset-1">
       <table id="contacts" class="table table-striped table-bordered table-hover">
         <thead>
           <tr>
@@ -16,27 +16,21 @@
             <th>{{ 'table.mobile_phone'|trans({}, 'messages') }}</th>
             <th>{{ 'table.email'|trans({}, 'messages') }}</th>
             <th>{{ 'table.company'|trans({}, 'messages') }}</th>
-            <th>{{ 'table.profile'|trans({}, 'messages') }}</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             {% for contacts in contacts %}
-            <td>{{ contacts.name }}</td>
+            <td><a href="{{ path("contactProfile", { 'id':contacts.id }) }}">{{ contacts.name }}</a></td>
             <td>{{ contacts.lastname }}</td>
             <td>{{ contacts.phone }}</td>
             <td>{{ contacts.mobilephone }}</td>
             <td>{{ contacts.email }}</td>
             <td>{{ contacts.company }}</td>
-            <td>
-            <a href={{ path('contactProfile', {'id': contacts.id}) }}>
-              <button width="auto" type="button" class="btn btn-success btn-xs">
-                <i class="glyphicon glyphicon-user">
-              </button></a></td>
-             </tr>
+            </tr>
             {% endfor %}
         </tbody>
       </table>
+      {{ knp_pagination_render(contacts) }}
     </div>
-    {{ knp_pagination_render(contacts) }}
   {% endblock %}

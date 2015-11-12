@@ -123,7 +123,7 @@ class NotesController extends Controller
   public function listPrivateNotesAction(Request $request)
   {
     $user          = $this->getUser()->getId();
-    $privateNotes  = $this->get('NotesManager')->findPrivateNotes($private = true, $user);
+    $privateNotes  = $this->get('NotesManager')->findPrivateNotes($user, $private = true);
 
     if(!$privateNotes){
       throw $this->createNotFoundException('No se han encontrado notas privadas');

@@ -26,7 +26,7 @@ class CommentRepository extends EntityRepository
         INNER JOIN task AS t ON (t.id = c.task_id)
         INNER JOIN state AS s ON (t.state_id = s.id)
         INNER JOIN task_category AS a ON (t.task_category_id = a.id)
-             WHERE t.user_id = :user
+             WHERE c.user_id = :user
           ORDER BY c.publishedAt DESC
              LIMIT 5';
 
