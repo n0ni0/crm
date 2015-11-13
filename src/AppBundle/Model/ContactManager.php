@@ -4,19 +4,16 @@ namespace AppBundle\Model;
 
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Entity\Repository;
-use Symfony\Component\DependencyInjection\ContainerInterface as Container;
 use AppBundle\Entity\Contact;
 
 class ContactManager
 {
   protected $em;
-  protected $container;
   protected $repo;
 
-  public function __construct(EntityManager $em, Container $container)
+  public function __construct(EntityManager $em)
   {
     $this->em         = $em;
-    $this->container  = $container;
     $this->repo       = $em->getRepository('AppBundle:Contact');
   }
 

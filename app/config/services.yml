@@ -17,31 +17,27 @@ services:
     class: AppBundle\Model\ContactManager
     arguments:
       - @doctrine.orm.default_entity_manager
-      - @service_container
 
   NotesManager:
     class: AppBundle\Model\NotesManager
     arguments:
       - @doctrine.orm.default_entity_manager
-      - @service_container
 
   TaskManager:
     class: AppBundle\Model\TaskManager
     arguments:
       - @doctrine.orm.default_entity_manager
-      - @service_container
+      - @security.context
 
   CommentManager:
     class: AppBundle\Model\CommentManager
     arguments:
       - @doctrine.orm.default_entity_manager
-      - @service_container
 
   UserManager:
     class: AppBundle\Model\UserManager
     arguments:
       - @doctrine.orm.default_entity_manager
-      - @service_container
 
   app.form.registration:
    class: AppBundle\Form\Type\RegistrationType
@@ -55,3 +51,5 @@ services:
     arguments:
       - @session
       - @translator
+
+
