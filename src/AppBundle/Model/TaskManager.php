@@ -4,20 +4,21 @@ namespace AppBundle\Model;
 
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Entity\Repository;
-use Symfony\Component\DependencyInjection\ContainerInterface as Container;
+use Symfony\Component\Security\Core\SecurityContext;
 use AppBundle\Entity\Task;
 
 class TaskManager
 {
   protected $em;
-  protected $container;
   protected $repo;
+  protected $context;
 
-  public function __construct(EntityManager $em, Container $container)
+  public function __construct(EntityManager $em, SecurityContext $context)
   {
     $this->em         = $em;
-    $this->container  = $container;
     $this->repo       = $em->getRepository('AppBundle:Task');
+    $this->context    = $this->context = $context;
+
   }
 
   public function findAllTasks()
@@ -43,9 +44,7 @@ class TaskManager
     $query       = $this->repo->findOneById($id);
     $userTask    = $query->getUser()->getId();
 
-    if($userTask == $user){
-      return $query;
-    }
+    return $query;
   }
 
   public function deleteTask($id)

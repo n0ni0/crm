@@ -120,7 +120,7 @@
           <tr>
           {% for comments in comment %}
               <td class="col-md-1">{{ comments.user }}<br>{{ comments.publishedat|date('d-m-Y H:i') }}
-               {% if task.state != 'Cerrada' %}
+               {% if is_granted('MODIFY', comments) %}
                  <a href="{{ path('editComment', { 'id':comments.id, 'task': task.id })  }}" class="btn btn-xs btn-success"/>
                   <i class="glyphicon glyphicon-edit"></i>
                  </span>

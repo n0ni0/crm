@@ -52,4 +52,9 @@ services:
       - @session
       - @translator
 
-
+  app_edit_comment_voter:
+    class: AppBundle\Security\CommentVoter
+    arguments:
+      - @service_container
+    tags:
+        - { name: security.voter }
