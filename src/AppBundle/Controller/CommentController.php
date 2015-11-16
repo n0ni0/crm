@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Form\Type\CommentType;
 use AppBundle\Entity\Comment;
 use AppBundle\Entity\Task;
+use AppBundle\Security\CommentVoter;
 
 class CommentController extends Controller
 {
@@ -58,11 +59,10 @@ class CommentController extends Controller
    */
   public function editCommentAction(Request $request, $id, $task)
   {
-    $user          = $this->getUser()->getId();
-    $commentToEdit = $this->get('CommentManager')->checkUserComment($user, $id);
+    $commentToEdit = $this->get('CommentManager')->checkUserComment($id);
 
-    if(!$commentToEdit){
-      throw $this->createNotFoundException('Comment not found or not allowed to edit');
+    if(!$this->isGranted(CommentVoter::ATTRIBUTE_MODIFY, $commentToEdit)){
+      throw $this->createAccessDeniedException('Comment not found or not allowed to edit');
     }
 
     $form = $this->createForm(new  CommentType(), $commentToEdit);
@@ -88,10 +88,9 @@ class CommentController extends Controller
    */
   public function deleteCommentAction($id, $task)
   {
-    $user    = $this->getUser()->getId();
-    $comment = $this->get('CommentManager')->checkIfDeleteComment($user, $id);
+    $comment = $this->get('CommentManager')->checkIfDeleteComment($id);
 
-    if(!$comment){
+    if(!$this->isGranted(CommentVoter::ATTRIBUTE_MODIFY, $comment)){
       throw $this->createNotFoundException('Comment not found or not allowed to delete');
     }
 

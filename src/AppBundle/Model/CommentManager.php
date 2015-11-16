@@ -4,19 +4,16 @@ namespace AppBundle\Model;
 
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Entity\Repository;
-use Symfony\Component\DependencyInjection\ContainerInterface as Container;
 use AppBundle\Entity\Comment;
 
 class CommentManager
 {
   protected $em;
-  protected $container;
   protected $repo;
 
-  public function __construct(EntityManager $em, Container $container)
+  public function __construct(EntityManager $em)
   {
     $this->em         = $em;
-    $this->container  = $container;
     $this->repo       = $em->getRepository('AppBundle:Comment');
   }
 
@@ -44,14 +41,11 @@ class CommentManager
     );
   }
 
-  public function checkUserComment($user, $id)
+  public function checkUserComment($id)
   {
-    $query       = $this->repo->findOneById($id);
-    $userComment = $query->getUser()->getId();
+    $query = $this->repo->findOneById($id);
 
-    if($userComment == $user){
-      return $query;
-    }
+    return $query;
   }
 
   public function createComment($data, $flush = true)
@@ -72,14 +66,11 @@ class CommentManager
     return $this->repo->findAndDeleteComment($id);
   }
 
-  public function checkIfDeleteComment($user, $id)
+  public function checkIfDeleteComment($id)
   {
     $query   = $this->repo->findOneById($id);
-    $comment = $query->getUser()->getId();
 
-    if($user == $comment){
-      return $query;
-    }
+    return $query;
   }
 
   public function findLastsComments($user)
