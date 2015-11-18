@@ -1,0 +1,13 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+    <div class="container col-md-6 col-md-offset-3">
+    {% include 'includes/crm_logo_with_line.html.twig' %}
+    <h2> {{ 'error.generic'|trans({}, 'messages') }}
+      {{ status_code  }}
+      <br>
+      {{ exception.message }}
+    <h2>
+    <h3><a href="{{ path('main') }}">{{ 'error.back_home'|trans({}, 'messages') }}</a><h3>
+ </div>
+{% endblock %}
