@@ -1,0 +1,12 @@
+{% extends 'layout.html.twig' %}
+
+{% block panel_title %}
+  Calendario
+{% endblock %}
+
+{% block panel_body %}
+<div class="container col-md-8 col-md-offset-2">
+  {% include 'ADesignsCalendarBundle::calendar.html.twig' %}
+  
+</div>
+{% endblock %}
