@@ -1,0 +1,130 @@
+body {
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+   min-height: 100vh;
+}
+
+.wrap{
+  flex: 1;
+  padding-bottom: 10px;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading{
+	text-align: center;
+}
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="text"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="text"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+#contacts th{
+text-align: center;
+background-color: #2C3E50;
+color: white;
+}
+
+#contacts td{
+text-align: center;
+}
+
+#contactTitle{
+  text-align: center;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.notes{
+  font-style: bold;
+}
+
+#footer {
+ color: white;
+ bottom: 0;
+ height: 35px;
+ width: 100%;
+}
+
+.panell{
+  width: 90vh;
+}
+
+.form_choice{
+  width: 120px;
+}
+
+textarea.form-control{
+  height: 230px;
+  resize: none;
+}
+
+.label{
+  font-size: 15px;
+}
+
+.commentTextarea{
+  padding-top: 15px;
+}
+
+.comments-table{
+  padding-top: 10px;
+}
+
+#commentEdited{
+  padding-top: 10px;
+  font-size: 15px;
+  text-align: right;
+}
+
+.commentContent{
+  text-align: right;
+}
+
+#forgot_password{
+  display: block;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+#remember_me_login{
+  margin-left: 10px;
+}
+
+.user_reset_crm_logo{
+  margin-top: 50px;
+}
+
+.btn_resetting_button{
+  margin-top: 20px;
+}
