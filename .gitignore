@@ -8,6 +8,7 @@
 /bin/
 /composer.phar
 /vendor/
+/web/assets/vendor
 /web/bundles/
 .bowerrc
 .ctags
