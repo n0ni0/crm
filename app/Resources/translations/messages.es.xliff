@@ -80,6 +80,10 @@
         <source>panel_title.list_users</source>
         <target>Usuarios</target>
       </trans-unit>
+      <trans-unit id="panel_title.calendar">
+        <source>panel_title.calendar</source>
+        <target>Calendario</target>
+      </trans-unit>
 
       <trans-unit id="table.name">
         <source>table.name</source>

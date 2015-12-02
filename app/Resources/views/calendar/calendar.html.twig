@@ -1,12 +1,26 @@
 {% extends 'layout.html.twig' %}
 
+{% block stylesheets %}
+  {{ parent()  }}
+  <link rel="stylesheet" href="{{ asset('bundles/adesignscalendar/css/fullcalendar/fullcalendar.css') }}"/>
+  <link rel="stylesheet" href="{{ asset('bundles/adesignscalendar/css/fullcalendar/fullcalendar.print.css') }}"/>
+{% endblock %}
+
 {% block panel_title %}
-  Calendario
+    {{ 'panel_title.calendar'|trans({}, 'messages') }}
 {% endblock %}
 
 {% block panel_body %}
 <div class="container col-md-8 col-md-offset-2">
   {% include 'ADesignsCalendarBundle::calendar.html.twig' %}
-  
 </div>
+{% endblock %}
+
+{% block javascripts %}
+  {{ parent()  }}
+  <script type="text/javascript" src="{{ asset('bundles/adesignscalendar/js/jquery/jquery-ui.custom.min.js')  }}"></script>
+  <script type="text/javascript" src="{{ asset('bundles/adesignscalendar/js/moment/moment.min.js')  }}"></script>
+  <script type="text/javascript" src="{{ asset('bundles/adesignscalendar/js/fullcalendar/fullcalendar.min.js')  }}"></script>
+  <script type="text/javascript" src="{{ asset('bundles/adesignscalendar/js/lang/es.js')  }}"></script>
+  <script type="text/javascript" src="{{ asset('js/calendar-settings.js')  }}"></script>
 {% endblock %}
