@@ -27,7 +27,6 @@ services:
     class: AppBundle\Model\TaskManager
     arguments:
       - @doctrine.orm.default_entity_manager
-      - @security.context
 
   CommentManager:
     class: AppBundle\Model\CommentManager
