@@ -10,6 +10,7 @@
 /vendor/
 /web/assets/vendor
 /web/bundles/
+/deprecation-detector/
 .bowerrc
 .ctags
 tags
