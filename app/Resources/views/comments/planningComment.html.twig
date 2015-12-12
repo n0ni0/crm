@@ -1,0 +1,70 @@
+{% extends 'layout.html.twig' %}
+
+
+{% block stylesheets %}
+  {{ parent()  }}
+  <link rel="stylesheet" href="{{ asset('assets/vendor/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css')  }}">
+{% endblock %}
+
+
+{% block panel_title %}
+  planificar
+{% endblock %}
+
+{% block panel_body %}
+<div class="commentTextarea container col-md-10">
+  {{ form_start(form)}}
+        {{ form_widget(form) }}
+        <input type="submit" value="{{ 'btn.new_comment'|trans({}, 'buttons') }}"
+            class="{{ button_css|default("btn btn-sm btn-warning pull-right") }}" />
+
+            <div class="container col-md-8">
+    <div class='col-md-3'>
+        <div class="form-group">
+            <div class='input-group date' id='datetimepicker6'>
+                <input type='text' class="form-control" />
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class='col-md-8'>
+        <div class="form-group">
+            <div class='input-group date' id='datetimepicker7'>
+                <input type='text' class="form-control" />
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+        {{ form_end(form) }}
+ </div>
+
+
+
+{% endblock %}
+
+{% block javascripts %}
+  {{ parent() }}
+  <script src="{{ asset('assets/vendor/moment/min/moment.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js') }}"></script>
+  <script type="text/javascript">
+    $(function () {
+        $('#datetimepicker6').datetimepicker();
+        $('#datetimepicker7').datetimepicker({
+            useCurrent: false //Important! See issue #1075
+        });
+        $("#datetimepicker6").on("dp.change", function (e) {
+            $('#datetimepicker7').data("DateTimePicker").minDate(e.date);
+        });
+        $("#datetimepicker7").on("dp.change", function (e) {
+            $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
+        });
+    });
+</script>
+{% endblock %}
+
+

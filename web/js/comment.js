@@ -1,6 +1,6 @@
  $(document).ready(function(){
-    $("#comment").hide();
+    $("#commentBox").hide();
     $(".edit").click(function(event){
-    $("#comment").slideToggle();
+    $("#commentBox").slideToggle();
     });
   });

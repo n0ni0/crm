@@ -173,7 +173,7 @@ class Calendar
         return $this->user;
     }
 
-    public function setComment(\AppBundle\Entity\Commnet $comment)
+    public function setComment(\AppBundle\Entity\Comment $comment)
     {
         $this->comment = $comment;
 
