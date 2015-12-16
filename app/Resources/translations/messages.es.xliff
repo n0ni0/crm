@@ -137,6 +137,18 @@
         <source>table.task_comments</source>
         <target>Comentarios</target>
       </trans-unit>
+      <trans-unit id="table.task_user">
+        <source>table.task_user</source>
+        <target>Usuario</target>
+      </trans-unit>
+      <trans-unit id="table.task_edited">
+        <source>table.task_edited</source>
+        <target>Editado</target>
+      </trans-unit>
+      <trans-unit id="table.task_planning">
+        <source>table.task_planning</source>
+        <target>Planificado</target>
+      </trans-unit>
       <trans-unit id="table.roles">
         <source>table.roles</source>
         <target>Roles</target>
@@ -156,6 +168,10 @@
       <trans-unit id="table.description">
         <source>table.description</source>
         <target>Descripción</target>
+      </trans-unit>
+      <trans-unit id="table.new_comment">
+        <source>table.new_comment</source>
+        <target>Nuevo comentario</target>
       </trans-unit>
 
       <trans-unit id="contact.name">
