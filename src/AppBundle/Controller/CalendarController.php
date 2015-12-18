@@ -55,4 +55,29 @@ class CalendarController extends Controller
       'form' => $form->createView(),
     ));
   }
+
+  /**
+   * @Route("/task/{task}/comment/{id}/planning/edit/", name="editPlanningComment")
+   * @ParamConverter("task", class="AppBundle:Task")
+   * @ParamConverter("comment", class="AppBundle:Comment")
+   */
+  public function editPlanningCommentAction(Request $request, Task $task, Comment $id)
+  {
+    $planningToEdit = $this->get('CalendarManager')->checkUserPlanning($id);
+
+
+    $form = $this->createForm(new PlanningType(), $planningToEdit);
+    $form->handleRequest($request);
+
+    if($form->isValid()){
+      $this->get('CalendarManager')->update();
+
+      return $this->redirectToRoute('task', array(
+        'id' => $task->getId()));
+    }
+
+    return $this->render('comments/planningComment.html.twig', array(
+      'form' => $form->createView(),
+    ));
+  }
 }

@@ -60,6 +60,12 @@ class Calendar
      */
     private $comment;
 
+    
+    public function __construct()
+    {
+        $this->start = new \DateTime();
+    }
+
     /**
      * Get id
      *

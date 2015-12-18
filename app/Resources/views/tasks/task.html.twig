@@ -142,6 +142,9 @@
                  <a href="{{ path('planningComment', { 'id':comments.id, 'task': task.id }) }}" class="btn btn-xs btn-primary">
                   <i class="glyphicon glyphicon-calendar"></i>
                  </a>
+                 <a href="{{ path('editPlanningComment', { 'id':comments.id, 'task': task.id }) }}" class="btn btn-xs btn-primary">
+                  <i class="glyphicon glyphicon-calendar"></i>
+                 </a>
                {% endif %}
               </td>
               <td>

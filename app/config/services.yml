@@ -38,6 +38,11 @@ services:
     arguments:
       - @doctrine.orm.default_entity_manager
 
+  CalendarManager:
+    class: AppBundle\Model\CalendarManager
+    arguments:
+      - @doctrine.orm.default_entity_manager
+
   app.form.registration:
    class: AppBundle\Form\Type\RegistrationType
    tags:
@@ -64,4 +69,9 @@ services:
       - { name: kernel.event_listener event: calendar.load_events, method: loadEvents }
     arguments:
       - @doctrine.orm.entity_manager
+
+  app.form.type.planning_edit:
+    class: AppBundle\Form\Type\PlanningType
+    tags:
+      - { name: form.type, alias: app_planning }
 

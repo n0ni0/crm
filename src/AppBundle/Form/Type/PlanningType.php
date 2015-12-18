@@ -5,6 +5,7 @@ namespace AppBundle\Form\Type;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use AppBundle\Form\DataTransformer\DateTimeTransformer;
 
 class PlanningType extends AbstractType
 {
@@ -12,16 +13,36 @@ class PlanningType extends AbstractType
   {
     $builder
       ->add('user', 'entity', array(
-        'class' => 'AppBundle:User',
+        'class'        => 'AppBundle:User',
         'choice_label' =>'username',
       ))
 
-      ->add('start', 'datetime')
+      ->add('start', 'text', array(
+        'attr'           => array(
+          'class'        => 'form-control input-inline datetimepicker6',
+          'data-provide' => 'datepicker',
+          'data-format'  => 'dd-mm-yyyy HH:ii',
+        )
+      ))
 
-      ->add('end', 'datetime');
+      ->add('end', 'text', array(
+        'attr'           => array(
+          'class'        => 'form-control input-inline datetimepicker7',
+          'data-provide' => 'datepicker',
+          'data-format'  => 'dd-mm-yyyy HH:ii',
+        )
+      ));
+
+    $builder
+      ->get('start')
+      ->addModelTransformer(new DateTimeTransformer());
+
+    $builder
+      ->get('end')
+      ->addModelTransformer(new DateTimeTransformer());
   }
 
-  public function setDefaultsOptions(OptionsResolver $resolver)
+  public function configureOptions(OptionsResolver $resolver)
   {
     $resolver->setDefaults(array(
       'data_class' => 'AppBundle\Entity\Calendar'

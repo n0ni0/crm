@@ -84,6 +84,10 @@
         <source>panel_title.calendar</source>
         <target>Calendario</target>
       </trans-unit>
+      <trans-unit id="panel_title.planning">
+        <source>panel_title.planning</source>
+        <target>Planificar</target>
+      </trans-unit>
 
       <trans-unit id="table.name">
         <source>table.name</source>
@@ -300,6 +304,21 @@
       <trans-unit id="error.back_home">
         <source>error.back_home</source>
         <target>Volver a la portada</target>
+      </trans-unit>
+
+      <trans-unit id="planning.user">
+        <source>planning.user</source>
+        <target>Usuario</target>
+      </trans-unit>
+
+      <trans-unit id="planning.start">
+        <source>planning.start</source>
+        <target>Inicio</target>
+      </trans-unit>
+
+      <trans-unit id="planning.end">
+        <source>planning.end</source>
+        <target>Fin</target>
       </trans-unit>
     </body>
   </file>

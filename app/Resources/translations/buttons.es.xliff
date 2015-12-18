@@ -38,6 +38,10 @@
         <source>btn.new_comment</source>
         <target>Añadir comentario</target>
       </trans-unit>
+      <trans-unit id="btn.new_planning">
+        <source>btn.new_planning</source>
+        <target>Añadir planificación</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
