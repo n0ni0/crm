@@ -66,7 +66,7 @@ services:
   app.calendar.listener:
     class: AppBundle\EventListener\CalendarEventListener
     tags:
-      - { name: kernel.event_listener event: calendar.load_events, method: loadEvents }
+      - { name: kernel.event_listener, event: calendar.load_events, method: loadEvents }
     arguments:
       - @doctrine.orm.entity_manager
 

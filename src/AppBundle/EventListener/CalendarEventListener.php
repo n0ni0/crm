@@ -27,8 +27,10 @@ class CalendarEventListener
                         ->getQuery()->getResult();
 
       foreach($companyEvents as $companyEvent) {
-        $eventEntity = new EventEntity($companyEvent->getTitle(), $companyEvent->getStart(), $companyEvent->getEnd());
-        $eventEntity->setBgColor('#2c3e50'); //set the background color of vent's lab
+        $eventEntity = new EventEntity($companyEvent->getTitle(),
+                                       $companyEvent->getStart(), 
+                                       $companyEvent->getEnd());
+        $eventEntity->setBgColor('red');
 
         $calendarEvent->addEvent($eventEntity);
       }

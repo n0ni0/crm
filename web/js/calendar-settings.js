@@ -9,15 +9,16 @@ $(function () {
         header: {
             left: 'prev, next',
             center: 'title',
-            right: 'month, basicWeek, basicDay,'
+            right: 'month, agendaWeek, agendaDay,'
         },
+        defaultView: 'agendaWeek',
+        minTime: "08:00:00",
+        maxTime: "21:00:00",
+        dow: [ 1, 2, 3, 4 ],
         lazyFetching: true,
         timeFormat: {
-            // for agendaWeek and agendaDay
-            agenda: 'h:mmt',    // 5:00 - 6:30
-
-            // for all other views
-            '': 'h:mmt'         // 7p
+            agenda: 'h:mmt',
+            month: 'h:mmt',
         },
         //Set to True to show Calendar Week in seperate Row/Field of Calendar View
         weekNumbers: false,
