@@ -30,6 +30,17 @@ class CalendarController extends Controller
   public function planninCommentAction(Request $request, Task $task, Comment $id)
   {
     $calendar = new Calendar();
+
+    $planning= $this->get('CalendarManager')->checkUserPlanning($id);
+
+    if($planning){
+      $this->addFlash(
+        'success',
+        'El comentario ya está planificado'
+      );
+      return $this->redirect($request->headers->get('referer'));
+    }
+
     $commentToPlanning = $this->get('CommentManager')->checkUserComment($id);
 
     if(!$this->isGranted(CommentVoter::ATTRIBUTE_MODIFY, $commentToPlanning)){
@@ -65,6 +76,13 @@ class CalendarController extends Controller
   {
     $planningToEdit = $this->get('CalendarManager')->checkUserPlanning($id);
 
+    if(!$planningToEdit){
+      $this->addFlash(
+        'success',
+        'No se ha planificado ningún comentario'
+      );
+      return $this->redirect($request->headers->get('referer'));
+    }
 
     $form = $this->createForm(new PlanningType(), $planningToEdit);
     $form->handleRequest($request);

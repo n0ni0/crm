@@ -3,12 +3,14 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * Calendar
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="AppBundle\Entity\CalendarRepository")
+ * @UniqueEntity("comment")
  */
 class Calendar
 {
@@ -56,11 +58,11 @@ class Calendar
 
     /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Comment")
-     * @ORM\JoinColumn(name="comment_id", referencedColumnName="id", onDelete="CASCADE")
+     * @ORM\JoinColumn(name="comment_id", referencedColumnName="id", onDelete="CASCADE", unique=true)
      */
     private $comment;
 
-    
+
     public function __construct()
     {
         $this->start = new \DateTime();
