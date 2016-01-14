@@ -8,7 +8,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 /**
  * Calendar
  *
- * @ORM\Table()
+ * @ORM\Table(name="calendar")
  * @ORM\Entity(repositoryClass="AppBundle\Entity\CalendarRepository")
  * @UniqueEntity("comment")
  */
@@ -45,7 +45,7 @@ class Calendar
     private $end;
 
     /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Task")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Task", inversedBy="calendar")
      * @ORM\JoinColumn(name="task_id", referencedColumnName="id", onDelete="CASCADE")
      */
     private $task;
@@ -57,7 +57,7 @@ class Calendar
     private $user;
 
     /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Comment")
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\Comment", inversedBy="calendar")
      * @ORM\JoinColumn(name="comment_id", referencedColumnName="id", onDelete="CASCADE", unique=true)
      */
     private $comment;
@@ -181,7 +181,7 @@ class Calendar
         return $this->user;
     }
 
-    public function setComment(\AppBundle\Entity\Comment $comment)
+    public function setComment(Comment $comment)
     {
         $this->comment = $comment;
 

@@ -3,20 +3,16 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Task
  *
- * @ORM\Table()
+ * @ORM\Table(name="task")
  * @ORM\Entity(repositoryClass="AppBundle\Entity\TaskRepository")
  */
 class Task
 {
-  public function __construct()
-  {
-    $this->startTime = new \DateTime('now');
-  }
-
     /**
      * @var integer
      *
@@ -25,6 +21,17 @@ class Task
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Comment", mappedBy="task")
+     * @ORM\OrderBy({"publishedAt" = "DESC"})
+     */
+    private $comments;
+
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Calendar", mappedBy="task")
+     */
+    private $calendar;
 
     /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\TaskCategory")
@@ -62,6 +69,14 @@ class Task
      * @ORM\Column(name="start_time", type="datetime")
      */
     private $startTime;
+
+
+  public function __construct()
+  {
+    $this->startTime = new \DateTime('now');
+    $this->comments  = new ArrayCollection();
+  }
+
 
     /**
      * Get id
@@ -153,11 +168,9 @@ class Task
         return $this->description;
     }
 
-   public function getComments(\AppBundle\Entity\Comment $comment)
+   public function getComments()
    {
-    $this->comment = $comment;
-
-    return $this;
+      return $this->comments;
    }
 
     public function setState(\AppBundle\Entity\State $state)
@@ -200,4 +213,60 @@ class Task
         return $this->startTime;
     }
 
+
+    /**
+     * Add comments
+     *
+     * @param \AppBundle\Entity\Comment $comments
+     * @return Task
+     */
+    public function addComment(\AppBundle\Entity\Comment $comments)
+    {
+        $this->comments[] = $comments;
+
+        return $this;
+    }
+
+    /**
+     * Remove comments
+     *
+     * @param \AppBundle\Entity\Comment $comments
+     */
+    public function removeComment(\AppBundle\Entity\Comment $comments)
+    {
+        $this->comments->removeElement($comments);
+    }
+
+    /**
+     * Add calendar
+     *
+     * @param \AppBundle\Entity\Calendar $calendar
+     * @return Task
+     */
+    public function addCalendar(\AppBundle\Entity\Calendar $calendar)
+    {
+        $this->calendar[] = $calendar;
+
+        return $this;
+    }
+
+    /**
+     * Remove calendar
+     *
+     * @param \AppBundle\Entity\Calendar $calendar
+     */
+    public function removeCalendar(\AppBundle\Entity\Calendar $calendar)
+    {
+        $this->calendar->removeElement($calendar);
+    }
+
+    /**
+     * Get calendar
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCalendar()
+    {
+        return $this->calendar;
+    }
 }

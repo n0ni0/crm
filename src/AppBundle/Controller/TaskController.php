@@ -36,16 +36,14 @@ class TaskController extends Controller
   /**
    * @Route("/task/{id}/content", name="task")
    */
-  public function showTaskAction($id, Request $request)
+  public function showTaskAction($id)
   {
     $task = $this->get('TaskManager')->findTask($id);
 
     if(!$task){
       throw $this->createNotFoundException('Task not found');
     }
-
     $taskId      = $task->getId();
-    $comment     = $this->get('CommentManager')->findComments($taskId);
     $lastComment = $this->get('CommentManager')->findLastComment($taskId);
     $lastEdit    = $this->get('CommentManager')->findLastEdit($taskId);
 
@@ -53,7 +51,6 @@ class TaskController extends Controller
       'task'        => $task,
       'lastComment' => $lastComment,
       'lastEdit'    => $lastEdit,
-      'comment'     => $comment
     ));
   }
 

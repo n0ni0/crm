@@ -28,4 +28,11 @@ class CalendarManager
   {
     $this->em->flush();
   }
+
+  public function findPlanning($id)
+  {
+    $query = $this->repo->findPlanning($id);
+
+    return $query;
+  }
 }
