@@ -7,16 +7,11 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Comment
  *
- * @ORM\Table()
+ * @ORM\Table(name="comment")
  * @ORM\Entity(repositoryClass="AppBundle\Entity\CommentRepository")
  */
 class Comment
 {
-  public function __construct()
-  {
-    $this->publishedAt = new \DateTime('now');
-  }
-
     /**
      * @var integer
      *
@@ -26,8 +21,9 @@ class Comment
      */
     private $id;
 
+
     /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Task")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Task", inversedBy="comments")
      * @ORM\JoinColumn(name="task_id", referencedColumnName="id", onDelete="CASCADE")
      */
     private $task;
@@ -59,6 +55,17 @@ class Comment
      */
     private $user;
 
+    /**
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\Calendar", mappedBy="comment")
+     */
+    private $calendar;
+
+
+    public function __construct()
+    {
+      $this->publishedAt = new \DateTime('now');
+    }
+
 
     /**
      * Get id
@@ -70,7 +77,7 @@ class Comment
         return $this->id;
     }
 
-    public function setTask(\AppBundle\Entity\Task $task = null)
+    public function setTask(Task $task)
     {
         $this->task = $task;
 
@@ -151,7 +158,7 @@ class Comment
      *
      * @return \DateTime
      */
-    public function editedAt()
+    public function getEditedAt()
     {
         return $this->editedAt;
     }
@@ -171,5 +178,29 @@ class Comment
     public function getUser()
     {
         return $this->user;
+    }
+
+
+    /**
+     * Set calendar
+     *
+     * @param \AppBundle\Entity\Comment $calendar
+     * @return Comment
+     */
+    public function setCalendar(\AppBundle\Entity\Comment $calendar = null)
+    {
+        $this->calendar = $calendar;
+
+        return $this;
+    }
+
+    /**
+     * Get calendar
+     *
+     * @return \AppBundle\Entity\Comment
+     */
+    public function getCalendar()
+    {
+        return $this->calendar;
     }
 }

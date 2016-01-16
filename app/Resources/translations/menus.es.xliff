@@ -78,6 +78,11 @@
         <source>admin.user_list</source>
         <target>Todos los usuarios</target>
       </trans-unit>
+
+      <trans-unit id="calendar">
+        <source>calendar</source>
+        <target>Calendario</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

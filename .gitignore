@@ -8,7 +8,10 @@
 /bin/
 /composer.phar
 /vendor/
+/web/assets/vendor
 /web/bundles/
+/deprecation-detector/
 .bowerrc
 .ctags
 tags
+/.idea/

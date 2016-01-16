@@ -80,6 +80,14 @@
         <source>panel_title.list_users</source>
         <target>Usuarios</target>
       </trans-unit>
+      <trans-unit id="panel_title.calendar">
+        <source>panel_title.calendar</source>
+        <target>Calendario</target>
+      </trans-unit>
+      <trans-unit id="panel_title.planning">
+        <source>panel_title.planning</source>
+        <target>Planificar</target>
+      </trans-unit>
 
       <trans-unit id="table.name">
         <source>table.name</source>
@@ -133,6 +141,18 @@
         <source>table.task_comments</source>
         <target>Comentarios</target>
       </trans-unit>
+      <trans-unit id="table.task_user">
+        <source>table.task_user</source>
+        <target>Usuario</target>
+      </trans-unit>
+      <trans-unit id="table.task_edited">
+        <source>table.task_edited</source>
+        <target>Editado</target>
+      </trans-unit>
+      <trans-unit id="table.task_planning">
+        <source>table.task_planning</source>
+        <target>Planificado</target>
+      </trans-unit>
       <trans-unit id="table.roles">
         <source>table.roles</source>
         <target>Roles</target>
@@ -152,6 +172,10 @@
       <trans-unit id="table.description">
         <source>table.description</source>
         <target>Descripción</target>
+      </trans-unit>
+      <trans-unit id="table.new_comment">
+        <source>table.new_comment</source>
+        <target>Nuevo comentario</target>
       </trans-unit>
 
       <trans-unit id="contact.name">
@@ -280,6 +304,21 @@
       <trans-unit id="error.back_home">
         <source>error.back_home</source>
         <target>Volver a la portada</target>
+      </trans-unit>
+
+      <trans-unit id="planning.user">
+        <source>planning.user</source>
+        <target>Usuario</target>
+      </trans-unit>
+
+      <trans-unit id="planning.start">
+        <source>planning.start</source>
+        <target>Inicio</target>
+      </trans-unit>
+
+      <trans-unit id="planning.end">
+        <source>planning.end</source>
+        <target>Fin</target>
       </trans-unit>
     </body>
   </file>

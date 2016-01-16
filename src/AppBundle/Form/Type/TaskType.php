@@ -18,14 +18,14 @@ class TaskType extends AbstractType
         'label'              => 'task.category',
         'class'              => 'AppBundle:TaskCategory',
         'choice_label'       => 'taskCategory',
-        'empty_value'        => 'Selecciona una opción',
+        'placeholder'        => 'Selecciona una opción',
         'translation_domain' => 'messages'
       ))
       ->add('state', 'entity', array(
         'label'              => 'task.state',
         'class'              => 'AppBundle:State',
         'choice_label'       => 'state',
-        'empty_value'        => 'Selecciona una opción',
+        'placeholder'       => 'Selecciona una opción',
         'translation_domain' => 'messages'
       ))
       ->add('description', 'textarea', array(

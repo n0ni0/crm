@@ -1,0 +1,68 @@
+{% extends 'layout.html.twig' %}
+{% form_theme form 'bootstrap_3_layout.html.twig' %}
+
+{% block stylesheets %}
+  {{ parent()  }}
+  <link rel="stylesheet" href="{{ asset('assets/vendor/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css')  }}">
+{% endblock %}
+
+{% block panel_title %}
+  {{ 'panel_title.planning'|trans({}, 'messages') }}
+{% endblock %}
+
+{% block panel_body %}
+
+  <div class="container">
+
+    {{ form_start(form) }}
+    {{ form_errors(form) }}
+
+    <div class="form-group col-md-3">
+      <label class="control-label">
+        {{ 'planning.user'|trans({}, 'messages') }}
+      </label>
+      {{ form_widget(form.user) }}
+    </div>
+
+    <div class="form-group col-md-3">
+      <label class="control-label">
+        {{ 'planning.start'|trans({}, 'messages') }}
+      </label>
+      <div class='input-group date' id='datetimepicker6'>
+        {{ form_widget(form.start) }}
+        <span class="input-group-addon">
+          <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group col-md-3">
+      <label class="control-label">
+        {{ 'planning.end'|trans({}, 'messages') }}
+      </label>
+      <div class='input-group date' id='datetimepicker7'>
+        {{ form_widget(form.end) }}
+        <span class="input-group-addon">
+          <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+      </div>
+      <br>
+      
+      <input type="submit" value="{{ 'btn.new_planning'|trans({}, 'buttons') }}"
+      class="{{ button_css|default("btn btn-sm btn-warning pull-right") }}" />
+    </div>
+
+  </div>
+
+  {{ form_end(form) }}
+
+  {% include 'includes/panelFooter.html.twig' %}
+{% endblock %}
+
+{% block javascripts %}
+  {{ parent() }}
+  <script src="{{ asset('assets/vendor/moment/min/moment.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/moment/locale/es.js') }}"></script>
+  <script src="{{ asset('assets/vendor/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js') }}"></script>
+  <script src="{{ asset('js/datetimepicker.js') }}"></script>
+{% endblock %}

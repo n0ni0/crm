@@ -4,20 +4,17 @@ namespace AppBundle\Model;
 
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Entity\Repository;
-use Symfony\Component\Security\Core\SecurityContext;
 use AppBundle\Entity\Task;
 
 class TaskManager
 {
   protected $em;
   protected $repo;
-  protected $context;
 
-  public function __construct(EntityManager $em, SecurityContext $context)
+  public function __construct(EntityManager $em)
   {
     $this->em         = $em;
     $this->repo       = $em->getRepository('AppBundle:Task');
-    $this->context    = $this->context = $context;
 
   }
 

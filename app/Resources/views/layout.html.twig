@@ -39,6 +39,8 @@
                 </ul>
             </li>
 
+            <li><a href="{{ path('calendar') }}">{{ 'calendar'|trans({}, 'menus') }}</a></li>
+
             {% if is_granted('ROLE_ADMIN') %}
               <li class="dropdown">
                 <a href="" class="dropdown-toggle" data-toggle="dropdown">{{ 'admin.administrate'|trans({}, 'menus') }}<b class="caret"></b></a>
