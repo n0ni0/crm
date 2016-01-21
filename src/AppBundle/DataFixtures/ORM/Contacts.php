@@ -87,17 +87,7 @@ class Contacts extends AbstractFixture implements OrderedFixtureInterface
   private function getAnnotations()
   {
     $annotations = array(
-        'Vivamus congue lacus nunc. Nulla facilisi. Morbi vitae turpis et mi 
-        accumsan tristique. Donec posuere lacus risus, eget tincidunt mi malesuada at.
-        Sed finibus elit hendrerit felis facilisis placerat. Morbi tincidunt sapien 
-        in lorem sagittis mollis. Fusce ultricies auctor neque id dictum. 
-        Maecenas eu fermentum dui. Pellentesque et pulvinar magna. Nulla ac mi at 
-        tellus laoreet ullamcorper nec vitae lorem. Curabitur id fringilla ante. 
-        Nulla tempor nisl sed ipsum facilisis, maximus malesuada risus pellentesque. 
-        Nunc lacus felis, bibendum suscipit ornare eu, congue accumsan erat. 
-        Donec tincidunt rhoncus convallis. Proin aliquet felis nec purus tristique, 
-        eu vulputate nulla mollis. Nulla venenatis nunc tellus, 
-        mollis sodales enim posuere ac.'
+      'Este usuario tiene una anotación.'
      );
        return $annotations[array_rand($annotations)];
   }

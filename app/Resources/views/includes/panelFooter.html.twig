@@ -2,5 +2,5 @@
 </div>
 
 <div class="panel-footer">
-  <a href="{{ path('main') }}" class="btn btn-sm btn-default">{{ 'btn.back'|trans({}, 'buttons') }}</a>
+  <a href="{{ app.request.headers.get('referer') }}" class="btn btn-sm btn-default">{{ 'btn.back'|trans({}, 'buttons')  }}</a>
 </div>

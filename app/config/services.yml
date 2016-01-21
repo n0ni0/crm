@@ -16,32 +16,32 @@ services:
   ContactManager:
     class: AppBundle\Model\ContactManager
     arguments:
-      - @doctrine.orm.default_entity_manager
+      - "@doctrine.orm.default_entity_manager"
 
   NotesManager:
     class: AppBundle\Model\NotesManager
     arguments:
-      - @doctrine.orm.default_entity_manager
+      - "@doctrine.orm.default_entity_manager"
 
   TaskManager:
     class: AppBundle\Model\TaskManager
     arguments:
-      - @doctrine.orm.default_entity_manager
+      - "@doctrine.orm.default_entity_manager"
 
   CommentManager:
     class: AppBundle\Model\CommentManager
     arguments:
-      - @doctrine.orm.default_entity_manager
+      - "@doctrine.orm.default_entity_manager"
 
   UserManager:
     class: AppBundle\Model\UserManager
     arguments:
-      - @doctrine.orm.default_entity_manager
+      - "@doctrine.orm.default_entity_manager"
 
   CalendarManager:
     class: AppBundle\Model\CalendarManager
     arguments:
-      - @doctrine.orm.default_entity_manager
+      - "@doctrine.orm.default_entity_manager"
 
   app.form.registration:
    class: AppBundle\Form\Type\RegistrationType
@@ -53,13 +53,13 @@ services:
     tags:
       - { name: kernel.event_listener, event: new.user_created, method: onNewUserCreated}
     arguments:
-      - @session
-      - @translator
+      - "@session"
+      - "@translator"
 
   app_edit_comment_voter:
     class: AppBundle\Security\CommentVoter
     arguments:
-      - @service_container
+      - "@service_container"
     tags:
         - { name: security.voter }
 
@@ -68,7 +68,7 @@ services:
     tags:
       - { name: kernel.event_listener, event: calendar.load_events, method: loadEvents }
     arguments:
-      - @doctrine.orm.entity_manager
+      - "@doctrine.orm.entity_manager"
 
   app.form.type.planning_edit:
     class: AppBundle\Form\Type\PlanningType
