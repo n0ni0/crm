@@ -4,7 +4,7 @@
 {% block panel_title %}{{ 'panel_title.register_user'|trans({}, 'messages') }} {% endblock %}
 
 {% block panel_body %}
-  <div class="container col-md-7">
+  <div class="container">
     <form action="{{ path('fos_user_registration_register') }}" method="POST" class="fos_user_registration_register">
       {{ form_widget(form) }}
       <input type="submit" value="{{ 'registration.submit'|trans }}" class="btn btn-md btn-success"/>
