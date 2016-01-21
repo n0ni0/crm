@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "56d63a46635905d8253d7bcb3b4a1d76",
-    "content-hash": "9161e838d3d7f64e5e4306029c9bbe6c",
+    "hash": "117e44a25eba9c15269b2795b338ba7a",
+    "content-hash": "34e06d4e9b8eefe18a81dcc51874ade7",
     "packages": [
         {
             "name": "adesigns/calendar-bundle",
@@ -2188,6 +2188,61 @@
             ],
             "description": "This bundle generates code for you",
             "time": "2015-03-17 06:36:52"
+        },
+        {
+            "name": "symfony/phpunit-bridge",
+            "version": "v2.7.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/phpunit-bridge.git",
+                "reference": "0af081bb227542507e00ccc067eaf18dfddead9b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/phpunit-bridge/zipball/0af081bb227542507e00ccc067eaf18dfddead9b",
+                "reference": "0af081bb227542507e00ccc067eaf18dfddead9b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.9"
+            },
+            "suggest": {
+                "symfony/debug": "For tracking deprecated interfaces usages at runtime with DebugClassLoader"
+            },
+            "type": "symfony-bridge",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.7-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ],
+                "psr-4": {
+                    "Symfony\\Bridge\\PhpUnit\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony PHPUnit Bridge",
+            "homepage": "https://symfony.com",
+            "time": "2016-01-06 06:53:30"
         }
     ],
     "aliases": [],
@@ -2196,7 +2251,8 @@
         "doctrine/doctrine-fixtures-bundle": 20,
         "doctrine/data-fixtures": 20,
         "friendsofsymfony/user-bundle": 20,
-        "adesigns/calendar-bundle": 10
+        "adesigns/calendar-bundle": 10,
+        "symfony/phpunit-bridge": 10
     },
     "prefer-stable": false,
     "prefer-lowest": false,
