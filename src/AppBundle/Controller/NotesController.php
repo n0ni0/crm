@@ -103,7 +103,11 @@ class NotesController extends Controller
     $publicNotes  = $this->get('NotesManager')->findPublicNotes($private = false);
 
     if(!$publicNotes){
-      throw $this->createNotFoundException('No se han encontrado notas públicas');
+        $request->getSession()
+            ->getFlashBag()
+            ->add('success', 'No se han encontrado notas públicas');
+
+        return $this->redirectToRoute('main');
     }
 
     $paginator  = $this->get('knp_paginator');
@@ -126,7 +130,11 @@ class NotesController extends Controller
     $privateNotes  = $this->get('NotesManager')->findPrivateNotes($user, $private = true);
 
     if(!$privateNotes){
-      throw $this->createNotFoundException('No se han encontrado notas privadas');
+      $request->getSession()
+          ->getFlashBag()
+          ->add('success', 'No se han encontrado notas privadas');
+
+      return $this->redirectToRoute('main');
     }
 
     $paginator   = $this->get('knp_paginator');
