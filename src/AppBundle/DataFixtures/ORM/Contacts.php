@@ -15,8 +15,20 @@ class Contacts extends AbstractFixture implements OrderedFixtureInterface
 
   public function load(ObjectManager $manager)
   {
+    $testContact = new Contact();
+    $testContact->setName('User');
+    $testContact->setLastName('Test');
+    $testContact->setAddress('calle test');
+    $testContact->setCity('Villatest');
+    $testContact->setPhone(956666666);
+    $testContact->setMobilePhone(666666666);
+    $testContact->setEmail('test@crm.local');
+    $testContact->setCompany('testCompany');
+    $testContact->setAnnotations('Test annotation');
 
-    for ($i = 0; $i < 30; $i++) {
+    $manager->persist($testContact);
+
+    for ($i = 1; $i < 30; $i++) {
       $contact = new Contact();
       $mobile = rand(661000000,669999999);
       $phone  = rand(910000000,999999999);

@@ -19,6 +19,16 @@ class Note extends AbstractFixture implements OrderedFixtureInterface
   {
     $users = $manager->getRepository('AppBundle:User')->findAll();
 
+    $testNote = new Notes();
+    $user = $users[array_rand($users)];
+    $testNote->setUser($user);
+    $testNote->setDate(new \DateTime('now - '.rand(1, 30).' days'));
+    $testNote->setTitle('Test note');
+    $testNote->setContent('Test comment');
+    $testNote->setPrivate(0);
+
+    $manager->persist($testNote);
+
     for ($i = 0; $i < 10; $i++) {
       $notes = new Notes();
 
