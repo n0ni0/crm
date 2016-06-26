@@ -17,3 +17,5 @@ tags
 /.idea
 Capfile
 /app/config/deploy.rb
+ansible/
+build/
