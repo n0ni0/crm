@@ -23,7 +23,7 @@
         <tbody>
           <tr>
             {% for task in tasks %}
-            <td><a href="{{ path("task", { 'id':task.id }) }}">{{ task.title |truncate(50) }}</a></td>
+            <td><a class="task" href="{{ path("task", { 'id':task.id }) }}">{{ task.title |truncate(50) }}</a></td>
             <td>{{ task.description |truncate(50, true) }}</td>
             <td>{{ task.user }}</td>
             <td>{{ task.starttime|date('d-m-Y H:i') }}</td>

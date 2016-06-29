@@ -22,7 +22,7 @@
             </div>
             <div class="panel-body">
               {% for publicNote in publicNotes %}
-                <a href="{{ path('note',{'id':publicNote.id}) }}">{{ publicNote.title |truncate(50, true) }}</a>
+                <a class="public-note" href="{{ path('note',{'id':publicNote.id}) }}">{{ publicNote.title |truncate(50, true) }}</a>
                 <br>
               {% endfor %}
             </div>
@@ -38,7 +38,7 @@
             </div>
             <div class="panel-body">
               {% for privateNote in privateNotes %}
-                <a href="{{ path('note',{'id':privateNote.id}) }}">{{ privateNote.title |truncate(50, true) }}</a>
+                <a class="private-note" href="{{ path('note',{'id':privateNote.id}) }}">{{ privateNote.title |truncate(50, true) }}</a>
                 <br>
               {% endfor %}
             </div>
@@ -67,7 +67,7 @@
         <tbody>
           <tr>
             {% for lastComment in lastComments  %}
-            <td><a href="{{ path("task", { 'id':lastComment.id }) }}">{{ lastComment.title }}</a></td>
+            <td><a class="task" href="{{ path("task", { 'id':lastComment.id }) }}">{{ lastComment.title }}</a></td>
             <td>{{ lastComment.publishedAt|date('d-m-Y H:i') }}</td>
             <td>{{ lastComment.task_category }}</td>
             <td>{{ lastComment.state }}</td>
