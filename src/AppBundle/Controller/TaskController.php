@@ -71,7 +71,7 @@ class TaskController extends Controller
       return $this->redirectToRoute('listTask');
     }
 
-    return $this->render('contact/newContact.html.twig', array(
+    return $this->render('tasks/newTask.html.twig', array(
       'form' => $form->createView()
     ));
   }
