@@ -29,7 +29,7 @@ class Note extends AbstractFixture implements OrderedFixtureInterface
 
     $manager->persist($testNote);
 
-    for ($i = 0; $i < 10; $i++) {
+    for ($i = 0; $i < 30; $i++) {
       $notes = new Notes();
 
       $priv = rand(0,1);
