@@ -34,8 +34,17 @@ class Users extends AbstractFixture implements
     $user->setEmail('user@crm.es');
     $user->setPlainPassword('password');
     $user->setEnabled(true);
-    $user->setRoles(array('ROLE_ADMIN'));
+    $user->setRoles(array('ROLE_USER'));
 
     $userManager->updateUser($user, true);
+
+    $admin = $userManager->createUser();
+    $admin->setUsername('admin');
+    $admin->setEmail('admin@crm.es');
+    $admin->setPlainPassword('admin');
+    $admin->setEnabled(true);
+    $admin->setRoles(array('ROLE_ADMIN'));
+
+    $userManager->updateUser($admin, true);
   }
 }
