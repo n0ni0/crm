@@ -26,7 +26,7 @@
         "knplabs/knp-paginator-bundle": "^2.4",
         "friendsofsymfony/jsrouting-bundle": "^1.5",
         "twig/extensions": "^1.3",
-        "adesigns/calendar-bundle": "1.2-beta"
+        "adesigns/calendar-bundle": "2.0.x-dev"
 
     },
     "require-dev": {
