@@ -13,7 +13,8 @@ class TaskRepository extends EntityRepository
                FROM AppBundle:Task t
                JOIN t.taskCategory c
                JOIN t.user u
-               JOIN t.state s';
+               JOIN t.state s
+           ORDER BY t.id DESC';
 
     $query = $em->createQuery($dql);
     $query->execute();

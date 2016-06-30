@@ -22,6 +22,16 @@ class Tasks extends AbstractFixture implements OrderedFixtureInterface
     $states         = $manager->getRepository('AppBundle:State')->findAll();
     $taskCategories = $manager->getRepository('AppBundle:TaskCategory')->findAll();
 
+    $testTask = new Task();
+    $testTask->setTaskCategory($taskCategories[2]);
+    $testTask->setUser($users[0]);
+    $testTask->setTitle('Test tasks');
+    $testTask->setDescription('Task description');
+    $testTask->setState($states[0]);
+    $testTask->setStartTime(new \DateTime('now - '.rand(1, 20).' days'));
+
+    $manager->persist($testTask);
+
     for ($i = 0; $i < 25; $i++) {
       $tasks        = new Task();
       $user         = $users[array_rand($users)];

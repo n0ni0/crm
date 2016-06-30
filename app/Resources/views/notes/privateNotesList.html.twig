@@ -17,7 +17,7 @@
         <tbody>
           <tr>
             {% for privateNote in privateNotes %}
-            <td><a href="{{ path("note", { 'id':privateNote.id }) }}">{{ privateNote.title }}</a></td>
+            <td><a class="private-note" href="{{ path("note", { 'id':privateNote.id }) }}">{{ privateNote.title }}</a></td>
             <td>{{ privateNote.user }}</td>
             <td>{{ privateNote.date|date('d-m-Y H:i') }}</td>
           </tr>

@@ -20,7 +20,15 @@ class Comments extends AbstractFixture implements OrderedFixtureInterface
     $tasks = $manager->getRepository('AppBundle:Task')->findAll();
     $users = $manager->getRepository('AppBundle:User')->findAll();
 
-    for ($i = 0; $i < 50; $i++) {
+    $testComment = new Comment();
+    $testComment->setTask($tasks[0]);
+    $testComment->setUser($users[0]);
+    $testComment->setPublishedAt(new \DateTime('now - '.rand(1, 20).' days'));
+    $testComment->setContent($this->getContents());
+
+    $manager->persist($testComment);
+    
+    for ($i = 1; $i < 50; $i++) {
       $comments = new Comment();
       $user     = $users[array_rand($users)];
       $task     = $tasks[array_rand($tasks)];

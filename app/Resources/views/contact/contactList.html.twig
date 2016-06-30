@@ -21,7 +21,7 @@
         <tbody>
           <tr>
             {% for contacts in contacts %}
-            <td><a href="{{ path("contactProfile", { 'id':contacts.id }) }}">{{ contacts.name }}</a></td>
+            <td><a class="contact" href="{{ path("contactProfile", { 'id':contacts.id }) }}">{{ contacts.name }}</a></td>
             <td>{{ contacts.lastname }}</td>
             <td>{{ contacts.phone }}</td>
             <td>{{ contacts.mobilephone }}</td>

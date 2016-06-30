@@ -17,7 +17,7 @@
         <tbody>
           <tr>
             {% for publicNote in publicNotes %}
-            <td><a href="{{ path("note", { 'id':publicNote.id }) }}">{{ publicNote.title }}</a></td>
+            <td><a class="public-note" href="{{ path("note", { 'id':publicNote.id }) }}">{{ publicNote.title }}</a></td>
             <td>{{ publicNote.user }}</td>
             <td>{{ publicNote.date|date('d-m-Y H:i') }}</td>
           </tr>

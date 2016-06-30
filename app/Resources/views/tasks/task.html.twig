@@ -89,16 +89,16 @@
       </div>
 
     <div class="container-fluid">
-      <a href="{{ path("editTask", {'id':task.id }) }}" class="btn btn-sm btn-primary">
+      <a id="edit-task" href="{{ path("editTask", {'id':task.id }) }}" class="btn btn-sm btn-primary">
         <i class="glyphicon glyphicon-edit"> {{ 'btn.edit'|trans({}, 'buttons') }}</i>
       </a>
-      <a href="{{ path("deleteTask", {'id':task.id }) }}" class="btn btn-sm btn-primary">
+      <a id="delete-task" href="{{ path("deleteTask", {'id':task.id }) }}" class="btn btn-sm btn-primary">
         <i class="glyphicon glyphicon-remove"> {{ 'btn.delete'|trans({}, 'buttons') }}</i>
       </a>
-      <a href="#" class="edit btn btn-sm btn-primary">
+      <a id="comment-task" href="#" class="edit btn btn-sm btn-primary">
         <i class="glyphicon glyphicon-comment"> {{ 'btn.comment'|trans({}, 'buttons') }}</i>
       </a>
-      <a href="{{ path('listTask') }}" class="btn btn-sm btn-primary">
+      <a id="back-task" href="{{ path('listTask') }}" class="btn btn-sm btn-primary">
         <i class="glyphicon glyphicon-share-alt"> {{ 'btn.back'|trans({}, 'buttons') }}</i>
       </a>
     </div>
@@ -135,18 +135,18 @@
                 {{ comments.user }}<br>
                 {{ comments.publishedAt|date('d-m-Y H:i') }}<br>
                 {% if is_granted('MODIFY', comments) %}
-                   <a href="{{ path('editComment', { 'id':comments.id, 'task': task.id })  }}" class="btn btn-xs btn-success">
+                   <a id="edit-comment" href="{{ path('editComment', { 'id':comments.id, 'task': task.id })  }}" class="btn btn-xs btn-success">
                     <i class="glyphicon glyphicon-edit"></i>
                    </a>
-                   <a href="{{ path('deleteComment', { 'id':comments.id, 'task': task.id }) }}" class="btn btn-xs btn-danger">
+                   <a id="delete-comment" href="{{ path('deleteComment', { 'id':comments.id, 'task': task.id }) }}" class="btn btn-xs btn-danger">
                     <i class="glyphicon glyphicon-remove"></i>
                    </a>
                   {% if comments.calendar  %}
-                    <a href="{{ path('editPlanningComment', { 'id':comments.id, 'task': task.id }) }}" class="btn btn-xs btn-primary">
+                    <a href="{{ path('editPlanningComment', { 'id':comments.id, 'task': task.id }) }}" class="planning-comment btn btn-xs btn-primary">
                       <i class="glyphicon glyphicon-calendar"></i>
                     </a>
                   {% else %}
-                    <a href="{{ path('planningComment', { 'id':comments.id, 'task': task.id }) }}" class="btn btn-xs btn-primary">
+                    <a href="{{ path('planningComment', { 'id':comments.id, 'task': task.id }) }}" class="planning-comment btn btn-xs btn-primary">
                       <i class="glyphicon glyphicon-calendar"></i>
                     </a>
                   {% endif %}
