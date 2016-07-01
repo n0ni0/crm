@@ -2,8 +2,8 @@
 ====
 
   
-[![Build Status](https://travis-ci.org/n0ni0/crm.svg?branch=dev)](https://travis-ci.org/n0ni0/crm) 
-[![Coverage Status](https://coveralls.io/repos/github/n0ni0/crm/badge.svg?branch=dev)](https://coveralls.io/github/n0ni0/crm?branch=dev)
+[![Build Status](https://travis-ci.org/n0ni0/crm.svg?branch=master)](https://travis-ci.org/n0ni0/crm) 
+[![Coverage Status](https://coveralls.io/repos/github/n0ni0/crm/badge.svg?branch=master)](https://coveralls.io/github/n0ni0/crm?branch=master)
 
 This applications is created with the PHP Framework Symfony 2.  
 Crm for managing tasks, contacts, notes and planning in a calendar.  
@@ -15,7 +15,7 @@ CRM use this bundles:
 
 [FOSUserBundle](https://github.com/FriendsOfSymfony/FOSUserBundle) -- User management  
 [KnpPaginatorBundle](https://github.com/KnpLabs/KnpPaginatorBundle) -- Paginate results  
-[CalendarBundle](https://github.com/adesigns/calendar-bundle) -- Calenddar
+[CalendarBundle](https://github.com/adesigns/calendar-bundle) -- Calendar
 
 
 
