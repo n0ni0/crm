@@ -75,3 +75,5 @@ services:
     tags:
       - { name: form.type, alias: app_planning }
 
+  fos_user.doctrine_registry:
+    alias: doctrine
