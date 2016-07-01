@@ -8,10 +8,7 @@ cache:
   directories:
     - $HOME/.composer/cache/files
 
-matrix:
-  fast_finish: true
-  include:
-    - php: 5.6
+php: 5.6
 
 env:
   - SYMFONY_VERSION="2.7.*" DB=mysql
@@ -26,10 +23,10 @@ install:
 
 script:
   - mkdir -p build/logs
-  - phpunit -c app --coverage-clover build/logs/clover.xml
+  - phpunit --coverage-clover build/logs/clover.xml -c app
 
 after_script:
-  - php vendor/bin/coveralls -v
+  - bin/coveralls -v
 
 notifications:
   slack: nonio:EC655lgzVdUOprh2bfBEAb2N
